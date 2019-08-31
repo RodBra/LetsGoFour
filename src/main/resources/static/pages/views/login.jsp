@@ -15,22 +15,15 @@
   <div id="formContent">
     <!-- Tabs Titles -->
 
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    </div>
-
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+    <form class="login">
+      <div class="logo">Logo</div>
+      <label class="labels" for="Usuário" id="usuario">Usuário</label><br>
+      <input class="entrada" type="text" id="user" name="login"><br>
+      <label class="labels" for="senha" id="senha">Senha</label><br>
+      <input class="entrada" type="password" id="password" name="senha"><br>
+      <button class="botao"><span class="text-button">Entrar</span></button>
     </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
 
   </div>
 </div>
