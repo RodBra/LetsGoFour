@@ -12,20 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 	
-	@PostMapping("/login{nome}{senha}")
+	@PostMapping("/login")
 	public ResponseEntity<String> validarLogin(
-			@PathVariable String nome,
-			@PathVariable String senha,
-			@RequestBody Credencias credencias) {
+			@PathVariable String login,
+			@PathVariable String senha) {
 
-		loginDao dao = new loginDao();
+//		loginDao dao = new loginDao();
+//		
+//		boolean userValidate = dao.autenticaUsuario(credencias);
 
-		credencias.setLogin(nome);
-		credencias.setSenha(senha);
-
-		boolean userValidate = dao.autenticaUsuario(credencias);
-
-		if(userValidate){
+		if(login.equals(senha)){
 			return ResponseEntity.ok("Sucesso");
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Erro");

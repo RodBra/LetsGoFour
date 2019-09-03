@@ -9,7 +9,6 @@ package com.bandtec.jobbers;
 	import org.springframework.http.HttpStatus;
 	import org.springframework.http.ResponseEntity;
 
-import com.bandtec.jobbers.controller.Credencias;
 import com.bandtec.jobbers.controller.LoginController;
 
 	public class LoginControllerTest {
@@ -24,7 +23,7 @@ import com.bandtec.jobbers.controller.LoginController;
 		@Test
 		public void LoginComSucesso() {
 
-			ResponseEntity<String> resposta = controller.validarLogin("nome","senha",new Credencias("nome", "senha"));
+			ResponseEntity<String> resposta = controller.validarLogin("igual","igual");
 
 			assertEquals(HttpStatus.OK, resposta.getStatusCode());
 			assertEquals("Sucesso", resposta.getBody());
@@ -33,7 +32,7 @@ import com.bandtec.jobbers.controller.LoginController;
 		@Test
 		public void LoginComFalha() {
 
-			ResponseEntity<String> resposta = controller.validarLogin("login","senha",new Credencias("login", "senha"));
+			ResponseEntity<String> resposta = controller.validarLogin("login","senha");
 
 			assertEquals(HttpStatus.UNAUTHORIZED, resposta.getStatusCode());
 			assertEquals("Erro", resposta.getBody());
