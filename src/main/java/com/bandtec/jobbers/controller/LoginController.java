@@ -23,8 +23,8 @@ public class LoginController {
 
 		loginDao dao = new loginDao();
 
-		credencias.setLogin(nome);
-		credencias.setSenha(senha);
+		//credencias.setLogin(nome);
+		//credencias.setSenha(senha);
 
 		boolean userValidate = dao.autenticaUsuario(credencias);
 

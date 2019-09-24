@@ -261,3 +261,98 @@ html {
     width:60%;
   }
   
+  .login {
+    width: 450px;
+    height: 480px;
+    left: 391px;
+    top: 71px;
+    padding-top: 40px;
+
+    background: #BD79FF;
+  }
+
+  .botao {
+    width: 150px;
+    height: 50px;
+    left: 582px;
+    margin-top: 40px;
+
+    background: #870CFF;
+    border-radius: 30px;
+  }
+
+  .text-button {
+    width: 147px;
+    height: 45px;
+    left: 608px;
+    top: 525px;
+    font-family: Roboto;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 42px;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
+  input.entrada {
+    background: #FFFFFF;
+    border-radius: 30px;
+  }
+
+  #password {
+    height: 30px;
+    width: 310px;
+    left: 492px;
+    margin-top: 20px;
+    text-align: center
+  }
+
+  #user {
+    width: 250px;
+    height: 1px;
+    left: 492px;
+    top: 285px;
+    margin-top: 20px;
+    margin-bottom: 20px
+  }
+
+  #senha {
+    left: 626px;
+    margin-top: 50px;
+  }
+
+  #usuario{
+    width: 198px;
+    height: 26px;
+    left: 583px;
+    top: 239px;
+    margin-top: 100px
+  }
+  .labels {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .logo {
+    width: 115px;
+    height: 77px;
+    margin-left: 167px;
+    top: 119.5px;
+    margin-bottom: 60px;
+
+    background: #FFFFFF;
+  }
+
+  body {
+    padding-top: 50px; 
+  }
