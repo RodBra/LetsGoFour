@@ -1,6 +1,7 @@
 package com.bandtec.jobbers.controller;
 
 import com.bandtec.jobbers.Dao.loginDao;
+import com.bandtec.jobbers.model.Credencias;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
