@@ -27,9 +27,8 @@ public class LoginController {
 		//credencias.setLogin(nome);
 		//credencias.setSenha(senha);
 
-		boolean userValidate = dao.autenticaUsuario(credencias);
 
-		if(userValidate){
+		if(!dao.autenticaUsuario().isEmpty()){
 			return ResponseEntity.ok("Sucesso");
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Erro");

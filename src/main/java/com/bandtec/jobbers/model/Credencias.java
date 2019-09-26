@@ -20,7 +20,15 @@ public class Credencias {
 		this.senha = senha;
 	}
 
-	@Override
+    public String getLogin() {
+        return login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    @Override
 	public String toString() {
 		return "Credencias{" +
 				"login='" + login + '\'' +

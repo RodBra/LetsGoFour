@@ -1,32 +1,32 @@
 package com.bandtec.jobbers.Dao;
 
-import com.bandtec.jobbers.model.CredenciaisRepository;
+import com.bandtec.jobbers.connector.Connector;
 import com.bandtec.jobbers.model.Credencias;
+import com.mongodb.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 
-public class loginDao implements CommandLineRunner {
+public class loginDao {
 
-    @Autowired
-    private CredenciaisRepository repository;
+//    @Autowired
+//    private CredenciaisRepository repository;
 
-    @Override
-    public boolean autenticaUsuario(Credencias credencias){
+    private Connector connector = new Connector();
 
-        String login = credencias.getLogin();
-        String senha = credencias.getSenha();
+    //TODO Validação de usuario
+    public String autenticaUsuario(){
 
+        DB database = (DB) connector.mongoClient().getDatabase("teste");
 
-        Credencias credencias1 = new Credencias("wender","1234");
+        DBCollection collection = database.getCollection("teste");
 
-        if (login.equals(credencias.getLogin()) && senha.equals(credencias.getSenha())) {
-            return true;
-        }
-        return false;
-    }
+        DBObject query = new BasicDBObject("nome", "jão");
+        DBCursor cursor = collection.find(query);
 
-    @Override
-    public void run(String... args) throws Exception {
+        System.out.println(cursor);
 
+//        if (repository.validation(credencias.getLogin(), credencias.getSenha())) {
+//            return true;
+//        }
+        return cursor.toString();
     }
 }
