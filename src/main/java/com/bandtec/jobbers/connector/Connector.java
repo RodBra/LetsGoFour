@@ -2,15 +2,19 @@ package com.bandtec.jobbers.connector;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
 
 public class Connector {
 
-	public MongoClient mongoClient() {
-		final String uri = "mongodb+srv://Rodrigo:batata12@jobberscluster-yqtzm.azure.mongodb.net/teste?retryWrites=true&w=majority";
+    public MongoDatabase conection() {
 
-		MongoClient mongoClient = (MongoClient) MongoClients.create(uri);
+        MongoClientURI uri = new MongoClientURI(
+                "mongodb+srv://Rodrigo:PepinoDenovo@jobberscluster-yqtzm.azure.mongodb.net/teste?retryWrites=true&w=majority");
 
-        return mongoClient;
-	}
+        MongoClient mongoClient = new MongoClient(uri);
+        MongoDatabase database = mongoClient.getDatabase("teste");
+
+        return database;
+    }
+
 }

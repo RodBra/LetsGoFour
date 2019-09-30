@@ -1,9 +1,7 @@
 package com.bandtec.jobbers.Dao;
 
 import com.bandtec.jobbers.connector.Connector;
-import com.bandtec.jobbers.model.Credencias;
 import com.mongodb.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class loginDao {
 
@@ -15,8 +13,8 @@ public class loginDao {
     //TODO Validação de usuario
     public String autenticaUsuario(){
 
-        DB database = (DB) connector.mongoClient().getDatabase("teste");
-
+        DB database = (DB) connector.conection();
+        
         DBCollection collection = database.getCollection("teste");
 
         DBObject query = new BasicDBObject("nome", "jão");

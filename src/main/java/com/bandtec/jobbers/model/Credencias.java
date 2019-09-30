@@ -1,12 +1,7 @@
 package com.bandtec.jobbers.model;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.data.annotation.Id;
-
 public class Credencias {
 
-	@Id
 	private String id;
 
 	private String login;
