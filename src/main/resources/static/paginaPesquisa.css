@@ -5,7 +5,7 @@
 
 header {
     position: absolute;
-    width: 1306px;
+    width: 100%;
     height: 70px;
     left: 0px;
     top: 0px;
@@ -13,7 +13,7 @@ header {
     background: #870CFF;
 }
 
-footer {
+/* footer {
     position: absolute;
     width: 1306px;
     height: 55px;
@@ -21,7 +21,7 @@ footer {
     top: 641px;
 
     background: #870CFF;
-}
+} */
 
 #botaoUsuario {
     position: absolute;
@@ -37,12 +37,13 @@ footer {
     border-radius: 40px;
 }
 
-#pesquisa {
+.pesquisa {
     position: absolute;
     width: 600px;
     height: 34px;
     left: 342px;
     top: 15px;
+    text-align: center;
 
     background: #FFFFFF;
     border-radius: 30px;
