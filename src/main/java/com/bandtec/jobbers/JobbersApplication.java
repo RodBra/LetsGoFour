@@ -2,8 +2,8 @@ package com.bandtec.jobbers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.bandtec.jobbers.connector.Connector;
+//
+//import com.bandtec.jobbers.connector.Connector;
 //import com.bandtec.jobbers.model.UsuarioContratante;
 //import com.bandtec.jobbers.model.UsuarioPrestador;
 
