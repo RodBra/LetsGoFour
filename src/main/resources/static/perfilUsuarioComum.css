@@ -3,14 +3,9 @@
     src: url('../font/Roboto-Regular.ttf')
 }
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('../font/Roboto-Regular.ttf')
-}
-
 header {
     position: absolute;
-    width: 1306px;
+    width: 100%;
     height: 70px;
     left: 0px;
     top: 0px;
@@ -18,7 +13,7 @@ header {
     background: #870CFF;
 }
 
-footer {
+/* footer {
     position: absolute;
     width: 1306px;
     height: 55px;
@@ -26,7 +21,7 @@ footer {
     top: 641px;
 
     background: #870CFF;
-}
+} */
 
 #botaoUsuario {
     position: absolute;
