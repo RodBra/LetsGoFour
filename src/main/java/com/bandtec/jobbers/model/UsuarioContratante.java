@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "usuarios_contratantes")
 public class UsuarioContratante extends Usuario {
+
 	@Id
 	private String id;
 	private Credenciais credenciais;

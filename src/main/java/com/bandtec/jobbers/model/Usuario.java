@@ -25,4 +25,7 @@ public abstract class Usuario {
 		this.numero = numero;
 		this.complemento = complemento;
 	}
+
+	public Usuario() {
+	}
 }
