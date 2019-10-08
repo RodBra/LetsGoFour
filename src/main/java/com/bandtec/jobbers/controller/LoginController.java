@@ -3,7 +3,6 @@ package com.bandtec.jobbers.controller;
 import com.bandtec.jobbers.Dao.ContratanteRepository;
 import com.bandtec.jobbers.Dao.CredenciaisRepository;
 import com.bandtec.jobbers.Dao.PrestadorRepository;
-import com.bandtec.jobbers.model.Credenciais;
 import com.bandtec.jobbers.model.UsuarioContratante;
 import com.bandtec.jobbers.model.UsuarioPrestador;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,32 +33,27 @@ public class LoginController {
 
 	@PostMapping("/cadastrar/contratante")
 	public ResponseEntity<String> cadastrarContratante(@RequestBody UsuarioContratante usuarioContratante) {
-		contratanteRepository.save(usuarioContratante);
 
-		return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
+		if(!contratanteRepository.findByLogin(usuarioContratante.getLogin())) {
+			contratanteRepository.save(usuarioContratante);
+
+			return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
+		} else {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
+		}
+
 	}
 
 	@PostMapping("/cadastrar/prestador")
 	public ResponseEntity<String> cadastrarPrestador(@RequestBody UsuarioPrestador usuarioPrestador) {
-//		UsuarioPrestador up = new UsuarioPrestador("Carlos", "Pedro", "email2@exemplo2.com",
-//				"13/11/2000", "São Paulo", "SP", "Rua 2", 230, "Apartamento",
-//				100, "faxineiro", "faxina",
-//				new Credenciais("Pedro", "1234"));
-		prestadorRepository.save(usuarioPrestador);
 
-		return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
-	}
+		if(!prestadorRepository.findByLogin(usuarioPrestador.getLogin())) {
+			prestadorRepository.save(usuarioPrestador);
 
-	@PostMapping("/valida")
-	public ResponseEntity<String> validarLogin(
-			@RequestBody Credenciais credenciais) {
-
-		boolean result = credenciaisRepository.findByCredenciais(credenciais);
-
-		if(result){
-			return ResponseEntity.status(HttpStatus.OK).body("Usuário exixte");
+			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
+		} else {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
-		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não existe");
 	}
 
 }

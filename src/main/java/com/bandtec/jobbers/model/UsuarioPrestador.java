@@ -9,16 +9,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "usuarios_prestadores")
 public class UsuarioPrestador extends Usuario {
 
-
-
 	@Id
 	private String id;
-
 	private Credenciais credenciais;
 	private double valor;
 	private String tipo_servico;
 	private String descricao;
 
+	public UsuarioPrestador(){
+	}
 
 	public UsuarioPrestador(String nome, String sobrenome, String email, String dataNascimento,
 							String cidade, String estado, String rua, int numero, String complemento, double valor, String tipo_servico,
@@ -31,5 +30,7 @@ public class UsuarioPrestador extends Usuario {
 
 	}
 
-
+	public String getLogin(){
+		return credenciais.getLogin();
+	}
 }
