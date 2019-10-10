@@ -4,18 +4,9 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-    color: white;
+    height: 80vh;
+    width: 90%;
 }
-
-form {
-    text-align: center;
-}
-
-
-/* p {
-    color: black;
-    font-family: "Poppins", sans-serif;
-} */
 
 input[type=text]:focus {
     background-color: #fff;
