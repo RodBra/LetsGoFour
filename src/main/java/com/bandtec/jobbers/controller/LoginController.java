@@ -15,8 +15,6 @@ import java.util.List;
 @RestController
 public class LoginController {
 
-
-
 	@Autowired
 	private ContratanteRepository contratanteRepository;
 
@@ -33,7 +31,7 @@ public class LoginController {
 	@PostMapping("/cadastrar/contratante")
 	public ResponseEntity<String> cadastrarContratante(@RequestBody UsuarioContratante usuarioContratante) {
 
-		if(!contratanteRepository.findByLogin(usuarioContratante.getLogin())) {
+		if(contratanteRepository.findByCredenciais(usuarioContratante.getCredenciais()) == null) {
 			contratanteRepository.save(usuarioContratante);
 
 			return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
@@ -46,33 +44,46 @@ public class LoginController {
 	@PostMapping("/cadastrar/prestador")
 	public ResponseEntity<String> cadastrarPrestador(@RequestBody UsuarioPrestador usuarioPrestador) {
 
-		if(!prestadorRepository.findByLogin(usuarioPrestador.getLogin())) {
+		if(prestadorRepository.findByCredenciais(usuarioPrestador.getCredenciais()) == null) {
 			prestadorRepository.save(usuarioPrestador);
 
 			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
 		} else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
-
-
 	}
 
-	@PostMapping("/valida")
-	public ResponseEntity<String>validarUsuario(@RequestBody Credenciais credenciais, String tipo ){
+	@GetMapping("/valida/{tipo}")
+	public ResponseEntity<String>validarUsuario(@RequestBody Credenciais credenciais, @PathVariable String tipo){
 		if (tipo.equals("prestador")) {
-			if(prestadorRepository.findByLoginAndSenha(credenciais)){
+ 				if(prestadorRepository.findByCredenciais(credenciais) != null){
 				return ResponseEntity.status(HttpStatus.OK).body("Login feito com sucesso");
 			}
 			else {
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
+					return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
 			}
 		} else if (tipo.equals(("contratante"))){
-			if(contratanteRepository.findByLoginAndSenha(credenciais)){
+			if(contratanteRepository.findByCredenciais(credenciais) != null){
 				return ResponseEntity.status(HttpStatus.OK).body(("login feito com sucesso"));
+			} else {
+				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
 			}
-
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(("Usuário não cadastrado"));
+	}
+	
 
+	@GetMapping("buscar/servico/{servico}")
+	public ResponseEntity<List<UsuarioPrestador>> buscaPrestador(@PathVariable("servico") String servico){
+
+		List<UsuarioPrestador> prestadores = prestadorRepository.findByTipo_servico(servico);
+
+		if (!prestadores.isEmpty()){
+			return ResponseEntity.status(HttpStatus.FOUND).body(prestadores);
+		} else if (prestadores.isEmpty()){
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		} else {
+			return ResponseEntity.status(HttpStatus.CONFLICT).build();
+		}
 	}
 }
