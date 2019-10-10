@@ -1,8 +1,8 @@
 package com.bandtec.jobbers.controller;
 
 import com.bandtec.jobbers.Dao.ContratanteRepository;
-import com.bandtec.jobbers.Dao.CredenciaisRepository;
 import com.bandtec.jobbers.Dao.PrestadorRepository;
+import com.bandtec.jobbers.model.Credenciais;
 import com.bandtec.jobbers.model.UsuarioContratante;
 import com.bandtec.jobbers.model.UsuarioPrestador;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,7 @@ import java.util.List;
 @RestController
 public class LoginController {
 
-	@Autowired
-	private CredenciaisRepository credenciaisRepository;
+
 
 	@Autowired
 	private ContratanteRepository contratanteRepository;
@@ -54,6 +53,26 @@ public class LoginController {
 		} else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
+
+
 	}
 
+	@PostMapping("/valida")
+	public ResponseEntity<String>validarUsuario(@RequestBody Credenciais credenciais, String tipo ){
+		if (tipo.equals("prestador")) {
+			if(prestadorRepository.findByLoginAndSenha(credenciais)){
+				return ResponseEntity.status(HttpStatus.OK).body("Login feito com sucesso");
+			}
+			else {
+				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
+			}
+		} else if (tipo.equals(("contratante"))){
+			if(contratanteRepository.findByLoginAndSenha(credenciais)){
+				return ResponseEntity.status(HttpStatus.OK).body(("login feito com sucesso"));
+			}
+
+		}
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(("Usuário não cadastrado"));
+
+	}
 }

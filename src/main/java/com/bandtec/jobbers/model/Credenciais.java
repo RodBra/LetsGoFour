@@ -1,8 +1,12 @@
 package com.bandtec.jobbers.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Credenciais {
 
+	@JsonProperty
 	private String login;
+	@JsonProperty
 	private String senha;
 
 	public Credenciais(){
