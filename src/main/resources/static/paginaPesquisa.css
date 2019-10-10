@@ -48,3 +48,72 @@ header {
     background: #FFFFFF;
     border-radius: 30px;
 }
+
+.result {
+
+    /* position: absolute;
+    width: 95%;
+    height: 95px;
+    left: 32px;
+    
+
+    border: 1px solid #000000;
+    box-sizing: border-box; */
+    /* width: 20px;
+    height: 30px;
+
+    border: 1px solid #000000; 
+    box-sizing: border-box;    */
+}
+
+.table {
+    position: absolute;
+    top: 14%;
+    left: 2%;
+    width: 95%;
+    min-height: 600px;
+    /* border: 1px solid #000000;
+    box-sizing: border-box; */
+    padding: 2%;
+}
+
+.tr {
+    position: absolute;
+    width: 95%;
+    min-height: 90px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.nome {
+    position: absolute;
+    width: 412px;
+    height: 28px;
+    left: 1%;
+    top: 10%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+
+    color: #000000;
+
+}
+
+.image {
+    position: absolute;
+    right: 90.78%;
+    left: 1%;
+    top: 5%;
+    width: 7%;
+    height: 85%;
+
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+
+}
