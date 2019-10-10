@@ -6,13 +6,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ContratanteRepository extends MongoRepository<UsuarioContratante, String> {
 
-    @Query( "{ 'credenciais.login' : ?0, 'credenciais.senha' : ?1 }")
-    boolean findByLoginAndSenha(Credenciais credenciais);
-
-    @Query("{ 'credenciais' : { 'login' : ?0")
-    boolean findByLogin(String login);
-
+    @Query( "{'credenciais' : ?0 }")
+    UsuarioContratante findByCredenciais(Credenciais credenciais);
 }
