@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
-export default class App extends React.Component {
+import Login from './pages/Login/Login'
+export default class App extends Component {
   render() {
-    return <div></div>
+    return <Login></Login>
   }
 }
