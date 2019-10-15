@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import '../css/cadastro.css'
+import '../css/cadastroPrestador.css'
 
-export default class Cadastro extends Component {
+export default class cadastroPrestador extends Component {
     render() {
         return (
             <Fragment>
 
                 <header>
-                    <h1>Cadastro</h1><br />
+                    <h1>Cadastro de Prestadores</h1><br />
 
                 </header>
 
@@ -21,8 +21,10 @@ export default class Cadastro extends Component {
 
                         <label className="label">Nome Completo:</label><br />
                         <input className="input" id="name" type="text" placeholder="João Batista dos Santos"></input><br />
-                        <label className="label">Telefone/Celular:</label><br />
-                        <input className="input" id="telefone" type="text" placeholder="  (DDD) 1 2345-6789"></input><br />
+                        <label className="label">RG</label><br />
+                        <input className="input" id="rg" type="text" placeholder="  12.345.678.9"></input><br />
+                        <label className="label">CPF</label><br />
+                        <input className="input" id="cpf" type="text" placeholder="  121.345.678.19"></input><br />
 
                         <h2>Login</h2><br /><br />
 
@@ -48,7 +50,13 @@ export default class Cadastro extends Component {
                         <label className="label">Numero:</label><br />
                         <input className="input" id="numero" type="text" placeholder="  000" /><br />
                         <label className="label">Complemento:</label><br />
-                        <input className="input" id="complemento" type="text" size="18" placeholder="  Casa 1" /><br /><br />
+                        <input className="input" id="complemento" type="text" size="18" placeholder="  Casa 1" /><br />
+                        <h2>Contato</h2><br/><br/>
+
+                        <label className="label">Celular</label><br />
+                        <input className="input" id="celular" type="text" placeholder=" (DDD) 1 2345-6789"></input><br /> 
+                        <label className="label">Telefone</label><br />
+                        <input className="input" id="fone" type="text" placeholder="  12.345.678.9"></input><br />
 
 
                         <input className="inputc" id="agree" type="checkbox" ></input>
