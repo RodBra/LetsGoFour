@@ -53,15 +53,19 @@ h2 {
 }
 
 .input {
-    /* width: 1px; */
+    width: 110x;
     height: 20px;
     /* left: 40px; */
     /* top: 205px; */
     background: #FFFFFF;
-    border-radius: 30px;
 }
 
 .inputc {
-    background: #FFFFFF;
-    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-style: normal; */
+    /* font-weight: bold; */
+    font-size: 12px;
+    /* line-height: 21px; */
+    align-items: center;
+    color: #FFFFFF;
 }
