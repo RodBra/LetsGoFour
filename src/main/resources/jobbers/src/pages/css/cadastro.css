@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf')
+}
+
+header {
+    background-color: #870CFF;
+    color: #FFFFFF;
+}
+
+.body {
+    background-color: #870CFF;
+    font-family: "Poppins", sans-serif;
+    height: 230vh;
+    width: 100%;
+}
+
+h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 0px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.formu {
+    align-items: center;
+    margin-left: 12%;
+}
+
+.label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    align-items: center;
+    text-align: center;
+    color: #cccc;
+}
+
+.input {
+    /* width: 1px; */
+    height: 20px;
+    /* left: 40px; */
+    /* top: 205px; */
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.inputc {
+    background: #FFFFFF;
+    border-radius: 30px;
+}
