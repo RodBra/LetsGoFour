@@ -22,16 +22,16 @@ export default class NavBar extends Component {
 
                 <aside className="menu-area">
                     <nav className="menu">
-                        <a href="#/">
+                        <a href="#/home">
                             <i className="fa fa-home"></i> Inicio
                         </a>
                         <a href="#/search">
                             <i className="fa fa-search"></i> Pesquisar
                         </a>
-                        <a href="#/perfil">
+                        <a href="#/profile">
                             <i className="fa fa-user"></i> Perfil
                         </a>
-                        <a href="#/history">
+                        <a href="#/historic">
                             <i className="fa fa-history"></i> Historico
                         </a>
                         <a href="#/logout">
