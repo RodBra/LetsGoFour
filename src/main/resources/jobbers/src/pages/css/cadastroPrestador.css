@@ -5,13 +5,13 @@
 
 header {
     background-color: #870CFF;
-    color: #FFFFFF;
+    width: 99%;
 }
 
 .body {
     background-color: #870CFF;
     font-family: 'Robot';
-    height: 250vh;
+    height: 195vh;
     width: 99%;
 }
 
@@ -57,6 +57,7 @@ h2 {
     height: 45px;
     left: 415px;
     top: 205px;
+    font-size: 15px;
     background: #FFFFFF;
     border-radius: 30px;
 }
@@ -66,6 +67,26 @@ h2 {
     height: 45px;
     left: 415px;
     top: 205px;
+    font-size: 15px;
     background: #FFFFFF;
     border-radius: 30px;
+}
+
+.termos {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    margin-top: 10%;
+    scroll-margin-left: 10%;
+}
+
+.check {
+    margin-left: 0%;
+    margin-top: -10%;
+}
+
+.cadastro {
+    margin-left: 14%;
+    margin-top: 0%;
 }

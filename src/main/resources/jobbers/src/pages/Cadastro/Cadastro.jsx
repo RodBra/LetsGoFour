@@ -1,95 +1,110 @@
 import React, { Component, Fragment } from 'react'
 import '../css/cadastro.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
 export default class Cadastro extends Component {
     render() {
         return (
             <Fragment>
 
                 <header>
-                    <h1>Cadastro</h1><br />
+                    <br /><br /> <h1>Cadastro</h1><br />
 
                 </header>
 
                 <body className="body">
 
-                    <form role="form">
-                        <div class="form-group col-lg-4">
-                            <label for="exampleInputEmail1">Campo simples</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Insira seu texto aqui"></input>
+                    <form className="form">
+                        <div className="form-row">
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <h2>Informações Pessoais</h2> <br /><br />
+
+                                    <label className="label">Nome Completo</label><br />
+                                    <input className="inpu" id="name" placeholder="  João Batista dos Santos"></input><br />
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="label">Telefone/Celular</label><br />
+                                    <input className="inpu" id="fone" placeholder=" Pedreiro"></input><br />
+                                </div>
+
+                                <div className="form-group">
+                                    <h2>Login</h2><br /><br />
+
+                                    <label className="label">E-mail</label><br />
+                                    <input className="inpu" id="email" placeholder="  joao.batista@gmail.com"></input><br />
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="label" >Confimar E-mail</label><br />
+                                    <input className="inpu" id="confirmaEmail" placeholder="  joao.batista@gmail.com"></input><br />
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="label">Apelido</label><br />
+                                    <input className="inpu" id="apelido" placeholder="  joaozinho007"></input><br /><br />
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-6 ">
+                                    <label className="label" for="exampleInputEmail1">Senha</label>
+                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                </div>
+
+
+                                <div className="form-group col-md-6">
+                                    <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
+                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="form-group col-lg-4">
-                            <label for="exampleInputEmail1">Campo simples</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Insira seu texto aqui"></input>
-                        </div>
 
-
-
-
-                    </form>
-
-
-
-                    {/* <form className="form-group formu" >
-
-
-
-                        <h2>Informações Pessoais</h2> <br /><br />
-                        <div>
-                        <label className="label">Nome Completo:</label><br />
-                        <input className="inpu" id="name"  placeholder="João Batista dos Santos"></input><br />
-                        <label className="label">Telefone/Celular:</label><br />
-                        <input className="inpu" id="fone"  placeholder="  (DDD) 1 2345-6789"></input><br />
-
-                        <h2>Login</h2><br /><br />
-
-                        <label className="label">E-mail:</label><br />
-                        <input className="inpu" id="email"  placeholder="  joao.batista@gmail.com"></input><br />
-                        <label className="label" >Confimar E-mail:</label><br />
-                        <input className="inpu" id="confirmaEmail"  placeholder="  joao.batista@gmail.com"></input><br />
-                        <label className="label">Apelido:</label><br />
-                        <input className="inpu" id="apelido"  placeholder="  joaozinho007"></input><br /><br/>
-                        </div>
-
-                        <div className="passwd">
-                        <label className="label">Senha:</label>
-                        <input className="passwd"  placeholder="  ************"></input>
-                        </div>
-
-                        <div className="checkpass">
-                        <label className="label"> Confirmar Senha:</label>
-                        <input className="checkpass"  placeholder="  ************"></input>
-                        </div>
-                        
 
                         <h2>Endereço</h2><br /><br />
-                        <div className="passwd">
-                        <label className="label">Estado:</label><br />
-                        <input className="passwd" id="estado"  placeholder="  São Paulo"></input><br />
-                        </div>
-                        <div className="checkpass">
-                        <label className="label">Cidade:</label><br />
-                        <input className="checkpass" id="cidade"  placeholder="  São Paulo"></input><br />
-                        </div>  
+                        <div className="form-row">
+                            <div className="form-row dados-endereco">
+                                <div className="form-group col-md-6">
 
-                        <div className="passwd">
-                        <label className="label">Rua:</label><br />
-                        <input className="passwd" id="rua"  placeholder="  Rua dos bobos"></input><br />
-                        </div>
-                        <div className="checkpass">
-                        <label className="label">Numero:</label><br />
-                        <input className="checkpass" id="numero"  placeholder="  000" /><br />
+                                    <label className="label">Estado</label><br />
+                                    <input className="inputc" id="estado" placeholder="  São Paulo"></input><br />
+                                </div>
+
+                                <div className="form-group col-md-6">
+                                    <label className="label">Cidade</label><br />
+                                    <input className="inputc" id="cidade" placeholder="  São Paulo"></input><br />
+                                </div>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
+                                    <label className="label">Rua</label><br />
+                                    <input className="inputc" id="rua" placeholder="  Rua dos bobos"></input><br />
+                                </div>
+
+                                <div className="form-group col-md-6">
+                                    <label className="label">Numero</label><br />
+                                    <input className="inputc" id="numero" placeholder="  000" />
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="passwd">
-                        <label className="label">Complemento:</label><br />
-                        <input className="passwd" id="complemento"  size="18" placeholder="  Casa 1" />
+
+
+                        <div className="check">
+                            <input id="agree" type="checkbox" ></input>
+                            <label className="termos">Li e concordo com os termos de uso.</label>
                         </div>
 
-                        <input className="inputc"  id="agree" type="checkbox" ></input>
-                        <label >Li e concordo com os termos.</label>
-                        <input type="submit" value="Cadastrar" /><br />
-                        
-                    </form> */}
+
+                        <div className="cadastro">
+                            <input type="submit" value="Cadastrar" />
+
+                        </div>
+                    </form>
                 </body>
 
 

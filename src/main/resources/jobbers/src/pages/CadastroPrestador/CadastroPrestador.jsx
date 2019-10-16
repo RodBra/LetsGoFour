@@ -2,70 +2,137 @@ import React, { Component, Fragment } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../css/cadastroPrestador.css'
 
-export default class cadastroPrestador extends Component {
+export default class CadastroPrestador extends Component {
     render() {
         return (
             <Fragment>
 
                 <header>
-                    <h1>Cadastro de Prestadores</h1><br />
-
+                    <br /><br /> <h1>Cadastro Prestador</h1><br />
                 </header>
 
                 <body className="body">
-                    <form className="form-group formu" >
+
+                    <form className="form">
+                        <div className="form-row">
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <h2>Informações Pessoais</h2> <br /><br />
+
+                                    <label className="label">Nome Completo</label><br />
+                                    <input className="inpu" id="name" placeholder="  João Batista dos Santos"></input><br />
+                                </div>
+
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <label className="label">RG</label><br />
+                                        <input className="inputc" id="name" placeholder="  12.345.678.9"></input><br />
+                                    </div>
+
+                                    <div className="form-group col-md-6">
+                                        <label className="label">CPF</label><br />
+                                        <input className="inputc" id="name" placeholder="  123.345.678.09"></input><br />
+                                    </div>
+
+                                </div>
 
 
+                                <div className="form-group">
+                                    <label className="label">Profissão</label><br />
+                                    <input className="inpu" id="fone" placeholder=" Pedreiro"></input><br />
+                                </div>
 
-                        <h2>Informações Pessoais</h2> <br /><br />
+                                <div className="form-group">
+                                    <h2>Login</h2><br /><br />
 
-                        <label className="label">Nome Completo:</label><br />
-                        <input className="input" id="name" type="text" placeholder="João Batista dos Santos"></input><br />
-                        <label className="label">RG</label><br />
-                        <input className="input" id="rg" type="text" placeholder="  12.345.678.9"></input><br />
-                        <label className="label">CPF</label><br />
-                        <input className="input" id="cpf" type="text" placeholder="  121.345.678.19"></input><br />
+                                    <label className="label">E-mail</label><br />
+                                    <input className="inpu" id="email" placeholder="  joao.batista@gmail.com"></input><br />
+                                </div>
 
-                        <h2>Login</h2><br /><br />
+                                <div className="form-group">
+                                    <label className="label" >Confimar E-mail</label><br />
+                                    <input className="inpu" id="confirmaEmail" placeholder="  joao.batista@gmail.com"></input><br />
+                                </div>
 
-                        <label className="label">E-mail:</label><br />
-                        <input className="input" id="email" type="text" placeholder="  joao.batista@gmail.com"></input><br />
-                        <label className="label" >Confimar E-mail:</label><br />
-                        <input className="input" id="confirmaEmail" type="text" placeholder="  joao.batista@gmail.com"></input><br />
-                        <label className="label">Apelido:</label><br />
-                        <input className="input" id="apelido" type="text" placeholder="  joaozinho007"></input><br />
+                                <div className="form-group">
+                                    <label className="label">Apelido</label><br />
+                                    <input className="inpu" id="apelido" placeholder="  joaozinho007"></input><br /><br />
+                                </div>
+                            </div>
 
-                        <label className="label">Senha:</label><br />
-                        <input className="input"  type="text" placeholder="  ************"></input><br />
-                        <label className="label">Confirmar Senha:</label><br />
-                        <input className="input"  type="text" placeholder="  ************"></input><br />
+                            <div className="form-row">
+                                <div className="form-group col-md-6 ">
+                                    <label className="label" for="exampleInputEmail1">Senha</label>
+                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                </div>
+
+
+                                <div className="form-group col-md-6">
+                                    <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
+                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                </div>
+
+                            </div>
+                        </div>
+
 
                         <h2>Endereço</h2><br /><br />
-                        <label className="label">Estado:</label><br />
-                        <input className="input" id="estado" type="text" placeholder="  São Paulo"></input><br />
-                        <label className="label">Cidade:</label><br />
-                        <input className="input" id="cidade" type="text" placeholder="  São Paulo"></input><br />
-                        <label className="label">Rua:</label><br />
-                        <input className="input" id="rua" type="text" placeholder="  Rua dos bobos"></input><br />
-                        <label className="label">Numero:</label><br />
-                        <input className="input" id="numero" type="text" placeholder="  000" /><br />
-                        <label className="label">Complemento:</label><br />
-                        <input className="input" id="complemento" type="text" size="18" placeholder="  Casa 1" /><br />
-                        <h2>Contato</h2><br/><br/>
+                        <div className="form-row">
+                            <div className="form-row dados-endereco">
+                                <div className="form-group col-md-6">
 
-                        <label className="label">Celular</label><br />
-                        <input className="input" id="celular" type="text" placeholder=" (DDD) 1 2345-6789"></input><br /> 
-                        <label className="label">Telefone</label><br />
-                        <input className="input" id="fone" type="text" placeholder="  12.345.678.9"></input><br />
+                                    <label className="label">Estado</label><br />
+                                    <input className="inputc" id="estado" placeholder="  São Paulo"></input><br />
+                                </div>
 
+                                <div className="form-group col-md-6">
+                                    <label className="label">Cidade</label><br />
+                                    <input className="inputc" id="cidade" placeholder="  São Paulo"></input><br />
+                                </div>
+                            </div>
 
-                        <input className="inputc" id="agree" type="checkbox" ></input>
-                        <label className="inputc">Li e concordo com os termos.</label>
-                        <input type="submit" value="Cadastrar" /><br />
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
+                                    <label className="label">Rua</label><br />
+                                    <input className="inputc" id="rua" placeholder="  Rua dos bobos"></input><br />
+                                </div>
+
+                                <div className="form-group col-md-6">
+                                    <label className="label">Numero</label><br />
+                                    <input className="inputc" id="numero" placeholder="  000" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Contato</h2><br /><br />
+                        <div className="form-row">
+                            <div className="form-row dados-endereco">
+                                <div className="form-group col-md-6">
+
+                                    <label className="label">Telefone</label><br />
+                                    <input className="inputc" id="estado" placeholder="  São Paulo"></input><br />
+                                </div>
+
+                                <div className="form-group col-md-6">
+                                    <label className="label">Celular</label><br />
+                                    <input className="inputc" id="cidade" placeholder="  São Paulo"></input><br />
+                                </div>
+                            </div>
+                        </div>
                         
+                            <div className="check"> 
+                                <input id="agree" type="checkbox" ></input>
+                                <label className="termos">Li e concordo com os termos de uso.</label>
+                             </div>
+                    
+
+                    <div className="cadastro">
+                        <input  type="submit" value="Cadastrar" />
+                        
+                        </div>
                     </form>
                 </body>
-
 
             </Fragment>
         )
