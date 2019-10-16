@@ -7,7 +7,7 @@ import Cadastro from './pages/Cadastro/Cadastro'
 
 export default class App extends Component {
     render() {
-        return ( < Cadastro > < /Cadastro>
+        return ( < Cadastro>  </Cadastro>
 
         )
 

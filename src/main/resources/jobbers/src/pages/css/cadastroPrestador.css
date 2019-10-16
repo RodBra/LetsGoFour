@@ -57,6 +57,9 @@ h2 {
     height: 45px;
     left: 415px;
     top: 205px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
     font-size: 15px;
     background: #FFFFFF;
     border-radius: 30px;
@@ -67,6 +70,9 @@ h2 {
     height: 45px;
     left: 415px;
     top: 205px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
     font-size: 15px;
     background: #FFFFFF;
     border-radius: 30px;
