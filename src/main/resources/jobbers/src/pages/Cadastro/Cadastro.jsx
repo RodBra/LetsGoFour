@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
 import '../css/cadastro.css'
-
 export default class Cadastro extends Component {
     render() {
         return (
@@ -13,49 +11,85 @@ export default class Cadastro extends Component {
                 </header>
 
                 <body className="body">
-                    <form className="form-group formu" >
+
+                    <form role="form">
+                        <div class="form-group col-lg-4">
+                            <label for="exampleInputEmail1">Campo simples</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Insira seu texto aqui"></input>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="exampleInputEmail1">Campo simples</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Insira seu texto aqui"></input>
+                        </div>
+
+
+
+
+                    </form>
+
+
+
+                    {/* <form className="form-group formu" >
 
 
 
                         <h2>Informações Pessoais</h2> <br /><br />
-
+                        <div>
                         <label className="label">Nome Completo:</label><br />
-                        <input className="input" id="name" type="text" placeholder="João Batista dos Santos"></input><br />
+                        <input className="inpu" id="name"  placeholder="João Batista dos Santos"></input><br />
                         <label className="label">Telefone/Celular:</label><br />
-                        <input className="input" id="telefone" type="text" placeholder="  (DDD) 1 2345-6789"></input><br />
+                        <input className="inpu" id="fone"  placeholder="  (DDD) 1 2345-6789"></input><br />
 
                         <h2>Login</h2><br /><br />
 
                         <label className="label">E-mail:</label><br />
-                        <input className="input" id="email" type="text" placeholder="  joao.batista@gmail.com"></input><br />
+                        <input className="inpu" id="email"  placeholder="  joao.batista@gmail.com"></input><br />
                         <label className="label" >Confimar E-mail:</label><br />
-                        <input className="input" id="confirmaEmail" type="text" placeholder="  joao.batista@gmail.com"></input><br />
+                        <input className="inpu" id="confirmaEmail"  placeholder="  joao.batista@gmail.com"></input><br />
                         <label className="label">Apelido:</label><br />
-                        <input className="input" id="apelido" type="text" placeholder="  joaozinho007"></input><br />
+                        <input className="inpu" id="apelido"  placeholder="  joaozinho007"></input><br /><br/>
+                        </div>
 
-                        <label className="label">Senha:</label><br />
-                        <input className="input"  type="text" placeholder="  ************"></input><br />
-                        <label className="label">Confirmar Senha:</label><br />
-                        <input className="input"  type="text" placeholder="  ************"></input><br />
+                        <div className="passwd">
+                        <label className="label">Senha:</label>
+                        <input className="passwd"  placeholder="  ************"></input>
+                        </div>
+
+                        <div className="checkpass">
+                        <label className="label"> Confirmar Senha:</label>
+                        <input className="checkpass"  placeholder="  ************"></input>
+                        </div>
+                        
 
                         <h2>Endereço</h2><br /><br />
+                        <div className="passwd">
                         <label className="label">Estado:</label><br />
-                        <input className="input" id="estado" type="text" placeholder="  São Paulo"></input><br />
+                        <input className="passwd" id="estado"  placeholder="  São Paulo"></input><br />
+                        </div>
+                        <div className="checkpass">
                         <label className="label">Cidade:</label><br />
-                        <input className="input" id="cidade" type="text" placeholder="  São Paulo"></input><br />
+                        <input className="checkpass" id="cidade"  placeholder="  São Paulo"></input><br />
+                        </div>  
+
+                        <div className="passwd">
                         <label className="label">Rua:</label><br />
-                        <input className="input" id="rua" type="text" placeholder="  Rua dos bobos"></input><br />
+                        <input className="passwd" id="rua"  placeholder="  Rua dos bobos"></input><br />
+                        </div>
+                        <div className="checkpass">
                         <label className="label">Numero:</label><br />
-                        <input className="input" id="numero" type="text" placeholder="  000" /><br />
+                        <input className="checkpass" id="numero"  placeholder="  000" /><br />
+                        </div>
+
+                        <div className="passwd">
                         <label className="label">Complemento:</label><br />
-                        <input className="input" id="complemento" type="text" size="18" placeholder="  Casa 1" /><br /><br />
+                        <input className="passwd" id="complemento"  size="18" placeholder="  Casa 1" />
+                        </div>
 
-
-                        <input className="inputc" id="agree" type="checkbox" ></input>
-                        <label className="inputc">Li e concordo com os termos.</label>
+                        <input className="inputc"  id="agree" type="checkbox" ></input>
+                        <label >Li e concordo com os termos.</label>
                         <input type="submit" value="Cadastrar" /><br />
                         
-                    </form>
+                    </form> */}
                 </body>
 
 

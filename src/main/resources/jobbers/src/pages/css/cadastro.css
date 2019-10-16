@@ -10,13 +10,13 @@ header {
 
 .body {
     background-color: #870CFF;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Robot';
     height: 230vh;
     width: 100%;
 }
 
 h1 {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -38,11 +38,11 @@ h2 {
 
 .formu {
     align-items: center;
-    margin-left: 12%;
+    margin-left: 30%;
 }
 
 .label {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -52,16 +52,37 @@ h2 {
     color: #cccc;
 }
 
-.input {
-    width: 110x;
-    height: 20px;
-    /* left: 40px; */
-    /* top: 205px; */
+.inpu {
+    width: 521px;
+    height: 45px;
+    left: 415px;
+    top: 205px;
     background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.passwd {
+    width: 250px;
+    height: 45px;
+    left: 415px;
+    top: 20px;
+    border-radius: 30px;
+    align-items: left;
+}
+
+.checkpass {
+    width: 250px;
+    height: 45px;
+    left: 415px;
+    top: 787px;
+    border-radius: 30px;
+    align-items: center;
+    margin-left: 22%;
+    /* margin-top: -29px; */
 }
 
 .inputc {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto';
     /* font-style: normal; */
     /* font-weight: bold; */
     font-size: 12px;
