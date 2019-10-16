@@ -10,7 +10,7 @@ header {
 
 .body {
     background-color: #870CFF;
-    font-family: 'Robot';
+    font-family: 'Roboto';
     height: 160vh;
     width: 99%;
     margin: 0%;
@@ -96,4 +96,7 @@ h2 {
 .cadastro {
     margin-left: 14%;
     margin-top: 0%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
 }

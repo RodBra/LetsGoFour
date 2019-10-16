@@ -5,14 +5,14 @@
 
 header {
     background-color: #870CFF;
-    width: 99%;
+    width: 100%;
 }
 
 .body {
     background-color: #870CFF;
-    font-family: 'Robot';
+    font-family: 'Roboto';
     height: 195vh;
-    width: 99%;
+    width: 100%;
 }
 
 h1 {
@@ -95,4 +95,7 @@ h2 {
 .cadastro {
     margin-left: 14%;
     margin-top: 0%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
 }
