@@ -27,12 +27,12 @@ export default class CadastroPrestador extends Component {
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label className="label">RG</label><br />
-                                        <input className="inputc" id="name" placeholder="  12.345.678.9"></input><br />
+                                        <input className="inputc" id="rg" placeholder="  12.345.678.9"></input><br />
                                     </div>
 
                                     <div className="form-group col-md-6">
                                         <label className="label">CPF</label><br />
-                                        <input className="inputc" id="name" placeholder="  123.345.678.09"></input><br />
+                                        <input className="inputc" id="cpf" placeholder="  123.345.678.09"></input><br />
                                     </div>
 
                                 </div>
@@ -40,7 +40,7 @@ export default class CadastroPrestador extends Component {
 
                                 <div className="form-group">
                                     <label className="label">Profissão</label><br />
-                                    <input className="inpu" id="fone" placeholder=" Pedreiro"></input><br />
+                                    <input className="inpu" id="jobber" placeholder=" Pedreiro"></input><br />
                                 </div>
 
                                 <div className="form-group">
@@ -64,13 +64,13 @@ export default class CadastroPrestador extends Component {
                             <div className="form-row">
                                 <div className="form-group col-md-6 ">
                                     <label className="label" for="exampleInputEmail1">Senha</label>
-                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                    <input className="form-control inputc" id="passwd" placeholder="*****************"></input>
                                 </div>
 
 
                                 <div className="form-group col-md-6">
                                     <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
-                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                    <input className="form-control inputc" id="checkpasswd" placeholder="*****************"></input>
                                 </div>
 
                             </div>
@@ -111,25 +111,25 @@ export default class CadastroPrestador extends Component {
                                 <div className="form-group col-md-6">
 
                                     <label className="label">Telefone</label><br />
-                                    <input className="inputc" id="estado" placeholder="  São Paulo"></input><br />
+                                    <input className="inputc" id="fone" placeholder="  São Paulo"></input><br />
                                 </div>
 
                                 <div className="form-group col-md-6">
                                     <label className="label">Celular</label><br />
-                                    <input className="inputc" id="cidade" placeholder="  São Paulo"></input><br />
+                                    <input className="inputc" id="cel" placeholder="  São Paulo"></input><br />
                                 </div>
                             </div>
                         </div>
-                        
-                            <div className="check"> 
-                                <input id="agree" type="checkbox" ></input>
-                                <label className="termos">Li e concordo com os termos de uso.</label>
-                             </div>
-                    
 
-                    <div className="cadastro">
-                        <input  type="submit" value="Cadastrar" />
-                        
+                        <div className="check">
+                            <input id="agree" type="checkbox" ></input>
+                            <label className="termos">Li e concordo com os termos de uso.</label>
+                        </div>
+
+
+                        <div className="cadastro">
+                            <input type="submit" id="cadastrar" value="Cadastrar" />
+
                         </div>
                     </form>
                 </body>

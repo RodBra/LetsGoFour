@@ -27,7 +27,7 @@ export default class Cadastro extends Component {
 
                                 <div className="form-group">
                                     <label className="label">Telefone/Celular</label><br />
-                                    <input className="inpu" id="fone" placeholder=" Pedreiro"></input><br />
+                                    <input className="inpu" id="fone" placeholder=" (DDD) 4002-8922"></input><br />
                                 </div>
 
                                 <div className="form-group">
@@ -50,14 +50,14 @@ export default class Cadastro extends Component {
 
                             <div className="form-row">
                                 <div className="form-group col-md-6 ">
-                                    <label className="label" for="exampleInputEmail1">Senha</label>
-                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                    <label className="label">Senha</label>
+                                    <input className="form-control inputc" id="passwd" placeholder="*****************"></input>
                                 </div>
 
 
                                 <div className="form-group col-md-6">
-                                    <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
-                                    <input className="form-control inputc" placeholder="*****************"></input>
+                                    <label className="label">Confirmar Senha</label>
+                                    <input className="form-control inputc" id="checkPasswd" placeholder="*****************"></input>
                                 </div>
 
                             </div>
@@ -101,7 +101,7 @@ export default class Cadastro extends Component {
 
 
                         <div className="cadastro">
-                            <input type="submit" value="Cadastrar" />
+                            <input type="submit" id="cadastro" value="Cadastrar" />
 
                         </div>
                     </form>
