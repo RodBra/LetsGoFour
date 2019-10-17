@@ -1,10 +1,10 @@
 package com.bandtec.jobbers.controller;
 
-import com.bandtec.jobbers.Dao.ContratanteRepository;
-import com.bandtec.jobbers.Dao.PrestadorRepository;
-import com.bandtec.jobbers.model.Credenciais;
-import com.bandtec.jobbers.model.UsuarioContratante;
-import com.bandtec.jobbers.model.UsuarioPrestador;
+import com.bandtec.jobbers.model.*;
+import com.bandtec.jobbers.repository.CredenciaisRepository;
+import com.bandtec.jobbers.repository.LogradouroRepository;
+import com.bandtec.jobbers.repository.ServicosRepository;
+import com.bandtec.jobbers.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,23 +16,33 @@ import java.util.List;
 public class LoginController {
 
 	@Autowired
-	private ContratanteRepository contratanteRepository;
+	private CredenciaisRepository credenciaisRepository;
 
 	@Autowired
-	private PrestadorRepository prestadorRepository;
+	private ServicosRepository servicosRepository;
 
-	//TODO Metodo quebrado "Não mexer se não souber o que está fazendo"
-	@GetMapping("/login")
-	public ResponseEntity<List<UsuarioPrestador>> findAll() {
-		//List<UsuarioPrestador> usuarios = credenciaisRepository.findAll();
-		return ResponseEntity.ok(null/*usuarios*/);
-	}
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	@Autowired
+	private LogradouroRepository logradouroRepository;
 
 	@PostMapping("/cadastrar/contratante")
-	public ResponseEntity<String> cadastrarContratante(@RequestBody UsuarioContratante usuarioContratante) {
+	public ResponseEntity<String> cadastrarContratante(@RequestBody Usuario usuario, @RequestBody Credenciais credenciais,
+													   @RequestBody Logradouro logradouro, Role role) {
 
-		if(contratanteRepository.findByCredenciais(usuarioContratante.getCredenciais()) == null) {
-			contratanteRepository.save(usuarioContratante);
+		if(usuarioRepository.findByEmail(usuario.getEmail()) == null) {
+			//Salva Usuário
+			usuario.setRole(role);
+			usuarioRepository.save(usuario);
+
+			//Adiciona o id do usuario aos documentos
+			credenciais.setUser_id(usuario.getId());
+			logradouro.setUser_id(usuario.getId());
+
+			//Salva os objetos no banco
+			credenciaisRepository.save(credenciais);
+			logradouroRepository.save(logradouro);
 
 			return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
 		} else {
@@ -41,29 +51,17 @@ public class LoginController {
 
 	}
 
-	@PostMapping("/cadastrar/prestador")
-	public ResponseEntity<String> cadastrarPrestador(@RequestBody UsuarioPrestador usuarioPrestador) {
-
-		if(prestadorRepository.findByCredenciais(usuarioPrestador.getCredenciais()) == null) {
-			prestadorRepository.save(usuarioPrestador);
-
-			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
-		} else {
-			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
-		}
-	}
-
 	@GetMapping("/valida/{tipo}")
 	public ResponseEntity<String>validarUsuario(@RequestBody Credenciais credenciais, @PathVariable String tipo){
 		if (tipo.equals("prestador")) {
- 				if(prestadorRepository.findByCredenciais(credenciais) != null){
+ 				if(credenciaisRepository.findByLoginEqualsAndSenhaEquals(credenciais.getLogin(), credenciais.getSenha()) != null){
 				return ResponseEntity.status(HttpStatus.OK).body("Login feito com sucesso");
 			}
 			else {
 					return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
 			}
 		} else if (tipo.equals(("contratante"))){
-			if(contratanteRepository.findByCredenciais(credenciais) != null){
+			if(credenciaisRepository.findByLoginEqualsAndSenhaEquals(credenciais.getLogin(), credenciais.getSenha())  != null){
 				return ResponseEntity.status(HttpStatus.OK).body(("login feito com sucesso"));
 			} else {
 				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
@@ -71,12 +69,12 @@ public class LoginController {
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(("Usuário não cadastrado"));
 	}
-	
+
 
 	@GetMapping("buscar/servico/{servico}")
-	public ResponseEntity<List<UsuarioPrestador>> buscaPrestador(@PathVariable("servico") String servico){
+	public ResponseEntity<List<Servicos>> buscaPrestador(@PathVariable("servico") String servico){
 
-		List<UsuarioPrestador> prestadores = prestadorRepository.findByTipo_servico(servico);
+		List<Servicos> prestadores = servicosRepository.findByTipo_servico(servico);
 
 		if (!prestadores.isEmpty()){
 			return ResponseEntity.status(HttpStatus.FOUND).body(prestadores);

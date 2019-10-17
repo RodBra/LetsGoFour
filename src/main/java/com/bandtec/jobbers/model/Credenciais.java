@@ -1,9 +1,13 @@
 package com.bandtec.jobbers.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
 
 public class Credenciais {
 
+	@Id
+	private String id;
+	private String user_id;
 	@JsonProperty
 	private String login;
 	@JsonProperty
@@ -23,5 +27,9 @@ public class Credenciais {
 
 	public String getSenha() {
 		return senha;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 }

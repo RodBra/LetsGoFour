@@ -1,9 +1,16 @@
 package com.bandtec.jobbers.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public abstract class Usuario {
+@Data
+@Document(value = "usuario")
+public class Usuario {
 
+	@Id
+	private String id;
 	@JsonProperty
 	private String nome;
 	@JsonProperty
@@ -13,28 +20,24 @@ public abstract class Usuario {
 	@JsonProperty
 	private String dataNascimento;
 	@JsonProperty
-	private String cidade;
-	@JsonProperty
-	private String estado;
-	@JsonProperty
-	private String rua;
-	@JsonProperty
-	private int numero;
-	@JsonProperty
-	private String complemento;
+	private Role role;
 
-	public Usuario(String nome, String sobrenome, String email, String dataNascimento, String cidade, String estado, String rua, int numero, String complemento) {
+	public Usuario() {
+	}
+
+	public Usuario(String nome, String sobrenome, String email, String dataNascimento, Role role) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.rua = rua;
-		this.numero = numero;
-		this.complemento = complemento;
+		this.role = role;
 	}
 
-	public Usuario() {
+	public String getId() {
+		return id;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 }
