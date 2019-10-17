@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css'
+
+// import Login from './pages/Login/Login'
+// import PrincipalApp from './pages/PrincipalApp/PrincipalApp'
+
+
+
+export default class App extends Component {
+    render() {
+        return (
+            <React.Fragment>
+                {/* <Login/> */}
+                {/* <PrincipalApp/> */}
+            </React.Fragment>
+        )
+    }
 }
-
-export default App;

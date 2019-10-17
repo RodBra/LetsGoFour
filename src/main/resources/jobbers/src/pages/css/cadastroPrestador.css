@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf')
+}
+
+header {
+    background-color: #870CFF;
+    width: 100%;
+}
+
+.body {
+    background-color: #870CFF;
+    font-family: 'Roboto';
+    height: 195vh;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 0px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.form {
+    align-items: center;
+    margin-left: 30%;
+}
+
+.label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    align-items: center;
+    text-align: center;
+    color: #cccc;
+}
+
+.inpu {
+    width: 521px;
+    height: 45px;
+    left: 415px;
+    top: 205px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.inputc {
+    width: 255px;
+    height: 45px;
+    left: 415px;
+    top: 205px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.termos {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    margin-top: 10%;
+    scroll-margin-left: 10%;
+}
+
+.check {
+    margin-left: 0%;
+    margin-top: -10%;
+}
+
+.cadastro {
+    margin-left: 14%;
+    margin-top: 0%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+}

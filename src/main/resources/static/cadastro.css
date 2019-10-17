@@ -8,22 +8,19 @@ body {
     font-size: 24px;
     line-height: 28px;
     line-height: 100%;
-    align: left;
+    /* align: left; */
     vertical-align: center;
     fill: solid;
     color: #ffffff;
 }
 
-
 form {
     text-align: center;
-    
 }
 
-input{ 
+input {
     border-radius: 15px;
 }
-
 
 
 /* p {

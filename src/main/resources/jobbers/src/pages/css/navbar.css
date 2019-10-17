@@ -1,0 +1,22 @@
+aside.menu-area {
+    background-color: var(--bg-dark);
+    box-shadow: 
+        2px 0 10px 0 rgba(0, 0, 0, 0.12),
+        2px 0 15px 0 rgba(0, 0, 0, 0.09);
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    /* margin-left: 20%; */
+    text-align: left;
+    font-weight: 300;
+    padding: 10px;
+    padding-left: 50px;
+}
+
+.menu a:hover {
+    background: #3E0179;
+}
