@@ -19,25 +19,23 @@ public class Usuario {
 	private String email;
 	@JsonProperty
 	private String dataNascimento;
-	@JsonProperty
-	private Role role;
 
 	public Usuario() {
 	}
 
-	public Usuario(String nome, String sobrenome, String email, String dataNascimento, Role role) {
+	public Usuario(String nome, String sobrenome, String email, String dataNascimento/*, Role role*/) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
-		this.role = role;
+		/*this.role = role;*/
 	}
 
 	public String getId() {
 		return id;
 	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
+//
+//	public void setRole(Role role) {
+//		this.role = role;
+//	}
 }

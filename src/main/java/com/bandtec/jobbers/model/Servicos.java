@@ -15,7 +15,7 @@ public class Servicos {
     @JsonProperty
     private double valor;
     @JsonProperty
-    private String tipo_servico;
+    private String tipoServico;
     @JsonProperty
     private String descricao;
 
@@ -23,9 +23,9 @@ public class Servicos {
 
     }
 
-    public Servicos(double valor, String tipo_servico, String descricao) {
+    public Servicos(double valor, String tipoServico, String descricao) {
         this.valor = valor;
-        this.tipo_servico = tipo_servico;
+        this.tipoServico = tipoServico;
         this.descricao = descricao;
     }
 

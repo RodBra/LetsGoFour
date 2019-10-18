@@ -12,5 +12,5 @@ public interface ServicosRepository extends MongoRepository<Servicos, String> {
 
     //TODO ESTA QUERY
     @Query()
-    List<Servicos> findByTipo_servico(String tipoServico);
+    List<Servicos> findByTipoServico(String tipoServico);
 }
