@@ -50,7 +50,7 @@ export default class Cadastro extends Component {
 
                 </header>
 
-                <body className="body">
+                <body>
 
                     <form className="form">
                         <div className="form-row">
@@ -89,13 +89,13 @@ export default class Cadastro extends Component {
                             <div className="form-row">
                                 <div className="form-group col-md-6 ">
                                     <label className="label">Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="passwd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)} type="password" className="form-control inputc" id="passwd" placeholder="*****************"></input>
                                 </div>
 
 
                                 <div className="form-group col-md-6">
                                     <label className="label">Confirmar Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkPasswd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)}  type="password" className="form-control inputc" id="checkPasswd" placeholder="*****************"></input>
                                 </div>
 
                             </div>
@@ -139,7 +139,7 @@ export default class Cadastro extends Component {
 
                         <Link to="/login">
                         <div className="cadastro">
-                            <input type="submit" id="cadastro" value="Cadastrar" />
+                          <input type="submit" id="cadastro" value="Cadastrar" /> 
                         </div>
                         </Link>
 
