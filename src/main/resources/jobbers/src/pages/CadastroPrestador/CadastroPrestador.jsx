@@ -29,6 +29,25 @@ export default class CadastroPrestador extends Component {
             agree:false
         }
     }
+
+    handleChange =  (event) => {
+        const state = Object.assign({}, this.state);
+
+        let field = event.target.id;
+
+        state[field] = event.target.value;
+
+        this.setState(state);
+    }
+
+    isChecked = () =>{
+        this.setState(prevState=>({
+            agree:!prevState.agree
+        }))
+    }
+
+
+
     render() {
         return (
             <Fragment>
@@ -158,7 +177,7 @@ export default class CadastroPrestador extends Component {
                         </div>
                         </Link>
                     </form>
-                    <Footer />
+                
                 </body>
 
               

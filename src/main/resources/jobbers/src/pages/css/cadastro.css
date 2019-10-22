@@ -95,10 +95,12 @@ h2 {
 }
 
 .cadastro {
-    align-self: center;
+    /* align-self: center; */
+    position: absolute;
     margin-left: auto;
     margin-top: 0%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
+    left: 24%;
 }

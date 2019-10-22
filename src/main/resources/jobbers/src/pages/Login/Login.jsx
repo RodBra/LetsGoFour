@@ -21,10 +21,10 @@ export default class Login extends Component {
                                 <input type="submit" className="fadeIn fourth" id="botao-login" value="Entrar"></input>
                             </form>
                            
-                            <p className="fadeIn cad">ainda não tem cadastro? Click <Link to="/cadastro"> <a>aqui</a></Link></p>
+                            <p className="fadeIn cad">Ainda não tem cadastro? Click <Link to="/cadastro"> <a>aqui</a></Link></p>
                             
                             
-                            <p className="fadeIn cad">quer divulgar seus serviços? Click <Link to="/cadastroPrestador"><a>aqui</a></Link></p>
+                            <p className="fadeIn cad">Quer divulgar seus serviços? Click <Link to="/cadastroPrestador"><a>aqui</a></Link></p>
                             
                         </div>
                     </div>
