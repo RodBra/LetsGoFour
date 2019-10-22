@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import '../css/cadastro.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import {Link} from 'react-router-dom'
 
 export default class Cadastro extends Component {
 
@@ -130,17 +131,19 @@ export default class Cadastro extends Component {
                         </div>
 
 
-
+                        
                         <div className="check">
                             <input onChange={(e) => this.isChecked(e)} id="agree" type="checkbox" ></input>
                             <label className="termos">Li e concordo com os termos de uso.</label>
                         </div>
 
-
+                        <Link to="/login">
                         <div className="cadastro">
                             <input type="submit" id="cadastro" value="Cadastrar" />
-
                         </div>
+                        </Link>
+
+
                     </form>
                 </body>
 
