@@ -4,27 +4,27 @@ import '../css/cadastroPrestador.css'
 
 export default class CadastroPrestador extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state ={
-            name:'',
-            rg:0,
-            cpf:0,
-            profissao:'',
-            email:'',
-            confirmaEmail:'',
-            apelido:'',
-            passwd:'',
-            checkPasswd:'',
-            estado:'',
-            cidade:'',
-            rua:'',
-            numero:0,
-            fone:'',
-            cel:0,
+        this.state = {
+            name: '',
+            rg: 0,
+            cpf: 0,
+            profissao: '',
+            email: '',
+            confirmaEmail: '',
+            apelido: '',
+            passwd: '',
+            checkPasswd: '',
+            estado: '',
+            cidade: '',
+            rua: '',
+            numero: 0,
+            fone: '',
+            cel: 0,
 
-            agree:false
+            agree: false
         }
     }
     render() {
@@ -64,7 +64,7 @@ export default class CadastroPrestador extends Component {
 
                                 <div className="form-group">
                                     <label className="label">Profissão</label><br />
-                                    <input onChange={(e) => this.handleChange(e)} className="inpu" id="profissao" placeholder=" Pedreiro"></input><br />
+                                    <input onChange={(e) => this.handleChange(e)} className="inpu" id="profissao" placeholder=" Pedreiro"></input><br /><br /><br />
                                 </div>
 
                                 <div className="form-group">
@@ -94,7 +94,7 @@ export default class CadastroPrestador extends Component {
 
                                 <div className="form-group col-md-6">
                                     <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkpasswd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkpasswd" placeholder="*****************"></input><br /><br /><br />
                                 </div>
 
                             </div>
@@ -151,8 +151,11 @@ export default class CadastroPrestador extends Component {
                         </div>
 
 
-                        <div className="cadastro">
-                            <input type="submit" id="cadastrar" value="Cadastrar" />
+                        <div >
+                            <input className="cadastro" type="submit" id="cadastrar" value="Cadastrar" />
+                            {/* <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                               Cadastrar
+                            </button> */}
 
                         </div>
                     </form>

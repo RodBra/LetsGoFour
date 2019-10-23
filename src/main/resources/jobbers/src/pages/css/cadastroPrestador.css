@@ -8,11 +8,11 @@ header {
     width: 100%;
 }
 
-.body {
+body {
     background-color: #870CFF;
     font-family: 'Roboto';
-    height: 195vh;
-    width: 100%;
+    height: 190vh;
+    width: 99%;
 }
 
 h1 {
@@ -93,9 +93,15 @@ h2 {
 }
 
 .cadastro {
+    
     margin-left: 14%;
     margin-top: 0%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
+    position: absolute;
+    left: 32%;
+    background: #BD79FF;
+    border-radius: 30px;
+
 }
