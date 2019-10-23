@@ -1,7 +1,6 @@
 main > div {
     background-color: #870CFF;
-    max-height: 12%;
-    
+    height: 13%;
 }
 
 /* .divsec {
@@ -22,6 +21,7 @@ main > div {
     font-size: 20px;
     background-color: #870CFF;
     border: none;
+    width: 13%;
 }
 
 .pesquisar:hover{

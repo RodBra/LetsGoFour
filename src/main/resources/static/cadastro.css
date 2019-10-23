@@ -1,7 +1,3 @@
-html {
-    background-color: #870CFF;
-}
-
 body {
     font-family: Roboto;
     font-style: Bold;
@@ -11,7 +7,7 @@ body {
     /* align: left; */
     vertical-align: center;
     fill: solid;
-    color: #ffffff;
+    color: #870CFF;
 }
 
 form {
@@ -28,7 +24,7 @@ input {
     font-family: "Poppins", sans-serif;
 } */
 
-input[type=text]:focus {
+/* input[type=text]:focus {
     background-color: #fff;
     border-bottom: 2px solid #5fbae9;
 }
@@ -43,4 +39,4 @@ input[type=email]::placeholder {
 
 input[type=password]::placeholder {
     color: #cccccc;
-}
+} */
