@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import '../css/cadastro.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import {Link} from 'react-router-dom'
 
 export default class Cadastro extends Component {
 
@@ -50,7 +49,7 @@ export default class Cadastro extends Component {
 
                 </header>
 
-                <body>
+                <body className="body">
 
                     <form className="form">
                         <div className="form-row">
@@ -89,13 +88,13 @@ export default class Cadastro extends Component {
                             <div className="form-row">
                                 <div className="form-group col-md-6 ">
                                     <label className="label">Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)} type="password" className="form-control inputc" id="passwd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="passwd" placeholder="*****************"></input>
                                 </div>
 
 
                                 <div className="form-group col-md-6">
                                     <label className="label">Confirmar Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)}  type="password" className="form-control inputc" id="checkPasswd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkPasswd" placeholder="*****************"></input>
                                 </div>
 
                             </div>
@@ -131,19 +130,17 @@ export default class Cadastro extends Component {
                         </div>
 
 
-                        
+
                         <div className="check">
                             <input onChange={(e) => this.isChecked(e)} id="agree" type="checkbox" ></input>
                             <label className="termos">Li e concordo com os termos de uso.</label>
                         </div>
 
-                        <Link to="/login">
+
                         <div className="cadastro">
-                          <input type="submit" id="cadastro" value="Cadastrar" /> 
+                            <input type="submit" id="cadastro" value="Cadastrar" />
+
                         </div>
-                        </Link>
-
-
                     </form>
                 </body>
 

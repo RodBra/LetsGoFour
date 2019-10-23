@@ -8,13 +8,12 @@ header {
     width: 99%;
 }
 
-body {
+.body {
     background-color: #870CFF;
     font-family: 'Roboto';
     height: 160vh;
     width: 99%;
     margin: 0%;
-    /* -webkit-print-color-adjust: exact; */
 }
 
 h1 {
@@ -95,12 +94,9 @@ h2 {
 }
 
 .cadastro {
-    /* align-self: center; */
-    position: absolute;
-    margin-left: auto;
+    margin-left: 14%;
     margin-top: 0%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
-    left: 24%;
 }

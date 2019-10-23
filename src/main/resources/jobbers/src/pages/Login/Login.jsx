@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../css/login.css'
-import {Link} from 'react-router-dom';
 
 export default class Login extends Component {
     render() {
@@ -20,12 +19,7 @@ export default class Login extends Component {
                                 <input type="password" id="password" className="fadeIn second" name="password"></input>
                                 <input type="submit" className="fadeIn fourth" id="botao-login" value="Entrar"></input>
                             </form>
-                           
-                            <p className="fadeIn cad">Ainda não tem cadastro? Click <Link to="/cadastro"> <a>aqui</a></Link></p>
-                            
-                            
-                            <p className="fadeIn cad">Quer divulgar seus serviços? Click <Link to="/cadastroPrestador"><a>aqui</a></Link></p>
-                            
+                            <p className="fadeIn cad">para se cadastrar click <a href="www.google.com">aqui</a></p>
                         </div>
                     </div>
                 </body>

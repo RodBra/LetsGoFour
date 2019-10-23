@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../css/cadastroPrestador.css'
-import {Link} from 'react-router-dom'
-import Footer from '../components/Footer';
 
 export default class CadastroPrestador extends Component {
 
@@ -29,25 +27,6 @@ export default class CadastroPrestador extends Component {
             agree:false
         }
     }
-
-    handleChange =  (event) => {
-        const state = Object.assign({}, this.state);
-
-        let field = event.target.id;
-
-        state[field] = event.target.value;
-
-        this.setState(state);
-    }
-
-    isChecked = () =>{
-        this.setState(prevState=>({
-            agree:!prevState.agree
-        }))
-    }
-
-
-
     render() {
         return (
             <Fragment>
@@ -109,13 +88,13 @@ export default class CadastroPrestador extends Component {
                             <div className="form-row">
                                 <div className="form-group col-md-6 ">
                                     <label className="label" for="exampleInputEmail1">Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)}  type="password" className="form-control inputc" id="passwd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="passwd" placeholder="*****************"></input>
                                 </div>
 
 
                                 <div className="form-group col-md-6">
                                     <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)}  type="password" className="form-control inputc" id="checkpasswd" placeholder="*****************"></input>
+                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkpasswd" placeholder="*****************"></input>
                                 </div>
 
                             </div>
@@ -171,16 +150,13 @@ export default class CadastroPrestador extends Component {
                             <label className="termos">Li e concordo com os termos de uso.</label>
                         </div>
 
-                        <Link to="/login">
+
                         <div className="cadastro">
                             <input type="submit" id="cadastrar" value="Cadastrar" />
-                        </div>
-                        </Link>
-                    </form>
-                
-                </body>
 
-              
+                        </div>
+                    </form>
+                </body>
 
             </Fragment>
         )
