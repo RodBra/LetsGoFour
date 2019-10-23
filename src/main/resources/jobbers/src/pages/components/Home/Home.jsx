@@ -10,7 +10,8 @@ export default props =>
         </div>
         <hr/>
         <p>
-            Olá, você esta na jobbers aqui você consegue se divulgar para empresas e
-            pessoas que necessitam de seu serviço
+            Olá, você está na jobbers aqui você consegue se divulgar para empresas e
+            pessoas que necessitam dos seus serviços, além de você mesmo poder solicitar 
+            serviços de varios dos nossos usuarios que querem prestar seus serviços
         </p>
     </Main>

@@ -8,7 +8,8 @@ import '../css/app.css'
 // import Login from './pages/Login/Login'
 import Logo from '../components/Logo'
 // import Home from '../components/Home/Home'
-import Pesquisa from '../components/Pesquisa/Pesquisa'
+import Perfil from '../components/Perfil/Perfil'
+// import Pesquisa from '../components/Pesquisa/Pesquisa'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
@@ -19,7 +20,8 @@ export default class PrincipalApp extends Component {
                 <Logo/>
                 <NavBar/>
                 {/* <Home/> */}
-                <Pesquisa/>
+                {/* <Pesquisa/> */}
+                <Perfil/>
                 <Footer/>
             </div>
 

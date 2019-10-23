@@ -6,8 +6,6 @@ import '../../css/pesquisa.css'
 export default props =>
     <Main icon="search" title="Pesquisa">
         <div className="display-4">
-            <div className="divsec">
                 <input type="text" className="inputPesquisa"></input> <button className="pesquisar"><span className="fa fa-search"></span>Pesquisar</button>
-            </div>
         </div>
     </Main>
