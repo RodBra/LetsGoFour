@@ -7,7 +7,8 @@ import '../css/app.css'
 
 // import Login from './pages/Login/Login'
 import Logo from '../components/Logo'
-import Main from '../Main/Main'
+// import Home from '../components/Home/Home'
+import Pesquisa from '../components/Pesquisa/Pesquisa'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
@@ -17,7 +18,8 @@ export default class PrincipalApp extends Component {
             <div className="app">
                 <Logo/>
                 <NavBar/>
-                <Main icon="home" title="Início"/>
+                {/* <Home/> */}
+                <Pesquisa/>
                 <Footer/>
             </div>
 
