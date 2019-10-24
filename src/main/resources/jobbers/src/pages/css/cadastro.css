@@ -94,45 +94,13 @@ h2 {
 }
 
 .cadastro {
-    
-    margin-left: 14%;
-    margin-top: 0%;
+    /* margin-left: 14%; */
+    /* margin-top: 0%; */
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     position: absolute;
-    left: 32%;
-    background: #BD79FF;
-    border-radius: 30px;
-
+    left: 38%;
+    /* background: #BD79FF; */
+    /* border-radius: 30px; */
 }
-
-/* .cadastro1{
-position: absolute;
-width: 147px;
-height: 45px;
-left: 604px;
-top: 1275px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 28px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-
-
-    position: absolute;
-    width: 199px;
-    height: 68px;
-    left: 578px;
-    top: 1264px;
-
-    background: #BD79FF;
-    border-radius: 30px;
-
-} */

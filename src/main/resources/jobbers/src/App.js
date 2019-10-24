@@ -6,18 +6,18 @@ import 'font-awesome/css/font-awesome.min.css'
 
 import Login from './pages/Login/Login'
 // import PrincipalApp from './pages/PrincipalApp/PrincipalApp'
-// import Cadastro from './pages/Cadastro/Cadastro'
+import Cadastro from './pages/Cadastro/Cadastro'
+import CadastroPrestador from './pages/CadastroPrestador/CadastroPrestador';
 
 
 export default class App extends Component {
     render() {
-        return (
-            <React.Fragment>
+        return ( <
+            React.Fragment >
 
-                <Login />
-                {/* <PrincipalApp /> */}
-                {/* <Cadastro /> */}
-            </React.Fragment>
+            { /* <Login /> */ } <
+            CadastroPrestador / > { /* <PrincipalApp /> */ } { /* <Cadastro /> */ } <
+            /React.Fragment>
         )
     }
 }

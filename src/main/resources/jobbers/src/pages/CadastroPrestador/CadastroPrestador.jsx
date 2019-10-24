@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import '../css/cadastroPrestador.css'
+import '../css/cadastro.css'
+
 
 export default class CadastroPrestador extends Component {
 
@@ -26,6 +27,22 @@ export default class CadastroPrestador extends Component {
 
             agree: false
         }
+    }
+
+    handleChange = (event) => {
+        const state = Object.assign({}, this.state);
+
+        let field = event.target.id;
+
+        state[field] = event.target.value;
+
+        this.setState(state);
+    }
+
+    isChecked = () => {
+        this.setState(prevState => ({
+            agree: !prevState.agree
+        }))
     }
     render() {
         return (
@@ -64,7 +81,7 @@ export default class CadastroPrestador extends Component {
 
                                 <div className="form-group">
                                     <label className="label">Profissão</label><br />
-                                    <input onChange={(e) => this.handleChange(e)} className="inpu" id="profissao" placeholder=" Pedreiro"></input><br /><br /><br />
+                                    <input onChange={(e) => this.handleChange(e)} className="inpu" id="profissao" placeholder=" Pedreiro"></input><br />
                                 </div>
 
                                 <div className="form-group">
@@ -94,7 +111,7 @@ export default class CadastroPrestador extends Component {
 
                                 <div className="form-group col-md-6">
                                     <label className="label" for="exampleInputEmail1">Confirmar Senha</label>
-                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkpasswd" placeholder="*****************"></input><br /><br /><br />
+                                    <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="checkpasswd" placeholder="*****************"></input><br />
                                 </div>
 
                             </div>
@@ -153,10 +170,6 @@ export default class CadastroPrestador extends Component {
 
                         <div >
                             <input className="cadastro" type="submit" id="cadastrar" value="Cadastrar" />
-                            {/* <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                               Cadastrar
-                            </button> */}
-
                         </div>
                     </form>
                 </body>
