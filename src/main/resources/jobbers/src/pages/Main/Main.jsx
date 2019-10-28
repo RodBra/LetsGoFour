@@ -9,9 +9,7 @@ export default class Main extends Component {
             <Fragment>
                 <Header {...this.props}/>
                 <main className="content container-fluid">
-                    <div className="p-3 mt-3">
                         {this.props.children}
-                    </div>
                 </main>
             </Fragment>
         )

@@ -9,13 +9,13 @@ export default class NavBar extends Component {
             <React.Fragment>
                 <aside className="menu-area">
                     <nav className="menu">
-                        <a href="#/home">
+                        <a href="/">
                             <i className="fa fa-home"></i> Inicio
                         </a>
-                        <a href="#/search/#/">
+                        <a href="/search">
                             <i className="fa fa-search"></i> Pesquisar
                         </a>
-                        <a href="#/profile">
+                        <a href="/profile">
                             <i className="fa fa-user"></i> Perfil
                         </a>
                         {/* <a href="#/historic">

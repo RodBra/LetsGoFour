@@ -7,8 +7,7 @@ export default class Footer extends Component {
         return(
             <footer className="footer">
                 <span>
-                    Desenvolvido pela 
-                    <strong> LetsGoFour</strong> 
+                    Desenvolvido pela <strong> LetsGoFour</strong> 
                 </span>
             </footer>
         )

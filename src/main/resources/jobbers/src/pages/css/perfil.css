@@ -43,11 +43,6 @@ span {
 
     margin-top: 1%;
     padding: 0px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 17px;
     /* line-height: 10px; */
     display: flex;
     align-items: center;
@@ -57,4 +52,12 @@ span {
     /* border: 1px solid black;
     box-sizing: border-box; */
 
+}
+
+
+.descricao span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 180%;
 }
