@@ -2,6 +2,9 @@ html {
     background-color: #870CFF;
     
 }
+p{
+    color: black    
+}
 
 body {
     font-family: Roboto;
