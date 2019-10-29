@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends MongoRepository<Usuario, String> {
 
     //TODO ESTA QUERY
-    @Query()
+    @Query(" 'email' : '?0' ")
     Usuario findByEmail(String email);
 
 //    @Query(value = "{'tipo_servico' : ?0}")

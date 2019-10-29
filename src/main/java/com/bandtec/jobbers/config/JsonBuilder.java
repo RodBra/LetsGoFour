@@ -6,6 +6,7 @@ import com.bandtec.jobbers.model.Servicos;
 import com.bandtec.jobbers.model.Usuario;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class JsonBuilder {
 
     @JsonProperty

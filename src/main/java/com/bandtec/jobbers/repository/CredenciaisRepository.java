@@ -8,9 +8,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CredenciaisRepository extends MongoRepository<Credenciais, String> {
 
-    //TODO ESTA QUERY
     @Query()
-    Credenciais findByLoginEqualsAndSenhaEquals(String login, String senha);
+    Credenciais findByLogin(Credenciais credenciais);
 
+    @Query("'login': ?0, senha: ?1")
+    boolean findByLoginEqualsAndSenhaEquals(String login, String senha);
 }
 

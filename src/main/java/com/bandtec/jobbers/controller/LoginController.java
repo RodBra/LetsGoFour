@@ -1,87 +1,55 @@
- 
 package com.bandtec.jobbers.controller;
 
-import java.util.List;
-
-import com.bandtec.jobbers.config.JsonBuilder;
+import com.bandtec.jobbers.Dao.ContratanteRepository;
+import com.bandtec.jobbers.Dao.PrestadorRepository;
 import com.bandtec.jobbers.model.Credenciais;
-import com.bandtec.jobbers.model.Logradouro;
 import com.bandtec.jobbers.model.Role;
-import com.bandtec.jobbers.model.Servicos;
-import com.bandtec.jobbers.model.Usuario;
-import com.bandtec.jobbers.repository.CredenciaisRepository;
-import com.bandtec.jobbers.repository.LogradouroRepository;
-import com.bandtec.jobbers.repository.ServicosRepository;
-import com.bandtec.jobbers.repository.UsuarioRepository;
-import com.mongodb.WriteConcern;
-
+import com.bandtec.jobbers.model.UsuarioContratante;
+import com.bandtec.jobbers.model.UsuarioPrestador;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @RestController
 public class LoginController {
 
 	private static Logger logger = Logger.getLogger(LoginController.class);
-	
-    WriteConcern writeConcern;
 
 	@Autowired
-	private CredenciaisRepository credenciaisRepository;
+	private ContratanteRepository contratanteRepository;
 
 	@Autowired
-	private ServicosRepository servicosRepository;
+	private PrestadorRepository prestadorRepository;
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
+	@GetMapping("/login/{role}")
+	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais, @PathVariable("role") Role role) {
 
-	@Autowired
-	private LogradouroRepository logradouroRepository;
+		if (role.equals(Role.PRESTADOR)){
+			if(prestadorRepository.findByCredenciais(credenciais)){
+				session.setAttribute("Usuario", credenciais.getLogin());
+				logger.info("usuario logado : " + credenciais.getLogin());
+				return ResponseEntity.status(HttpStatus.OK).body("Usuario logado");
+			}
+		} else if (role.equals(Role.CONTRATANTE)){
+			if(contratanteRepository.findByCredenciais(credenciais)){
+				session.setAttribute("Usuario", credenciais.getLogin());
+				logger.info("usuario logado : " + credenciais.getLogin());
+				return ResponseEntity.status(HttpStatus.OK).body("Usuario logado");
+			}
+		}
 
-	@PostMapping("/cadastrar/{role}")
-	public ResponseEntity<String> cadastrarContratante(@RequestBody JsonBuilder jsonBuilder, @PathVariable("role") String role) {
+		return ResponseEntity.ok("Usuario inexistente");
+	}
 
-        Usuario usuario = jsonBuilder.getUsuario();
-		Credenciais credenciais = jsonBuilder.getCredenciais();
-		Logradouro logradouro = jsonBuilder.getLogradouro();
-		Servicos servicos = jsonBuilder.getServicos();
+	@PostMapping("/cadastrar/contratante")
+	public ResponseEntity<String> cadastrarContratante(HttpSession session, @RequestBody UsuarioContratante usuarioContratante) {
 
-		if(usuarioRepository.findByEmail(credenciais.getLogin()) == null) {
-			try {
-                //Salva Usuário
-                usuarioRepository.save(usuario);
-            }catch (Exception e){
-			    e.printStackTrace();
-                System.out.println("Erro ao cadastrar usuário");
-            }
-        try{
-            //Salva Credenciais
-            credenciaisRepository.save(credenciais);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            logradouroRepository.save(logradouro);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            if (role.equals(Role.PRESTADOR)){
-                servicosRepository.save(servicos);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-            //Adiciona o id do usuario aos documentos
-//			credenciais.setUser_id(usuario.getId());
-//			logradouro.setUser_id(usuario.getId());
-
+		if(contratanteRepository.findByLogin(usuarioContratante.getLogin()) == null) {
+			contratanteRepository.save(usuarioContratante);
 			return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
 		} else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
@@ -89,39 +57,20 @@ public class LoginController {
 
 	}
 
-	@GetMapping("/valida/{tipo}")
-	public ResponseEntity<String>validarUsuario(@RequestBody Credenciais credenciais, @PathVariable String tipo){
-		if (tipo.equals("prestador")) {
- 				if(credenciaisRepository.findByLoginEqualsAndSenhaEquals(credenciais.getLogin(), credenciais.getSenha()) != null){
-				return ResponseEntity.status(HttpStatus.OK).body("Login feito com sucesso");
-				
-			}
-			else {
-					return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
-			}
-		} else if (tipo.equals(("contratante"))){
-			if(credenciaisRepository.findByLoginEqualsAndSenhaEquals(credenciais.getLogin(), credenciais.getSenha())  != null){
-				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.status(HttpStatus.OK).body(("login feito com sucesso"));
-			} else {
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("falha nas credenciais");
-			}
+	@PostMapping("/cadastrar/prestador")
+	public ResponseEntity<String> cadastrarPrestador(HttpSession session, @RequestBody UsuarioPrestador usuarioPrestador) {
+
+		if(prestadorRepository.findByLogin(usuarioPrestador.getLogin()) == null) {
+			prestadorRepository.save(usuarioPrestador);
+			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
+		} else {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
-		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(("Usuário não cadastrado"));
 	}
 
-
-	@GetMapping("buscar/servico/{servico}")
-	public ResponseEntity<List<Servicos>> buscaPrestador(@PathVariable("servico") String servico){
-
-		List<Servicos> prestadores = servicosRepository.findByTipoServico(servico);
-
-		if (!prestadores.isEmpty()){
-			return ResponseEntity.status(HttpStatus.FOUND).body(prestadores);
-		} else if (prestadores.isEmpty()){
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		} else {
-			return ResponseEntity.status(HttpStatus.CONFLICT).build();
-		}
+	@GetMapping("/logout")
+	public ResponseEntity<String> logout(HttpSession session ) {
+		session.invalidate();
+		return ResponseEntity.status(HttpStatus.OK).body("Deslogado");
 	}
 }
