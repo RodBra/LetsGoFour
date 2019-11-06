@@ -11,9 +11,9 @@ header {
 body {
     background-color: #870CFF;
     font-family: 'Roboto';
-    height: 160vh;
-    width: 99%;
-    margin: 0%;
+    /* height: 160vh; */
+    /* width: 99%;
+    margin: 0%; */
 }
 
 h1 {
@@ -35,7 +35,10 @@ h2 {
     line-height: 0px;
     align-items: center;
     color: #FFFFFF;
+    margin-left: 2.3%;
+    font-size: 260%
 }
+
 
 .form {
     align-items: center;
@@ -50,7 +53,7 @@ h2 {
     line-height: 28px;
     align-items: center;
     text-align: center;
-    color: #cccc;
+    color: #FFFFFF;
 }
 
 .inpu {
@@ -94,13 +97,52 @@ h2 {
 }
 
 .cadastro {
-    /* margin-left: 14%; */
-    /* margin-top: 0%; */
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     position: absolute;
-    left: 38%;
-    /* background: #BD79FF; */
-    /* border-radius: 30px; */
+    margin-bottom: 10%;
+    margin-top: 3%;
+    left: 42.4%;
+    width: 13%;
+    height: 6%;
+    color: #FFFFFF;
+    font-size: 200%;
+    
+    border: none;
+    background-color: #BD79FF;
+    border-radius: 30px;
+}
+
+.cadastro:hover {
+    background-color: #3E0179;
+}
+
+input {
+    border: none;
+    padding-left: 2%;
+}
+
+label {
+    color: #FFFFFF;
+}
+
+#login {
+    margin-top: 3%
+}
+
+#h2Endereco {
+    margin-left: 0.5%;
+}
+
+.form1 {
+    margin-left: 0px;
+}
+/* 
+.formSenha {
+    margin-left: -1%;
+} */
+
+.endereco input {
+    padding-left: 5%;
 }

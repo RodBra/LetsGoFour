@@ -167,10 +167,7 @@ export default class CadastroPrestador extends Component {
                             <label className="termos">Li e concordo com os termos de uso.</label>
                         </div>
 
-
-                        <div >
-                            <input className="cadastro" type="submit" id="cadastrar" value="Cadastrar" />
-                        </div>
+                        <button className="cadastro" type="submit" id="cadastrar">Cadastrar</button>
                     </form>
                 </body>
 

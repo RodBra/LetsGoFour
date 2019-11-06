@@ -20,3 +20,12 @@ aside.menu-area {
 .menu a:hover {
     background: #3E0179;
 }
+
+.lg {
+    height: 8.8%;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+        /* border: 1px solid black;
+    box-sizing: border-box; */
+}

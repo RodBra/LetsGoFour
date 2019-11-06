@@ -8,8 +8,11 @@ export default class NavBar extends Component {
         return (
             <React.Fragment>
                 <aside className="menu-area">
+                    <div className="lg">
+                        Logo
+                    </div>
                     <nav className="menu">
-                        <a href="/">
+                        <a href="/home">
                             <i className="fa fa-home"></i> Inicio
                         </a>
                         <a href="/search">

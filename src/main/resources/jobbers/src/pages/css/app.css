@@ -33,7 +33,7 @@
         1fr
         var(--footer-heigth);
     grid-template-areas: 
-        "logo header"
+        "menu header"
         "menu content"
         "menu footer";
     height: 100vh;

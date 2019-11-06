@@ -1,21 +1,16 @@
 import React from 'react';
-// import { Switch, Route, Redirect } from 'react-router'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import { HashRouter } from 'react-router-dom'
 
+import Login from './pages/Login2/Login1';
+import PrincipalApp from './pages/PrincipalApp/PrincipalApp';
+import Cadastro from './pages/Cadastro/Cadastro';
 import Home from './pages/components/Home/Home';
-import Pesquisa from './pages/components/Pesquisa/Pesquisa';
-import Perfil from './pages/components/Perfil/Perfil';
 
 export default props => 
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route from='/search' component={Pesquisa}/>
-            <Route from='/profile' component={Perfil}/>
+            <Route exact path="/" component={Login}/>
+            <Route from='/home' component={PrincipalApp}/>
+            <Route from='/register' component={Cadastro}/>
         </Switch>
     </BrowserRouter>
-    
-    
-    
-    

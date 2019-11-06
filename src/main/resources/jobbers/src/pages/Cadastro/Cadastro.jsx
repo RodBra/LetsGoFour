@@ -52,7 +52,7 @@ export default class Cadastro extends Component {
                 <body className="body">
 
                     <form className="form">
-                        <div className="form-row">
+                        <div className="form-row form1">
 
                             <div className="form-row">
                                 <div className="form-group">
@@ -68,7 +68,7 @@ export default class Cadastro extends Component {
                                 </div>
 
                                 <div className="form-group">
-                                    <h2>Login</h2><br /><br />
+                                    <h2 id="login">Login</h2><br /><br />
 
                                     <label className="label">E-mail</label><br />
                                     <input onChange={(e) => this.handleChange(e)} className="inpu" id="email" placeholder="  joao.batista@gmail.com"></input><br />
@@ -85,7 +85,7 @@ export default class Cadastro extends Component {
                                 </div>
                             </div>
 
-                            <div className="form-row">
+                            <div className="form-row formSenha">
                                 <div className="form-group col-md-6 ">
                                     <label className="label">Senha</label>
                                     <input onChange={(e) => this.handleChange(e)} className="form-control inputc" id="passwd" placeholder="*****************"></input>
@@ -101,8 +101,8 @@ export default class Cadastro extends Component {
                         </div>
 
 
-                        <h2>Endereço</h2><br /><br />
-                        <div className="form-row">
+                        <h2 id="h2Endereco">Endereço</h2><br /><br />
+                        <div className="form-row endereco">
                             <div className="form-row dados-endereco">
                                 <div className="form-group col-md-6">
 
@@ -135,11 +135,8 @@ export default class Cadastro extends Component {
                             <input onChange={(e) => this.isChecked(e)} id="agree" type="checkbox" ></input>
                             <label className="termos">Li e concordo com os termos de uso.</label>
                         </div>
-
-
-                        <div >
-                            <input className="cadastro" type="submit" id="cadastro" value="Cadastrar" />
-                        </div>
+                        
+                        <button className="cadastro" type="submit" id="cadastro">Cadastrar</button>
                     </form>
                 </body>
 
