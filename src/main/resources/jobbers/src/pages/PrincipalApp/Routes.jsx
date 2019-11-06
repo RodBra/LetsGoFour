@@ -9,8 +9,8 @@ export default props =>
     <BrowserRouter>
         <Switch>
             <Route exact path="/home" component={Home}/>
-            <Route from='/search' component={Pesquisa}/>
-            <Route from='/profile' component={Perfil}/>
+            <Route from='/home/search' component={Pesquisa}/>
+            <Route from='/home/profile' component={Perfil}/>
         </Switch>
     </BrowserRouter>
     

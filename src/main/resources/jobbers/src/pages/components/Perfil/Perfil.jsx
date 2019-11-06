@@ -5,22 +5,15 @@ import Main from '../../Main/Main'
 
 export default props =>
     <Main icon="user" title="Perfil">
-
-        
-            <div class="imagen mt-4">
-                <span className="fa fa-user"></span>
-            </div>
-
-        <div class="descricao">
-            <div>
-                <span>Nome:</span>candjocna<br/>
-                <span>Estado:</span><br/>
-                <span>Cidade:</span><br/>
-                <span>Rua:</span><br/>
-                <span>Numero:</span><br/>
-                <span>Complemento:</span><br/>
-                <span>Telefone:</span><br/>
-                <span>Email:</span>
-            </div>
+        <div class="imagen mt-4">
+            <span className="fa fa-user"></span>
         </div>
+        <span className="descricao" id="nome">Nome:</span><br/>
+        <span className="descricao" id="estado">Estado:</span><br/>
+        <span className="descricao" id="cidade">Cidade:</span><br/>
+        <span className="descricao" id="rua">Rua:</span><br/>
+        <span className="descricao" id="numero">Numero:</span><br/>
+        <span className="descricao" id="complemento">Complemento:</span><br/>
+        <span className="descricao" id="telefone">Telefone:</span><br/>
+        <span className="descricao" id="email">Email:</span><br/>
     </Main>

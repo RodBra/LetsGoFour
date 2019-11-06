@@ -18,7 +18,7 @@ aside.menu-area {
 }
 
 .menu a:hover {
-    background: #3E0179;
+    color: #3E0179;
 }
 
 .lg {
@@ -26,6 +26,15 @@ aside.menu-area {
     text-align: center;
     align-items: center;
     font-size: 30px;
+    /* position: fixed; */
         /* border: 1px solid black;
     box-sizing: border-box; */
+}
+
+.posi {
+    position: fixed;
+    /* right: 0; */
+    /* top: 50%; */
+    /* width: 8em; */
+    /* margin-top: -2.5em */
 }

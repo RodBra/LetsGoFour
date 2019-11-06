@@ -10,6 +10,7 @@ header.header {
     white-space: nowrap;
     box-shadow: var(--shadow);
     padding-top: 0.8%;
+    position: relative;
 }
 
 header.header h1 {

@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
-import '../Cadastro2/cadastro2.css'
+import './cadastro2.css'
 
-export default class CadastroPrestador extends Component {
+export default class Cadastro2 extends Component {
     render() {
         return (
                 <div>
                     <div className="div-titulo">
-                        <h1 className="h1-cadastro">Cadastro De Prestador</h1>
+                        <h1 className="h1-cadastro">Cadastro</h1>
                     </div>
                     <form action="">
                         <h2 className="h2" id="h2-info">Informações Pessoais</h2><br/>
                         <label className="labelgran" id="label-nome">Nome Completo</label><br/>
                         <input type="texto" name="nome" id="nome" className="inputgran"/><br/>
-                        <label className="labelpeq labelpri" id="label-rg">Rg</label>
-                        <label className="labelpeq labelseg" id="label-cpf">Cpf</label><br/>
-                        <input type="texto" name="rg" id="rg" className="inputpeqpri inputpeq"/>
-                        <input type="texto" name="cpf" id="cpf" className="inputpeqseg inputpeq"/><br/>
-                        <label className="labelgran" id="label-profissao">Profissão</label><br/>
-                        <input type="texto" name="profissao" id="profissao" className="inputgran"/><br/>
+                        <label className="labelgran" id="label-telefone1">Telefone/Celular</label><br/>
+                        <input type="texto" name="telefone" id="telefone" className="inputgran"/><br/>
                         <h2 className="h2" id="h2-login">login</h2><br/>
                         <label className="labelgran" id="label-email">Email</label><br/>
                         <input type="email" name="email" id="email" className="inputgran"/><br/>
@@ -38,11 +34,6 @@ export default class CadastroPrestador extends Component {
                         <label className="labelpeq labelseg" id="label-numero">Numero</label><br/>
                         <input type="texto" name="rua" id="rua" className="inputpeqpri inputpeq"/>
                         <input type="texto" name="numero" id="numero" className="inputpeqseg inputpeq"/><br/>
-                        <h2 className="h2" id="h2-contato">Contato</h2><br/>
-                        <label className="labelpeq labelpri" id="label-celular">Celular</label>
-                        <label className="labelpeq labelseg" id="label-telefone">Telefone</label><br/>
-                        <input type="texto" name="celular" id="celular" className="inputpeqpri inputpeq"/>
-                        <input type="texto" name="telefone" id="telefone" className="inputpeqseg inputpeq"/><br/>
                         <div className="termo">
                             <input type="checkbox" id="check"/> <label htmlFor="check">Concordo com os termos de uso</label><br/>
                         </div>  
