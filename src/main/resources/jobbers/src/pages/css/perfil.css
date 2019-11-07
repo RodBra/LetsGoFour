@@ -65,7 +65,7 @@
     font-size: 200%;
 }
 
-.buttonPrestador :hover {
+.buttonPrestador:hover {
     background-color: #3E0179;
 }
 
@@ -77,28 +77,29 @@
     margin-left: 1%;
 }
 
+
 #inputNomePrestador {
-    width: 90%;
+    width: 89.5%;
 }
 
 #inputIdadePrestador {
-    width: 90.5%;
+    width: 89.9%;
 }
 
 #inputEstadoPrestador {
-    width: 89.3%;
+    width: 88.9%;
 }
 
 #inputCidadePrestador {
-    width: 89.3%;
+    width: 88.8%;
 }
 
 #inputTelefonePrestador {
-    width: 77.6%;
+    width: 77%;
 }
 
 #inputEmailPrestador {
-    width: 90%;
+    width: 89.9%;
 }
 
 
@@ -106,10 +107,42 @@
     height: 26px;
     font-size: 20px;
     margin-left: 1%;
+    border: 1px solid black;
+    box-sizing: border-box;
 }
 
 
 #inputFormacao {
-    width: 50%;
-    margin-top: 2%;
+    width: 85.5%;    
+}
+
+#inputProfissaoPrestador {
+    width: 86.9%;
+}
+
+#inputValorServicoPrestador {
+    width: 76%;
+}
+
+.inputSemBorda {
+    height: 26px;
+    font-size: 20px;
+    margin-left: 1%;
+    border: none;
+}
+
+#denunciar {
+    width: 12%;
+    background-color: red;
+    margin-left: 55.3%;
+}
+
+#contato {
+    width: 18%;
+    margin-left: 1%;
+}
+
+#contratar {
+    width: 12%;
+    margin-left: 1%;
 }

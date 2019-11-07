@@ -10,7 +10,6 @@ aside.menu-area {
     text-decoration: none;
     color: #fff;
     font-size: 20px;
-    /* margin-left: 20%; */
     text-align: left;
     font-weight: 300;
     padding: 10px;
@@ -26,17 +25,10 @@ aside.menu-area {
     text-align: center;
     align-items: center;
     font-size: 30px;
-    /* position: fixed; */
-        /* border: 1px solid black;
-    box-sizing: border-box; */
 }
 
 .posi {
     position: fixed;
-    /* right: 0; */
-    /* top: 50%; */
-    /* width: 8em; */
-    /* margin-top: -2.5em */
 }
 
 #nomePrestador {

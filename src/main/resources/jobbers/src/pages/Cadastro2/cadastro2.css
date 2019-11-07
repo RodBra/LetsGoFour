@@ -136,7 +136,7 @@ input {
     margin-top: 2%;
 }
 
-.botaoCadastra :hover {
+.botaoCadastra:hover {
     background-color: #3E0179;
 }
 

@@ -39,6 +39,7 @@ a {
     width: 100%;
     min-height: 100%;
     padding: 20px;
+    margin-top: 6%;
   }
   
   #formContent {
@@ -105,7 +106,7 @@ a {
   }
   
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-    background-color: #39ace7;
+    background-color: #3E0179;
   }
   
   input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {

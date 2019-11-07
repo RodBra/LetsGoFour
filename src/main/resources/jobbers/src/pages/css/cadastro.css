@@ -146,3 +146,7 @@ label {
 .endereco input {
     padding-left: 5%;
 }
+
+.botaoCadastra:hover {
+    background-color: #3E0179;
+}

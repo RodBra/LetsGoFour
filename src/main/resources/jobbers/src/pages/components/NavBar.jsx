@@ -15,10 +15,10 @@ export default class NavBar extends Component {
                         <a href="/home">
                             <i className="fa fa-home"></i> Inicio
                         </a>
-                        <a href="/home/search">
+                        <a href="/home/pesquisa">
                             <i className="fa fa-search"></i> Pesquisar
                         </a>
-                        <a href="/home/profile">
+                        <a href="/home/perfil">
                             <i className="fa fa-user"></i> Perfil
                         </a>
                         {/* <a href="#/historic">

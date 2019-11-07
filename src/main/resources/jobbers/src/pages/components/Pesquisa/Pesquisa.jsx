@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Main from '../../Main/Main'
 import '../../css/pesquisa.css'
+import UsuarioPesquisado from '../UsuarioPesquisado/UsuarioPesquisado'
 
 export default props =>
     <Main icon="search" title="Pesquisa">
@@ -12,4 +13,5 @@ export default props =>
                 </form>
             </div>
         </div>
+        <UsuarioPesquisado/>
     </Main>

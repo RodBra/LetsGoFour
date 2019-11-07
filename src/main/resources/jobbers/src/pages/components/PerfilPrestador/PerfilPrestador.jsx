@@ -34,27 +34,27 @@ export default class PerfilPrestador extends React.Component{
     render() {
         return (
             <Main icon="user" title="Perfil Prestador">
-                <div class="imagen mt-4">
+                <div class="imagen mt-4 mb-4">
                     <span className="fa fa-user"></span>
                 </div>
                 <span className="descricao" id="nomePrestador">Nome:</span>
-                <input className="inputPestador" type="texto" name="inputNomePrestador" id="inputNomePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputNomePrestador" disabled={this.state.botao} id="inputNomePrestador"/><br/>
                 <span className="descricao" id="idadePrestador">Idade:</span>
-                <input className="inputPestador" type="texto" name="inputIdadePrestador" id="inputIdadePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputIdadePrestador" disabled={this.state.botao} id="inputIdadePrestador"/><br/>
                 <span className="descricao" id="estadoPrestador">Estado:</span>
-                <input className="inputPestador" type="texto" name="inputEstadoPrestador" id="inputEstadoPrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputEstadoPrestador" disabled={this.state.botao} id="inputEstadoPrestador"/><br/>
                 <span className="descricao" id="cidadePrestador">Cidade:</span>
-                <input className="inputPestador" type="texto" name="inputCidadePrestador" id="inputCidadePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputCidadePrestador" disabled={this.state.botao} id="inputCidadePrestador"/><br/>
                 <span className="descricao" id="telefonePrestador">Telefone para Contato:</span>
-                <input className="inputPestador" type="texto" name="inputTelefonePrestador" id="inputTelefonePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputTelefonePrestador" disabled={this.state.botao} id="inputTelefonePrestador"/><br/>
                 <span className="descricao" id="emailPrestador">Email:</span>
-                <input className="inputPestador" type="texto" name="inputEmailPrestador" id="inputEmailPrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputEmailPrestador" disabled={this.state.botao} id="inputEmailPrestador"/><br/>
                 <span className="descricao" id="profissaoPrestador">Profissão:</span>
-                <input className="inputPestador" type="texto" name="inputProfissaoPrestador" id="inputProfissaoPrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputProfissaoPrestador" disabled={this.state.botao} id="inputProfissaoPrestador"/><br/>
                 <span className="descricao" id="valorServicoPrestador">Valor de serviço (diaria):</span>
-                <input className="inputPestador" type="texto" name="inputValorServicoPrestador" id="inputValorServicoPrestador"/><br/>
-                <span className="descricao" id="formacaoPrestador">Formações:</span><br/>
-                <textarea name="inputFormacao" id="inputFormacao" cols="30" rows="2"></textarea><br/>
+                <input className="inputPestador" type="texto" name="inputValorServicoPrestador" disabled={this.state.botao} id="inputValorServicoPrestador"/><br/>
+                <span className="descricao" id="formacaoPrestador">Formações:</span>
+                <input className="inputPestador" name="inputFormacao" id="inputFormacao" disabled={this.state.botao} cols="30" rows="2"></input><br/>
                 <textarea name="descricapoServico" id="descricapoServico" cols="92" rows="10" disabled={this.state.botao}></textarea>
                 <button className="buttonPrestador" id="editar" disabled={!this.state.botao} onClick={() => this.habilitaDesabilita()}>Editar</button>
                 <button className="buttonPrestador" id="salvar" disabled={this.state.botao} onClick={() => this.habilitaDesabilita()}>Salvar</button>

@@ -5,6 +5,7 @@ import Home from '../components/Home/Home';
 import Pesquisa from '../components/Pesquisa/Pesquisa';
 import Perfil from '../components/Perfil/Perfil';
 import PerfilPrestador from '../components/PerfilPrestador/PerfilPrestador';
+import Contratacao from '../components/Contratacao/Contratacao'
 
 export default class Routes extends React.Component{
     render() {
@@ -12,15 +13,12 @@ export default class Routes extends React.Component{
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/home" render={Home}/>
-                    <Route from='/home/search' render={Pesquisa}/>
-                    <Route from='/home/profile' render={Perfil}/>
-                    <Route from='/home/profilePrestador' render={(props) => <PerfilPrestador/>}/>
+                    <Route from='/home/pesquisa' render={Pesquisa}/>
+                    <Route from='/home/perfil' render={Perfil}/>
+                    <Route from='/home/perfilPrestador' render={(props) => <PerfilPrestador/>}/>
+                    <Route from='/home/contratacao' render={(props) => <Contratacao/>}/>
                 </Switch>
             </BrowserRouter>
         )
     }
 } 
-    
-    
-    
-    
