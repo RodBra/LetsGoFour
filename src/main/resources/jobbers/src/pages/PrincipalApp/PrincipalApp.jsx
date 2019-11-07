@@ -14,12 +14,8 @@ import HashRouter from 'react-router-dom/HashRouter';
 export default props =>
     <HashRouter>
         <div className="app">
-            {/* <Logo /> */}
             <NavBar />
             <Routes />
-            {/* <Home /> */}
-            {/* <Pesquisa /> */}
-            {/* <Perfil /> */}
             <Footer />
         </div>
     </HashRouter>

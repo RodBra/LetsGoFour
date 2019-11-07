@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Cadastro2 from './pages/Cadastro2/Cadastro2';
-import Login from './pages/Login2/Login1';
+import Login from './pages/Login/Login';
 import PrincipalApp from './pages/PrincipalApp/PrincipalApp';
 import CadastroPrestador from './pages/CadastroPrestador/CadastroPrestador'
 

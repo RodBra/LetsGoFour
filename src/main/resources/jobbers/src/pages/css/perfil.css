@@ -47,3 +47,69 @@
     box-sizing: border-box; */
 
 }
+
+#descricapoServico {
+    font-size: 20px;
+    font-family: 'Roboto';
+    margin-top: 2%;
+}
+
+.buttonPrestador {
+    border-radius: 30px;
+    border: none;
+    color: #FFFFFF;
+    background-color: #870CFF;
+    width: 10%;
+    height: 35px;
+    margin: 1% 0% 2% 0%;
+    font-size: 200%;
+}
+
+.buttonPrestador :hover {
+    background-color: #3E0179;
+}
+
+#editar {
+    margin-left: 78.5%;
+}
+
+#salvar {
+    margin-left: 1%;
+}
+
+#inputNomePrestador {
+    width: 90%;
+}
+
+#inputIdadePrestador {
+    width: 90.5%;
+}
+
+#inputEstadoPrestador {
+    width: 89.3%;
+}
+
+#inputCidadePrestador {
+    width: 89.3%;
+}
+
+#inputTelefonePrestador {
+    width: 77.6%;
+}
+
+#inputEmailPrestador {
+    width: 90%;
+}
+
+
+.inputPestador{
+    height: 26px;
+    font-size: 20px;
+    margin-left: 1%;
+}
+
+
+#inputFormacao {
+    width: 50%;
+    margin-top: 2%;
+}
