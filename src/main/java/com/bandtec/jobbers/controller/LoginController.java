@@ -25,18 +25,32 @@ public class LoginController {
 	@Autowired
 	private PrestadorRepository prestadorRepository;
 
-	@GetMapping("/login/{role}")
-	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais, @PathVariable("role") Role role) {
+	private Role role;
+	private UsuarioContratante contrantante;
+	private UsuarioPrestador prestador;
+	
+	@GetMapping("/login")
+	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
 
+		if (prestadorRepository.findByCredenciais(credenciais)) {
+			role = Role.PRESTADOR;
+		} else if (contratanteRepository.findByCredenciais(credenciais)) {
+			role = Role.CONTRATANTE;
+		}
+		
 		if (role.equals(Role.PRESTADOR)){
 			if(prestadorRepository.findByCredenciais(credenciais)){
+				prestador = prestadorRepository.findByLogin(credenciais.getLogin());
+				session.setAttribute("usuario", prestador);
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.status(HttpStatus.OK).body("Usuario logado");
 			}
 		} else if (role.equals(Role.CONTRATANTE)){
 			if(contratanteRepository.findByCredenciais(credenciais)){
+				contrantante = contratanteRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("Usuario", credenciais.getLogin());
+				session.setAttribute("usuario", contrantante);
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.status(HttpStatus.OK).body("Usuario logado");
 			}
