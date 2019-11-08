@@ -18,7 +18,7 @@ export default class UsuarioPesquisado extends React.Component {
                                 </td>
                                 <td id="informacao">
                                     <label className="labels ml-3 primeiro">Nome:</label>
-                                    <input className="inputVi" type="texto" name="nome" id="nome"/>
+                                    <input className="inputVi" type="texto" name="nomePesquisado" id="nomePesquisado"/>
                                     <label className="labels">Estado:</label>
                                     <input className="inputVi" type="texto" name="" id=""/><br/>
                                     <label className="labels ml-3 primeiro">Profissão:</label>

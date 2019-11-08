@@ -7,7 +7,7 @@ export default class Cadastro2 extends Component {
         super(props);
 
         this.state ={
-            nome:'',
+            nomeUsuario:'',
             telefone:'',
             email:'',
             confEmail:'',
@@ -48,7 +48,7 @@ export default class Cadastro2 extends Component {
                     <form action="">
                         <h2 className="h2" id="h2-info">Informações Pessoais</h2><br/>
                         <label className="labelgran" id="label-nome">Nome Completo</label><br/>
-                        <input onChange={(e) => this.handleChange(e)} type="texto" name="nome" id="nome" className="inputgran"/><br/>
+                        <input onChange={(e) => this.handleChange(e)} type="texto" name="nomeUsuario" id="nomeUsuario" className="inputgran"/><br/>
                         <label className="labelgran" id="label-telefone1">Telefone/Celular</label><br/>
                         <input onChange={(e) => this.handleChange(e)} type="texto" name="telefone" id="telefone" className="inputgran"/><br/>
                         <h2 className="h2" id="h2-login">login</h2><br/>
