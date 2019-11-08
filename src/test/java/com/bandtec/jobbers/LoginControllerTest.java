@@ -1,12 +1,9 @@
 package com.bandtec.jobbers;
 
-import org.junit.Test;
-
 public class LoginControllerTest{
 
-    @Test
-    public void loginSucessoTeste(){
-        
+    public String concatena(String a, String b) {
+        return a.concat(b);
     }
 }
 

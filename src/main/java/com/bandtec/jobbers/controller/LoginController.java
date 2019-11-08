@@ -32,12 +32,12 @@ public class LoginController {
 	@GetMapping("/login")
 	public String login(HttpSession session, @RequestBody Credenciais credenciais) {
 
-		if (prestadorRepository.findByCredenciais(credenciais)) {
+	if (prestadorRepository.findByCredenciais(credenciais)) {
 			role = Role.PRESTADOR;
 		} else if (contratanteRepository.findByCredenciais(credenciais)) {
 			role = Role.CONTRATANTE;
 		}
-		
+
 		if (role.equals(Role.PRESTADOR)){
 			if(prestadorRepository.findByCredenciais(credenciais)){
 				prestador = prestadorRepository.findByLogin(credenciais.getLogin());
