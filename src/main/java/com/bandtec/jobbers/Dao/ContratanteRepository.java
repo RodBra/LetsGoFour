@@ -1,7 +1,6 @@
 package com.bandtec.jobbers.Dao;
 
 import com.bandtec.jobbers.model.Credenciais;
-import com.bandtec.jobbers.model.Usuario;
 import com.bandtec.jobbers.model.UsuarioContratante;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;

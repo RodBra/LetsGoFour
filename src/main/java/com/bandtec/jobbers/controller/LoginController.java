@@ -30,7 +30,7 @@ public class LoginController {
 	private UsuarioPrestador prestador;
 	
 	@GetMapping("/login")
-	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
+	public String login(HttpSession session, @RequestBody Credenciais credenciais) {
 
 		if (prestadorRepository.findByCredenciais(credenciais)) {
 			role = Role.PRESTADOR;
@@ -44,7 +44,7 @@ public class LoginController {
 				session.setAttribute("usuario", prestador);
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.status(HttpStatus.OK).body("Usuario logado");
+				return "dashboard";
 			}
 		} else if (role.equals(Role.CONTRATANTE)){
 			if(contratanteRepository.findByCredenciais(credenciais)){
@@ -52,11 +52,11 @@ public class LoginController {
 				session.setAttribute("Usuario", credenciais.getLogin());
 				session.setAttribute("usuario", contrantante);
 				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.status(HttpStatus.OK).body("Usuario logado");
+				return "dashboard";
 			}
 		}
 
-		return ResponseEntity.ok("Usuario inexistente");
+		return "login";
 	}
 
 	@PostMapping("/cadastrar/contratante")
