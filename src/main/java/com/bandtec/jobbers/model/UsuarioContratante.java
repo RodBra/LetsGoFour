@@ -4,12 +4,15 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Data
 @Document(collection = "usuarios_contratantes")
 public class UsuarioContratante extends Usuario {
 
 	@Id
 	private String id;
+	@JsonProperty
 	private Credenciais credenciais;
 
 	public UsuarioContratante(){
@@ -23,5 +26,9 @@ public class UsuarioContratante extends Usuario {
 
 	public String getLogin(){
 		return credenciais.getLogin();
+	}
+	
+	public Credenciais getCredenciais() {
+		return this.credenciais;
 	}
 }

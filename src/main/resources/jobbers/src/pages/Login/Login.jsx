@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../css/login.css'
 
-const url = 'http://localhost:8080'
+import axios from 'axios'
+
 export default class Login extends Component {
 
     state = {
@@ -24,12 +24,8 @@ export default class Login extends Component {
         this.setState(user);
     }
 
-    login() {
-        axios.post(url).then(resp => {
-            console.log("oi")
-        }).catch(e => {
-            console.log("erro")
-        })
+    logar = () => {
+        axios.post()
     }
 
     render() {
