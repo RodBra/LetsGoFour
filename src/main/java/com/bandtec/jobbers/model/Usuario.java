@@ -7,11 +7,9 @@ public abstract class Usuario {
 	@JsonProperty
 	private String nome;
 	@JsonProperty
-	private String sobrenome;
-	@JsonProperty
 	private String email;
 	@JsonProperty
-	private String dataNascimento;
+	private String telefone;
 	@JsonProperty
 	private String cidade;
 	@JsonProperty
@@ -20,19 +18,15 @@ public abstract class Usuario {
 	private String rua;
 	@JsonProperty
 	private int numero;
-	@JsonProperty
-	private String complemento;
 
-	public Usuario(String nome, String sobrenome, String email, String dataNascimento, String cidade, String estado, String rua, int numero, String complemento) {
+	public Usuario(String nome, String email, String cidade, String estado, String rua, int numero, String telefone) {
 		this.nome = nome;
-		this.sobrenome = sobrenome;
 		this.email = email;
-		this.dataNascimento = dataNascimento;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.rua = rua;
 		this.numero = numero;
-		this.complemento = complemento;
+		this.telefone = telefone;
 	}
 
 	public Usuario() {
