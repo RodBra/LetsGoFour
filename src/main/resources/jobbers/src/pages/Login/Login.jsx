@@ -4,6 +4,8 @@ import '../css/login.css'
 
 import axios from 'axios'
 
+let url = "http://localhost:8080"
+
 export default class Login extends Component {
 
     state = {
@@ -25,7 +27,22 @@ export default class Login extends Component {
     }
 
     logar = () => {
-        axios.post()
+        let login = this.state.user.usuario
+        let senha = this.state.user.password 
+
+        let dados = {
+            credenciais: {
+                login: login,
+                senha: senha
+            }
+        }
+
+        axios.get(url+"/login", dados).then(res => {
+            console.log(res);
+            this.props.history.push('/home');
+        }).catch(e => {
+            console.log("deu ruim " + e)
+        })
     }
 
     render() {
