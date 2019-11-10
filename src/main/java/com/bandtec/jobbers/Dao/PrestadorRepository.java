@@ -17,9 +17,9 @@ public interface PrestadorRepository extends MongoRepository<UsuarioPrestador, S
     @Query("{ 'credenciais' : {'login' : ?0 }}")
     UsuarioPrestador findByLogin(String login);
 
-    @Query("{ 'tipo_servico' : ?0")
+    @Query("{ 'tipo_servico' : ?0 }")
     List<UsuarioPrestador> findByServico(String servico);
 
-    @Query("{ 'nome' : ?0")
+    @Query("{ 'nome' : ?0 }")
     List<UsuarioPrestador> findByNome(String nome);
 }
