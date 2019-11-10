@@ -18,9 +18,9 @@ public class UsuarioContratante extends Usuario {
 	public UsuarioContratante(){
 	}
 
-	public UsuarioContratante(String nome, String sobrenome, String email, String dataNascimento,
-			String cidade, String estado, String rua, int numero, String complemento, Credenciais credenciais) {
-		super(nome, sobrenome, email, dataNascimento, cidade, estado, rua, numero, complemento);
+	public UsuarioContratante(String nome, String telefone, String email,
+			String cidade, String estado, String rua, int numero, Credenciais credenciais) {
+		super(nome, email, cidade, estado, rua, numero, telefone);
 		this.credenciais = credenciais;
 	}
 
