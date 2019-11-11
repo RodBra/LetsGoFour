@@ -12,7 +12,7 @@ import java.util.List;
 public interface PrestadorRepository extends MongoRepository<UsuarioPrestador, String> {
 
     @Query("{ 'credenciais' : ?0 }")
-    boolean findByCredenciais(Credenciais credenciais);
+    UsuarioPrestador findByCredenciais(Credenciais credenciais);
 
     @Query("{ 'credenciais' : {'login' : ?0 }}")
     UsuarioPrestador findByLogin(String login);

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface ContratanteRepository extends MongoRepository<UsuarioContratante, String> {
 
     @Query("{ 'credenciais' : ?0 }")
-    boolean findByCredenciais(Credenciais credenciais);
+    UsuarioContratante findByCredenciais(Credenciais credenciais);
 
     @Query("{ 'credenciais' : {'login' : ?0 }}")
     UsuarioContratante findByLogin(String login);

@@ -32,14 +32,14 @@ public class LoginController {
 	@GetMapping("/login")
 	public String login(HttpSession session, @RequestBody Credenciais credenciais) {
 
-	if (prestadorRepository.findByCredenciais(credenciais)) {
+	if (prestadorRepository.findByCredenciais(credenciais) != null) {
 			role = Role.PRESTADOR;
-		} else if (contratanteRepository.findByCredenciais(credenciais)) {
+		} else if (contratanteRepository.findByCredenciais(credenciais) != null) {
 			role = Role.CONTRATANTE;
 		}
 
 		if (role.equals(Role.PRESTADOR)){
-			if(prestadorRepository.findByCredenciais(credenciais)){
+			if(prestadorRepository.findByCredenciais(credenciais) != null){
 				prestador = prestadorRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("usuario", prestador);
 				session.setAttribute("Usuario", credenciais.getLogin());
@@ -47,7 +47,7 @@ public class LoginController {
 				return "dashboard";
 			}
 		} else if (role.equals(Role.CONTRATANTE)){
-			if(contratanteRepository.findByCredenciais(credenciais)){
+			if(contratanteRepository.findByCredenciais(credenciais) != null){
 				contrantante = contratanteRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("Usuario", credenciais.getLogin());
 				session.setAttribute("usuario", contrantante);
