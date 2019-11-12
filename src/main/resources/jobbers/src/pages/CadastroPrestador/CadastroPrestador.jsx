@@ -31,29 +31,6 @@ const inicialState = {
 export default class CadastroPrestador extends Component {
     state = { ...inicialState }
 
-    // constructor(props){
-    //     super(props);
-
-    //     this.state ={
-    //         nomeUsuario:'',
-    //         rg:'',
-    //         cpf:'',
-    //         profissao:'',
-    //         email:'',
-    //         confEmail:'',
-    //         apelido:'',
-    //         senha:'',
-    //         confSenha:'',
-    //         estado:'',
-    //         cidade:'',
-    //         rua:'',
-    //         numero:'',
-    //         celular:'',
-    //         telefone:'',
-    //         check:false
-    //     }
-    // }
-
     componentWillMount() {
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })
