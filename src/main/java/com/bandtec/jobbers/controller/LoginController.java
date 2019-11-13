@@ -28,25 +28,11 @@ public class LoginController {
 	private Role role;
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
-<<<<<<< HEAD
 
-	@PostMapping("/login")
-	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
-=======
-	
-	@Autowired
-	public LoginController(ContratanteRepository contratanteRepository,PrestadorRepository prestadorRepository) {
-		super();
-		this.contratanteRepository = contratanteRepository;
-		this.prestadorRepository = prestadorRepository;
-	}
-
-	
 	@GetMapping("/login")
-	public String login(HttpSession session, @RequestBody Credenciais credenciais) {
->>>>>>> 10ebb7a2eb69f291a92618e5ec7449c4f48b50b8
+	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
 
-	if (prestadorRepository.findByCredenciais(credenciais) != null) {
+		if (prestadorRepository.findByCredenciais(credenciais) != null) {
 			role = Role.PRESTADOR;
 		} else if (contratanteRepository.findByCredenciais(credenciais) != null) {
 			role = Role.CONTRATANTE;
@@ -58,7 +44,7 @@ public class LoginController {
 				session.setAttribute("usuario", prestador);
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.status(HttpStatus.OK).body("Logado prestador");
+				return ResponseEntity.ok("Logado");
 			}
 		} else if (role.equals(Role.CONTRATANTE)){
 			if(contratanteRepository.findByCredenciais(credenciais) != null){
@@ -66,11 +52,11 @@ public class LoginController {
 				session.setAttribute("Usuario", credenciais.getLogin());
 				session.setAttribute("usuario", contrantante);
 				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.status(HttpStatus.OK).body("Logado contratante");
+				return ResponseEntity.ok("Logado");
 			}
 		}
 
-		return ResponseEntity.status(HttpStatus.OK).body("Logado");
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 
 	@PostMapping("/cadastrar/contratante")
