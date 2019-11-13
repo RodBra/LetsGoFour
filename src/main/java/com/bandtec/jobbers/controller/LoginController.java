@@ -29,7 +29,7 @@ public class LoginController {
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
 
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
 
 		if (prestadorRepository.findByCredenciais(credenciais) != null) {
