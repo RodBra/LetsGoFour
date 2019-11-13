@@ -1,36 +1,56 @@
 aside.menu-area {
-    background-color: var(--bg-dark);
-    box-shadow: 
-        2px 0 10px 0 rgba(0, 0, 0, 0.12),
-        2px 0 15px 0 rgba(0, 0, 0, 0.09);
+  background-color: var(--bg-dark);
+  box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.12), 2px 0 15px 0 rgba(0, 0, 0, 0.09);
+}
+
+#logout {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 300;
+  padding: 10px;
+  padding-left: 50px;
+}
+
+#span-logout {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 300;
+  padding: 10px;
+  padding-left: 50px;
+  font-family: "Roboto";
 }
 
 .menu a {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-    text-align: left;
-    font-weight: 300;
-    padding: 10px;
-    padding-left: 50px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 300;
+  padding: 10px;
+  padding-left: 50px;
 }
 
 .menu a:hover {
-    color: #3E0179;
+  color: #3e0179;
 }
 
 .lg {
-    height: 8.8%;
-    text-align: center;
-    align-items: center;
-    font-size: 30px;
+  height: 8.8%;
+  text-align: center;
+  align-items: center;
+  font-size: 30px;
 }
 
 .posi {
-    position: fixed;
+  position: fixed;
 }
 
 #nomePrestador {
-    height: 20px;
+  height: 20px;
 }

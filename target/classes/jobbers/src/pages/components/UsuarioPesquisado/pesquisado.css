@@ -1,0 +1,45 @@
+.quadro {
+    box-shadow: 0px 0px 15px #0004;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.label-pesquisado {
+    font-size: 40%;
+}
+
+td {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 90px;
+}
+
+#fotoLocal {
+    width: 22%;
+}
+
+.labels {
+    font-size: 18px;
+}
+
+#foto {
+    background-color: #ececec;
+    height: 90px;
+}
+
+.inputVi {
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 2px;
+    height: 20px;
+    font-size: 18px;
+}
+
+#nomePesquisado {
+    width: 80%;
+}
+
+
+#botaoVi {
+    font-size: 15px;
+}
