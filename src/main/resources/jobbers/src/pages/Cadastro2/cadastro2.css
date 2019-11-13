@@ -30,12 +30,6 @@ body {
     font-size: 22px;
 }
 
-input {
-    border: none;
-    border-radius: 30px;
-    padding-left: 1%;
-}
-
 .h2 {
     color: #ffff;
     margin-left: 26.7%;
@@ -132,7 +126,7 @@ input {
     margin-left: 42%;
     color: #ffff;
     font-family: 'Roboto';
-    font-size: 27px;
+    font-size: 250%;
     margin-top: 2%;
 }
 
@@ -140,3 +134,9 @@ input {
     background-color: #3E0179;
 }
 
+input {
+    font-size: 210%;
+    border: none;
+    border-radius: 30px;
+    padding-left: 1%;
+}

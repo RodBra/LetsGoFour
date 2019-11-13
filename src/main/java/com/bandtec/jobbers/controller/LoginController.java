@@ -28,9 +28,23 @@ public class LoginController {
 	private Role role;
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
+<<<<<<< HEAD
 
 	@PostMapping("/login")
 	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
+=======
+	
+	@Autowired
+	public LoginController(ContratanteRepository contratanteRepository,PrestadorRepository prestadorRepository) {
+		super();
+		this.contratanteRepository = contratanteRepository;
+		this.prestadorRepository = prestadorRepository;
+	}
+
+	
+	@GetMapping("/login")
+	public String login(HttpSession session, @RequestBody Credenciais credenciais) {
+>>>>>>> 10ebb7a2eb69f291a92618e5ec7449c4f48b50b8
 
 	if (prestadorRepository.findByCredenciais(credenciais) != null) {
 			role = Role.PRESTADOR;

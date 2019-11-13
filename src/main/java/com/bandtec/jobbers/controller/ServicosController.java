@@ -29,7 +29,7 @@ public class ServicosController {
     private UsuarioContratante contrantante;
     private UsuarioPrestador prestador;
 
-    @GetMapping("/prestador/{servico}")
+    @GetMapping("/prestador/servico/{servico}")
     public List<UsuarioPrestador> retornaServicos(HttpSession session, @PathVariable("servico") String servico){
         List<UsuarioPrestador> prestadors = prestadorRepository.findByServico(servico);
         session.setAttribute("servicos", prestadors);
