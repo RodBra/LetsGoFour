@@ -29,6 +29,14 @@ public class LoginController {
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
 	
+	@Autowired
+	public LoginController(ContratanteRepository contratanteRepository,PrestadorRepository prestadorRepository) {
+		super();
+		this.contratanteRepository = contratanteRepository;
+		this.prestadorRepository = prestadorRepository;
+	}
+
+	
 	@GetMapping("/login")
 	public String login(HttpSession session, @RequestBody Credenciais credenciais) {
 

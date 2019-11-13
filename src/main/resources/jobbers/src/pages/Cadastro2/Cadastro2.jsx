@@ -41,7 +41,7 @@ class Cadastro2 extends Component {
         }))
     }
 
-    login = () => {
+    cadastro = () => {
         let nome = this.state.nomeUsuario
         let email = this.state.email
         let login = this.state.apelido
@@ -86,7 +86,7 @@ class Cadastro2 extends Component {
                     <input onChange={(e) => this.handleChange(e)} type="texto" name="nomeUsuario" id="nomeUsuario" className="inputgran"/><br/>
                     <label className="labelgran" id="label-telefone1">Telefone/Celular</label><br/>
                     <input onChange={(e) => this.handleChange(e)} type="texto" name="telefone" id="telefone" className="inputgran"/><br/>
-                    <h2 className="h2" id="h2-login">login</h2><br/>
+                    <h2 className="h2" id="h2-login">Dados de Login</h2><br/>
                     <label className="labelgran" id="label-email">Email</label><br/>
                     <input onChange={(e) => this.handleChange(e)} type="email" name="email" id="email" className="inputgran"/><br/>
                     <label className="labelgran" id="label-confEmail">Confirmar Email</label><br/>
@@ -109,7 +109,7 @@ class Cadastro2 extends Component {
                     <div className="termo">
                         <input onChange={(e) => this.isChecked(e)} type="checkbox" id="check"/> <label htmlFor="check">Concordo com os termos de uso</label><br/>
                     </div>  
-                    <button type="button" className="botaoCadastra" onClick={this.login}>Cadastrar</button>
+                    <button type="button" className="botaoCadastra" onClick={this.cadastro}>Cadastrar</button>
                 </form>
             </div>
         )
