@@ -20,10 +20,9 @@ aside.menu-area {
   font-size: 20px;
   text-align: left;
   font-weight: 300;
-  padding: 10px;
-  padding-left: 50px;
   font-family: "Roboto";
 }
+
 
 .menu a {
   display: block;

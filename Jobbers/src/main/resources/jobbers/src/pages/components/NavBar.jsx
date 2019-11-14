@@ -23,7 +23,7 @@ export default class NavBar extends Component {
                         </a> */}
 
             <i className="fa fa-sign-out" id="logout">
-              <span id="span-logout">Sair</span>
+              <span id="span-logout"> Sair</span>
             </i>
           </nav>
         </div>
