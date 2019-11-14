@@ -1,15 +1,37 @@
+import com.bandtec.jobbers.Dao.ContratanteRepository
+import com.bandtec.jobbers.Dao.PrestadorRepository
+import com.bandtec.jobbers.controller.LoginController
+import com.bandtec.jobbers.model.Credenciais
+import com.bandtec.jobbers.model.UsuarioContratante
+import com.bandtec.jobbers.model.UsuarioPrestador
+import org.springframework.mock.web.MockHttpSession
 import spock.lang.Specification
+
+import javax.servlet.http.HttpSession
 
 class LoginControllerTest extends Specification {
 
-    def "tamanho da string retornada esta ok"() {
-        expect:
-        new  com.bandtec.jobbers.LoginControllerTest().concatena(a, b).length() == c
+    LoginController controller
+    UsuarioPrestador prestador
+    UsuarioContratante contratante
+    Credenciais credenciais
+    PrestadorRepository prestadorRepository
+    ContratanteRepository contratanteRepository
+    HttpSession session
 
-        where:
-        a       | b          || c
-        "Felix" | "Gilioli" || 13
-        "um"    | "dois"     || 6
-        "1"     | "2"        || 2
+    def setup(){
+        credenciais = Mock(credenciais)
+        prestador = Mock(prestador)
+        contratante Mock(contratante)
+        controller = new LoginController(credenciais, prestador, contratante)
+         session = new MockHttpSession()
+    }
+
+    def 'Login Com Sucesso'(){
+        given:
+        controller.login() >>> [
+                new Credenciais('Rodrigo')
+        ]
+
     }
 }

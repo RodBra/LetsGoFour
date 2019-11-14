@@ -25,9 +25,16 @@ public class LoginController {
 	@Autowired
 	private PrestadorRepository prestadorRepository;
 
+	private Credenciais credenciais;
 	private Role role;
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
+
+	public LoginController(Credenciais credenciais, UsuarioPrestador usuarioPrestador, UsuarioContratante usuarioContratante){
+	    this.credenciais = credenciais;
+	    this.contrantante = usuarioContratante;
+	    this.prestador = usuarioPrestador;
+    }
 
 	@PostMapping("/login")
 	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
