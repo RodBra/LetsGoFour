@@ -48,7 +48,7 @@ public class LoginController {
 		if (role.equals(Role.PRESTADOR)){
 			if(prestadorRepository.findByCredenciais(credenciais) != null){
 				prestador = prestadorRepository.findByLogin(credenciais.getLogin());
-				session.setAttribute("usuario", prestador);
+				session.setAttribute("usuario", true);
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.ok("Logado");
@@ -57,7 +57,7 @@ public class LoginController {
 			if(contratanteRepository.findByCredenciais(credenciais) != null){
 				contrantante = contratanteRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("Usuario", credenciais.getLogin());
-				session.setAttribute("usuario", contrantante);
+				session.setAttribute("usuario", false);
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.ok("Logado");
 			}
