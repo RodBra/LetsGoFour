@@ -84,9 +84,10 @@ class Login extends Component {
                 type="button"
                 className="fadeIn fourth"
                 id="botao-login"
-                value="Entrar"
                 onClick={this.login1}
-              ></button>
+              >
+                Entrar
+              </button>
             </form>
             <p className="fadeIn cad">
               para se cadastrar click <a href="/register">aqui</a>

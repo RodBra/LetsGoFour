@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../static/cadastro.css">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+
+    <form>
+        <p>Cadastro</p>
+        <p id="info">Informações pessoais</p>
+
+        <label class="cursorP">Nome Completo</label><br>
+        <input id="name" type="text" size="50" placeholder="  João Batista dos Santos" /><br>
+        <label class="cursorP">Telefone/Celular</label><br>
+        <input id="telefone" type="text" size="50" placeholder="  (DDD) 1 2345-6789" />
+
+        <p>Login</p>
+
+        <label class="cursorP">E-mail</label><br>
+        <input id="email" type="email" size="50" placeholder="  joao.batista@gmail.com" /><br>
+        <label class="cursorP">Confimar E-mail</label><br>
+        <input id="confirmaEmail" type="email" size="50" placeholder="  joao.batista@gmail.com" /><br>
+        <label class="cursorP">Apelido</label><br>
+        <input id="apelido" type="text" size="50" placeholder="  joaozinho007" /><br>
+        <div>
+            <div>
+                <label class="cursorP">Senha</label><br>
+                <input id="passwd" type="password" size="20" placeholder="  ************">
+            </div>
+            <div>
+                <label class="cursorP">Confirmar Senha</label><br>
+                <input id="passwd" type="password" size="20" placeholder="  ************">
+            </div>
+        </div>
+
+        <p>Endereço</p>
+        <div>
+            <label class="cursorP">Estado</label><br>
+            <input id="estado" type="text" size="20" placeholder="  São Paulo">
+        </div>
+        <div>
+            <label class="cursorP">Cidade</label><br>
+            <input id="cidade" type="text" size="20" placeholder="  São Paulo">
+        </div>
+
+        <div>
+            <label class="cursorP">Rua</label><br>
+            <input id="rua" type="text" size="20" placeholder="  Rua dos bobos">
+        </div>
+        <div>
+            <label class="cursorP">Numero</label><br>
+            <input id="numero" type="text" size="20" placeholder="  000">
+        </div>
+        <div>
+            <label class="cursorP">Complemento</label><br>
+            <input id="complemento" type="text" size="18" placeholder="  Casa 1">
+        </div>
+
+
+        <div>
+            <input id="agree" type="checkbox" />
+            <label class="cursorP">Li e concordo com os termos.</label>
+            <button type="button" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
+</body>
+
+</html>

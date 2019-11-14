@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf')
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+    
+    background: #870CFF;
+}
+
+/* footer {
+    position: absolute;
+    width: 1306px;
+    height: 55px;
+    left: 0px;
+    top: 641px;
+
+    background: #870CFF;
+} */
+
+#botaoUsuario {
+    position: absolute;
+    width: 121px;
+    height: 34px;
+    left: 1144px;
+    top: 15px;
+    opacity: 100%;
+    background-color: #870CFF; 
+
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.imagen {
+    position: absolute;
+    left: 1.83%;
+    right: 82.58%;
+    top: 14.58%;
+    bottom: 61.07%;
+    /* top: 50px; */
+    width: 213px;
+    height: 187px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.descricao {
+    position: absolute;
+    width: 1000px;
+    height: 380px;
+    left: 264px;
+    top: 14.58%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 10px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+    /* border: 1px solid black;
+    box-sizing: border-box; */
+
+}
