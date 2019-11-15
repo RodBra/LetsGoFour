@@ -30,6 +30,8 @@ public class LoginController {
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
 
+	public LoginController(){}
+
 	public LoginController(Credenciais credenciais, UsuarioPrestador usuarioPrestador, UsuarioContratante usuarioContratante){
 	    this.credenciais = credenciais;
 	    this.contrantante = usuarioContratante;
