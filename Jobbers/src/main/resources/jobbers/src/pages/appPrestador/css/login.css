@@ -311,10 +311,6 @@ input[type="text"]::placeholder {
   border-radius: 30px;
 }
 
-#botao-login:hover {
-  background-color: #3e0179;
-}
-
 .text-button {
   width: 147px;
   height: 45px;
@@ -412,8 +408,4 @@ input[type="text"]::placeholder {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   animation-delay: 0.6s;
-}
-
-#msgErro {
-  color: red;
 }

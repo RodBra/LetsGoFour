@@ -10,7 +10,8 @@ let url = "http://localhost:8080";
 class Login extends Component {
   state = {
     usuario: "",
-    password: ""
+    password: "",
+    Erro: ""
   };
 
   handleChange = event => {
@@ -25,9 +26,11 @@ class Login extends Component {
     this.setState(state);
   };
 
-  login1 = () => {
+  login1 = (e) => {
+    e.preventDefault();
     let login = this.state.usuario;
     let senha = this.state.password;
+    const state = Object.assign({}, this.state);
 
     let dados = {
       login: login,
@@ -45,6 +48,8 @@ class Login extends Component {
       .catch(e => {
         this.props.history.push("/");
         console.log("deu ruim " + e);
+        state.Erro = "Usuário ou senha inválido"
+        this.setState(state);
       });
   };
 
@@ -54,9 +59,8 @@ class Login extends Component {
         <div className="wrapper fadeInDown">
           <div id="formContent">
             <div className="fadeIn first">
-              <img src="" id="icon" alt="User Icon" />
             </div>
-            <form>
+            <form onSubmit={e => this.login1(e)}> 
               <label className="fadeIn labels" id="label-usuario">
                 Usuario
               </label>
@@ -81,14 +85,16 @@ class Login extends Component {
                 onChange={event => this.handleChange(event)}
               ></input>
               <button
-                type="button"
                 className="fadeIn fourth"
                 id="botao-login"
-                onClick={this.login1}
+                // onClick={this.login1}
               >
                 Entrar
               </button>
             </form>
+            <p id="msgErro">
+                {this.state.Erro}
+            </p>
             <p className="fadeIn cad">
               para se cadastrar click <a href="/register">aqui</a>
             </p>
