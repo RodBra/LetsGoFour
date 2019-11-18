@@ -40,16 +40,13 @@ class Login extends Component {
     axios
       .post(url + "/login", dados)
       .then(res => {
-        localStorage.setItem('user', res.data)
-        console.log("res: "+res.data)
-        console.log("localStorage: "+localStorage)
-        if (res.data.prestador === true) {
+        localStorage.setItem('id', res.data.id)
+        // if (res.data.prestador === true) {
           this.props.history.push("/homePrestador");
-          console.log(res)
-        } else if (res.data.prestador === false) {
-          this.props.history.push("/home");
-          console.log(res)
-        }
+        // } else if (res.data.prestador === false) {
+        //   this.props.history.push("/home");
+        //   console.log(res)
+        // }
       })
       .catch(e => {
         this.props.history.push("/");

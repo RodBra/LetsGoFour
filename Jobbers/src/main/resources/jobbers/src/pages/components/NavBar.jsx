@@ -7,6 +7,12 @@ import Login from "../Login/Login";
 
 class NavBar extends Component {
 
+  componentDidMount() {
+    const state = Object.assign({}, this.state);
+    state.id = localStorage.getItem('id');
+    this.setState(state);
+  }
+
   logout = (param) => {
     let url = "http://localhost:8080/logout"
     axios.get(url).then(res => {
@@ -16,13 +22,9 @@ class NavBar extends Component {
     })
   }
 
-  renderRedirect = () => {
-      return <Redirect to='/' />
-  }
-
   perfil = (e) => {
     e.preventDefault();
-    // axios.get
+    // axios.get()
   }
 
   render() {
@@ -37,7 +39,7 @@ class NavBar extends Component {
             <a href="/home/pesquisa">
               <i className="fa fa-search"></i> Pesquisar
             </a>
-              <i className="fa fa-user" id="perfil" onClick={e => this.perfil(e)}> Perfil</i><br/>
+            <i className="fa fa-user" id="perfil" onClick={e => this.perfil(e)}> Perfil</i><br />
             <i className="fa fa-sign-out" id="logout" onClick={() => this.logout(Login)}> Sair
             </i>
           </nav>

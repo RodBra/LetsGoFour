@@ -21,24 +21,10 @@ export default class PrincipalApp extends Component {
     }
 
     componentDidMount() {
-        // let id = this.props.location.pathname
-        // console.log(this.props)
-        // id = id.replace("/home/", "" );
-        // id = id.replace("#/", "" );
-
-        // const state = Object.assign({}, this.state);
-
-        // state.id = id;
-
-        // this.setState(state);
-        console.log(localStorage.getItem('login'))
+        const state = Object.assign({}, this.state);
+        state.id = localStorage.getItem('id');
+        this.setState(state);
     }
-
-    apenasNumeros = (string) => {
-        var numsStr = string.replace(/[^0-9]/g,'');
-        return parseInt(numsStr);
-    }
-
 
     render() {
         return(
