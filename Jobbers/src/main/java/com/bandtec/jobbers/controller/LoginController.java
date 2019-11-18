@@ -4,6 +4,7 @@ import com.bandtec.jobbers.Dao.ContratanteRepository;
 import com.bandtec.jobbers.Dao.PrestadorRepository;
 import com.bandtec.jobbers.model.Credenciais;
 import com.bandtec.jobbers.model.Role;
+import com.bandtec.jobbers.model.Usuario;
 import com.bandtec.jobbers.model.UsuarioContratante;
 import com.bandtec.jobbers.model.UsuarioPrestador;
 import org.apache.log4j.Logger;
@@ -39,7 +40,7 @@ public class LoginController {
     }
 
 	@PostMapping("/login")
-	public ResponseEntity<String> login(HttpSession session, @RequestBody Credenciais credenciais) {
+	public ResponseEntity<Usuario> login(HttpSession session, @RequestBody Credenciais credenciais) {
 
 		if (prestadorRepository.findByCredenciais(credenciais) != null) {
 			role = Role.PRESTADOR;
@@ -48,20 +49,22 @@ public class LoginController {
 		}
 
 		if (role.equals(Role.PRESTADOR)){
-			if(prestadorRepository.findByCredenciais(credenciais) != null){
-				prestador = prestadorRepository.findByLogin(credenciais.getLogin());
+			prestador = prestadorRepository.findByCredenciais(credenciais);
+			if(prestador != null){
+				// prestador = prestadorRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("usuario", true);
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.ok("Logado");
+				return ResponseEntity.ok(prestador);
 			}
 		} else if (role.equals(Role.CONTRATANTE)){
-			if(contratanteRepository.findByCredenciais(credenciais) != null){
-				contrantante = contratanteRepository.findByLogin(credenciais.getLogin());
+			contrantante = contratanteRepository.findByCredenciais(credenciais); 
+			if(contrantante != null){
+//				contrantante = contratanteRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("Usuario", credenciais.getLogin());
 				session.setAttribute("usuario", false);
 				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.ok("Logado");
+				return ResponseEntity.ok(contrantante);
 			}
 		}
 
@@ -82,8 +85,8 @@ public class LoginController {
 
 	@PostMapping("/cadastrar/prestador")
 	public ResponseEntity<String> cadastrarPrestador(HttpSession session, @RequestBody UsuarioPrestador usuarioPrestador) {
-
-		if(prestadorRepository.findByLogin(usuarioPrestador.getLogin()) == null) {
+		UsuarioPrestador cdUsuarioPrestador = prestadorRepository.findByLogin(usuarioPrestador.getLogin());	
+		if(cdUsuarioPrestador == null) {
 			prestadorRepository.save(usuarioPrestador);
 			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
 		} else {

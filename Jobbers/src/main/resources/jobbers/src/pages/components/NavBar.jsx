@@ -1,11 +1,33 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/navbar.css";
+import axios from 'axios'
+import { withRouter, Redirect } from "react-router-dom";
+import Login from "../Login/Login";
 
-export default class NavBar extends Component {
+class NavBar extends Component {
+
+  logout = (param) => {
+    let url = "http://localhost:8080/logout"
+    axios.get(url).then(res => {
+      withRouter(param);
+    }).catch(e => {
+      // this.props.history.push('/');
+    })
+  }
+
+  renderRedirect = () => {
+      return <Redirect to='/' />
+  }
+
+  perfil = (e) => {
+    e.preventDefault();
+    // axios.get
+  }
+
   render() {
     return (
-      <aside className="menu-area">
+      <aside className="menu-area display-4">
         <div className="posi">
           <div className="lg">Logo</div>
           <nav className="menu">
@@ -15,15 +37,8 @@ export default class NavBar extends Component {
             <a href="/home/pesquisa">
               <i className="fa fa-search"></i> Pesquisar
             </a>
-            <a href="/home/perfil">
-              <i className="fa fa-user"></i> Perfil
-            </a>
-            {/* <a href="#/historic">
-                            <i className="fa fa-history"></i> Historico
-                        </a> */}
-
-            <i className="fa fa-sign-out" id="logout">
-              <span id="span-logout"> Sair</span>
+              <i className="fa fa-user" id="perfil" onClick={e => this.perfil(e)}> Perfil</i><br/>
+            <i className="fa fa-sign-out" id="logout" onClick={() => this.logout(Login)}> Sair
             </i>
           </nav>
         </div>
@@ -31,3 +46,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+export default withRouter(NavBar);

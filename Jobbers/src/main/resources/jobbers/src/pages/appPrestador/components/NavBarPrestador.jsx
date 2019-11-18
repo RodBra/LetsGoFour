@@ -1,8 +1,19 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/navbar.css";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 
-export default class NavBarPrestador extends Component {
+class NavBarPrestador extends Component {
+
+  logout = () => {
+    let url = "http://localhost:8080/logout"
+    axios.get(url).then(res => {
+      this.props.history.push('/');
+    }).catch(e => {
+      this.props.history.push('/');
+    })
+  }
   render() {
     return (
       <aside className="menu-area">
@@ -15,7 +26,7 @@ export default class NavBarPrestador extends Component {
             <a href="/homePrestador/perfilPrestador">
               <i className="fa fa-user"></i> Perfil
             </a>
-            <i className="fa fa-sign-out" id="logout">Sair
+            <i className="fa fa-sign-out" id="logout" onClick={() => this.logout()}>Sair
             </i>
           </nav>
         </div>
@@ -23,3 +34,5 @@ export default class NavBarPrestador extends Component {
     );
   }
 }
+
+export default withRouter(NavBarPrestador);

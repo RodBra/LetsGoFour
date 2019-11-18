@@ -15,14 +15,9 @@ class Login extends Component {
   };
 
   handleChange = event => {
-    console.log(event.target.id);
-
     const state = Object.assign({}, this.state);
     let field = event.target.id;
-
     state[field] = event.target.value;
-    console.log(this.state.usuario);
-    console.log(this.state.password);
     this.setState(state);
   };
 
@@ -37,12 +32,23 @@ class Login extends Component {
       senha: senha
     };
 
+    localStorage.setItem('login', dados.login)
+    localStorage.setItem('senha', dados.senha)
+    
+        console.log("localStorage: "+ localStorage.getItem('login'))
+
     axios
       .post(url + "/login", dados)
       .then(res => {
-        if (res.status === 200) {
-          console.log(res);
+        localStorage.setItem('user', res.data)
+        console.log("res: "+res.data)
+        console.log("localStorage: "+localStorage)
+        if (res.data.prestador === true) {
+          this.props.history.push("/homePrestador");
+          console.log(res)
+        } else if (res.data.prestador === false) {
           this.props.history.push("/home");
+          console.log(res)
         }
       })
       .catch(e => {

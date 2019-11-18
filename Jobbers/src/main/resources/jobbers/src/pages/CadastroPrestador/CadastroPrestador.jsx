@@ -26,24 +26,34 @@ export default class CadastroPrestador extends Component {
          }
     }
 
-    cadastrar() {
-        const url = 'http://localhost:8080'
+    cadastrar(e) {
+        e.preventDefault()
+        const url = 'http://localhost:8080/cadastrar/prestador'
+
+        let nome = this.state.nomeUsuario
+        let email = this.state.email
+        let telefone = this.state.telefone
+        let cidade = this.state.cidade
+        let estado = this.state.estado
+        let rua = this.state.rua
+        let numero = this.state.numero
+        let celular = this.state.celular
+        let login = this.state.apelido
+        let senha = this.state.senha
+        let profissao = this.state.profissao
+        let credenciais = { login, senha }
+
         const user = {
-            nome: this.state.nomeUsuario,
-            email: this.state.email,
-            telefone: this.state.telefone,
-            cidade: this.state.cidade,
-            estado: this.state.estado,
-            rua: this.state.rua,
-            numero: this.state.numero,
-            valor: this.state.valor,
-            tipo_serviço: this.state.profissao,
-            descricao: this.state.descricao,
-            celular: this.state.celular,
-            credenciais: {
-                login: this.state.login,
-                senha: this.state.senha
-            }
+            nome: nome,
+            email: email,
+            telefone: telefone,
+            cidade: cidade,
+            estado: estado,
+            rua: rua,
+            numero: numero,
+            celular: celular,
+            credenciais: credenciais,
+            tipo_servico: profissao
         }
 
         axios.post(url, user).then(res => {
@@ -95,12 +105,12 @@ export default class CadastroPrestador extends Component {
                     <input onChange={e => this.handleChange(e)} type="texto" name="cpf" id="cpf" className="inputpeqseg inputpeq" /><br />
                     <label className="labelgran" id="label-profissao">Profissão</label><br />
                     <input onChange={e => this.handleChange(e)} type="texto" name="profissao" id="profissao" className="inputgran" /><br />
-                    <h2 className="h2" id="h2-login">login</h2><br />
+                    <h2 className="h2" id="h2-login">Informações de login</h2><br />
                     <label className="labelgran" id="label-email">Email</label><br />
                     <input onChange={e => this.handleChange(e)} type="email" name="email" id="email" className="inputgran" /><br />
                     <label className="labelgran" id="label-confEmail">Confirmar Email</label><br />
                     <input onChange={e => this.handleChange(e)} type="email" name="confEmail" id="confEmail" className="inputgran" /><br />
-                    <label className="labelgran" id="label-apelido">Apelido</label><br />
+                    <label className="labelgran" id="label-apelido">Usuario</label><br />
                     <input onChange={e => this.handleChange(e)} type="texto" name="apelido" id="apelido" className="inputgran" /><br />
                     <label className="labelpeq labelpri" id="label-senha">Senha</label>
                     <label className="labelpeq labelseg" id="label-confSenha">Confirmar senha</label><br />

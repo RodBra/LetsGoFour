@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class UsuarioContratante extends Usuario {
 
 	@Id
+	@JsonProperty	
 	private String id;
 	@JsonProperty
 	private Credenciais credenciais;
@@ -20,7 +21,7 @@ public class UsuarioContratante extends Usuario {
 
 	public UsuarioContratante(String nome, String telefone, String email,
 			String cidade, String estado, String rua, int numero, Credenciais credenciais) {
-		super(nome, email, cidade, estado, rua, numero, telefone);
+		super(nome, email, cidade, estado, rua, numero, telefone, false);
 		this.credenciais = credenciais;
 	}
 

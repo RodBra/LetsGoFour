@@ -11,9 +11,6 @@ export default props =>
             </div>
             <hr/>
             <p>
-                {/* Olá, você está na jobbers aqui você consegue se divulgar para empresas e
-                pessoas que necessitam dos seus serviços, além de você mesmo poder solicitar 
-                serviços de varios dos nossos usuarios que querem prestar seus serviços */}
                 Olá, seja bem vindo a jobbers aqui você pode anunciar os seus serviços para
                 que pessoas que estejam interessados em seu serviço possa entrar em contrato
                 ou agendar para contratar os seus serviços

@@ -21,7 +21,7 @@ let handleChange =  (event) => {
 let pesquisar = () => {
     let urlPesquisa = url+"/prestador/servico/"+pesquisa.servico
     axios.get(urlPesquisa).then(res => {
-        console.log(res.data + " deu bom")
+        console.log(res)
     }).catch(e => {
         console.log("deu ruim "+ e)
     })
@@ -29,10 +29,15 @@ let pesquisar = () => {
 
 export default props =>
     <Main icon="search" title="Pesquisa">
-        <div className="p-3 mt-3 divPesquisa">
+        <div className="p-3 mt-3 divPesquisa display-4">
             <div className="display-4 divPosicion">
                 <form action="">
-                    <input type="texto" className="inputPesquisa" id="servico" onChange={(e) => handleChange(e)}></input><button className="pesquisar" onClick={() => pesquisar()}><span className="fa fa-search"></span>Pesquisar</button>
+                    <input type="texto" className="inputPesquisa" id="servico" onChange={(e) => handleChange(e)}></input>
+                    <button className="pesquisar" onClick={() => pesquisar()}>
+                        <span className="fa fa-search">
+                            <span>Pesquisar</span>
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>

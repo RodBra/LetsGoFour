@@ -4,7 +4,6 @@ aside.menu-area {
 }
 
 #logout {
-  display: block;
   text-decoration: none;
   color: #fff;
   font-size: 20px;
@@ -13,6 +12,27 @@ aside.menu-area {
   padding: 10px;
   padding-left: 50px;
 }
+
+#logout:hover {
+  color: #3e0179;
+  cursor: default;
+}
+
+#perfil {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 300;
+  padding: 10px;
+  padding-left: 50px;
+}
+
+#perfil:hover {
+  color: #3e0179;
+  cursor: default;
+}
+
 
 #span-logout {
   text-decoration: none;

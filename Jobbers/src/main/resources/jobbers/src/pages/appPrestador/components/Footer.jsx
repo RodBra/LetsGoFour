@@ -5,7 +5,7 @@ import '../css/footer.css'
 export default class Footer extends Component {
     render() {
         return(
-            <footer className="footer">
+            <footer className="footer display-4">
                 <span>
                     Desenvolvido pela <strong> LetsGoFour</strong> 
                 </span>
