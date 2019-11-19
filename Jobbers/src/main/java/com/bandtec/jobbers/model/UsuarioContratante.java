@@ -16,6 +16,8 @@ public class UsuarioContratante extends Usuario {
 	@JsonProperty
 	private Credenciais credenciais;
 
+	private boolean prestador = true;
+
 	public UsuarioContratante(){
 	}
 
