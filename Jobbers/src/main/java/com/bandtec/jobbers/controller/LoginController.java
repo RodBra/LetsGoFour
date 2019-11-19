@@ -33,10 +33,10 @@ public class LoginController {
 
 	public LoginController(){}
 
-	public LoginController(Credenciais credenciais, UsuarioPrestador usuarioPrestador, UsuarioContratante usuarioContratante){
+	public LoginController(Credenciais credenciais, PrestadorRepository prestadorRepository, ContratanteRepository contratanteRepository){
 	    this.credenciais = credenciais;
-	    this.contrantante = usuarioContratante;
-	    this.prestador = usuarioPrestador;
+	    this.contratanteRepository = contratanteRepository;
+	    this.prestadorRepository = prestadorRepository;
     }
 
 	@PostMapping("/login")
@@ -52,7 +52,6 @@ public class LoginController {
 			prestador = prestadorRepository.findByCredenciais(credenciais);
 			if(prestador != null){
 				// prestador = prestadorRepository.findByLogin(credenciais.getLogin());
-				session.setAttribute("usuario", true);
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.ok(prestador);
@@ -60,9 +59,7 @@ public class LoginController {
 		} else if (role.equals(Role.CONTRATANTE)){
 			contrantante = contratanteRepository.findByCredenciais(credenciais); 
 			if(contrantante != null){
-//				contrantante = contratanteRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("Usuario", credenciais.getLogin());
-				session.setAttribute("usuario", false);
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.ok(contrantante);
 			}
