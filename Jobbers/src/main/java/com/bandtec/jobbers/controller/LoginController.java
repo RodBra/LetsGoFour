@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpSession;
 
 @RestController
@@ -80,7 +82,6 @@ public class LoginController {
 		} else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
-
 	}
 
 	@PostMapping("/cadastrar/prestador")
@@ -92,6 +93,33 @@ public class LoginController {
 		} else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<String> update(HttpSession session, @RequestBody UsuarioContratante uc) {
+		contratanteRepository.save(uc);
+		return ResponseEntity.ok("Usuario atualizado");
+	}
+	
+	
+	@GetMapping("/userPrestador/{id}")
+	public ResponseEntity<UsuarioPrestador> searchByIdPrestador(@PathVariable("id") String id) {
+		Optional<UsuarioPrestador> usuarioPrestador = prestadorRepository.findById(id);
+		if(usuarioPrestador.get() == null) {
+			return ResponseEntity.notFound().build();
+		}
+		UsuarioPrestador result = usuarioPrestador.get();
+		return ResponseEntity.status(HttpStatus.OK).body(result);
+	}
+	
+	@GetMapping("/user/{id}")
+	public ResponseEntity<UsuarioContratante> searchByIdCotratante(@PathVariable("id") String id) {
+		Optional<UsuarioContratante> usuarioContratante = contratanteRepository.findById(id);
+		if(usuarioContratante.get() == null) {
+			return ResponseEntity.notFound().build();
+		}
+		UsuarioContratante result = usuarioContratante.get();
+		return ResponseEntity.status(HttpStatus.OK).body(result);
 	}
 
 	@GetMapping("/logout")

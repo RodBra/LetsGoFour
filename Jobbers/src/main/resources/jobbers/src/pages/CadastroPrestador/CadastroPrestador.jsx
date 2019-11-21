@@ -53,7 +53,8 @@ export default class CadastroPrestador extends Component {
             numero: numero,
             celular: celular,
             credenciais: credenciais,
-            tipo_servico: profissao
+            tipo_servico: profissao,
+            prestador: true
         }
 
         axios.post(url, user).then(res => {

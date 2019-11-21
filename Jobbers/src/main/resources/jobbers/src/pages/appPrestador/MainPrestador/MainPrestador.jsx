@@ -7,7 +7,7 @@ export default class MainPrestador extends Component {
     render() {
         return(
             <Fragment>
-                <Header {...this.props}/>
+                <Header/>
                 <main className="content container-fluid">
                         {this.props.children}
                 </main>

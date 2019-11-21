@@ -21,7 +21,6 @@ public abstract class Usuario {
 	@JsonProperty
 	private int numero;	
 	@JsonProperty
-	@Transient
 	private Boolean prestador;
 
 	public Usuario(String nome, String email, String cidade, String estado, String rua, int numero, String telefone, Boolean prestador) {

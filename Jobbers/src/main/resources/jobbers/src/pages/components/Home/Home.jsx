@@ -1,10 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import Main from '../../Main/Main'
+// import Main from '../../Main/Main'
 import '../../css/home.css'
 
 export default props =>
-    <Main icon="home" title="Início">
+    // <Main icon="home" title="Início">
         <div className="p-3 mt-3">
             <div className="display-4">
                 <span>Bem Vindo!</span>
@@ -16,4 +16,4 @@ export default props =>
                 serviços de varios dos nossos usuarios que querem prestar seus serviços
             </p>
         </div>
-    </Main>
+    // </Main>

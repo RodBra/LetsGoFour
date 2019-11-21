@@ -61,7 +61,8 @@ class Cadastro2 extends Component {
             estado: estado,
             cidade: cidade,
             rua: rua,
-            numero: numero
+            numero: numero,
+            prestador: false
         }
 
 

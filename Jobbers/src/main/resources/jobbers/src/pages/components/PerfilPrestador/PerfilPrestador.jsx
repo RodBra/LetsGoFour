@@ -1,7 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../../css/perfil.css'
-import Main from '../../Main/Main'
 
 export default class PerfilPrestador extends React.Component{
     constructor(props){
@@ -33,7 +32,7 @@ export default class PerfilPrestador extends React.Component{
 
     render() {
         return (
-            <Main icon="user" title="Perfil Prestador">
+            <React.Fragment >
                 <div class="imagen mt-4 mb-4">
                     <span className="fa fa-user"></span>
                 </div>
@@ -58,7 +57,7 @@ export default class PerfilPrestador extends React.Component{
                 <textarea name="descricapoServico" id="descricapoServico" cols="92" rows="10" disabled={this.state.botao}></textarea>
                 <button className="buttonPrestador" id="editar" disabled={!this.state.botao} onClick={() => this.habilitaDesabilita()}>Editar</button>
                 <button className="buttonPrestador" id="salvar" disabled={this.state.botao} onClick={() => this.habilitaDesabilita()}>Salvar</button>
-            </Main>
+            </React.Fragment>
         )
     }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../../css/perfil.css'
-import MainPrestador from '../../MainPrestador/MainPrestador';
 
 export default class PerfilPrestador extends React.Component{
     constructor(props){
@@ -33,33 +32,31 @@ export default class PerfilPrestador extends React.Component{
 
     render() {
         return (
-            <MainPrestador icon="user" title="Perfil Prestador">
+            <React.Fragment>
                 <div class="imagen mt-4 mb-4">
                     <span className="fa fa-user"></span>
                 </div>
                 <span className="descricao" id="nomePrestador">Nome:</span>
-                <input className="inputPestador" type="texto" name="inputNomePrestador" disabled={this.state.botao} id="inputNomePrestador"/><br/>
-                <span className="descricao" id="idadePrestador">Idade:</span>
-                <input className="inputPestador" type="texto" name="inputIdadePrestador" disabled={this.state.botao} id="inputIdadePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputNomePrestador" disabled={this.state.botao} id="inputNomePrestador" value={this.props.nome}/><br/>
+                {/* <span className="descricao" id="idadePrestador">Idade:</span>
+                <input className="inputPestador" type="texto" name="inputIdadePrestador" disabled={this.state.botao} id="inputIdadePrestador" value={this.props.}/><br/> */}
                 <span className="descricao" id="estadoPrestador">Estado:</span>
-                <input className="inputPestador" type="texto" name="inputEstadoPrestador" disabled={this.state.botao} id="inputEstadoPrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputEstadoPrestador" disabled={this.state.botao} id="inputEstadoPrestador" value={this.props.estado}/><br/>
                 <span className="descricao" id="cidadePrestador">Cidade:</span>
-                <input className="inputPestador" type="texto" name="inputCidadePrestador" disabled={this.state.botao} id="inputCidadePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputCidadePrestador" disabled={this.state.botao} id="inputCidadePrestador" value={this.props.cidade}/><br/>
                 <span className="descricao" id="telefonePrestador">Telefone para Contato:</span>
-                <input className="inputPestador" type="texto" name="inputTelefonePrestador" disabled={this.state.botao} id="inputTelefonePrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputTelefonePrestador" disabled={this.state.botao} id="inputTelefonePrestador" value={this.props.celular}/><br/>
                 <span className="descricao" id="emailPrestador">Email:</span>
-                <input className="inputPestador" type="texto" name="inputEmailPrestador" disabled={this.state.botao} id="inputEmailPrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputEmailPrestador" disabled={this.state.botao} id="inputEmailPrestador" value={this.props.email}/><br/>
                 <span className="descricao" id="profissaoPrestador">Profissão:</span>
-                <input className="inputPestador" type="texto" name="inputProfissaoPrestador" disabled={this.state.botao} id="inputProfissaoPrestador"/><br/>
+                <input className="inputPestador" type="texto" name="inputProfissaoPrestador" disabled={this.state.botao} id="inputProfissaoPrestador" value={this.props.profissao}/><br/>
                 <span className="descricao" id="valorServicoPrestador">Valor de serviço (diaria):</span>
-                <input className="inputPestador" type="texto" name="inputValorServicoPrestador" disabled={this.state.botao} id="inputValorServicoPrestador"/><br/>
-                <span className="descricao" id="formacaoPrestador">Formações:</span>
-                <input className="inputPestador" name="inputFormacao" id="inputFormacao" disabled={this.state.botao} cols="30" rows="2"></input><br/>
+                <input className="inputPestador" type="texto" name="inputValorServicoPrestador" disabled={this.state.botao} id="inputValorServicoPrestador" value={this.props.valor}/><br/>
                 <span className="descricao" id="idDescrip">Descrição:  </span>
                 <textarea name="descricapoServico" id="descricapoServico" rows="10" disabled={this.state.botao}></textarea>
                 <button className="buttonPrestador" id="editar" disabled={!this.state.botao} onClick={() => this.habilitaDesabilita()}>Editar</button>
                 <button className="buttonPrestador" id="salvar" disabled={this.state.botao} onClick={() => this.habilitaDesabilita()}>Salvar</button>
-            </MainPrestador>
+            </React.Fragment>
         )
     }
 }
