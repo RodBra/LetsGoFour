@@ -80,6 +80,7 @@
 2019-11-17 16:07:13 INFO  usuario logado : admin
 2019-11-17 16:14:58 INFO  usuario logado : admin
 2019-11-17 16:16:29 INFO  usuario logado : admin
+<<<<<<< HEAD
 2019-11-19 18:40:46 INFO  usuario logado : admin
 2019-11-19 18:51:20 INFO  usuario logado : admin
 2019-11-19 18:54:23 INFO  usuario logado : admin
@@ -95,3 +96,16 @@
 2019-11-20 22:01:54 INFO  usuario logado : matheus123
 2019-11-20 22:02:36 INFO  usuario logado : matheus123
 2019-11-20 22:08:56 INFO  usuario logado : teste
+=======
+2019-11-19 18:47:04 INFO  usuario logado : Joao1234
+2019-11-19 18:48:59 INFO  usuario logado : Joao1234
+2019-11-19 18:51:56 INFO  usuario logado : Joao1234
+2019-11-19 18:55:24 INFO  usuario logado : Joao1234
+2019-11-19 18:55:38 INFO  usuario logado : Joao1234
+2019-11-19 18:56:26 INFO  usuario logado : Joao1234
+2019-11-19 18:58:15 INFO  usuario logado : Joao1234
+2019-11-19 18:58:36 INFO  usuario logado : Joao1234
+2019-11-19 18:59:21 INFO  usuario logado : Joao1234
+2019-11-19 18:59:38 INFO  usuario logado : Joao1234
+2019-11-19 18:59:55 INFO  usuario logado : Joao1234
+>>>>>>> 7fdb02c3b68cd8bb2ec99ddf73899d9aedb873ea
