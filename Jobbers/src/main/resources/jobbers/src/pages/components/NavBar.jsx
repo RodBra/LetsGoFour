@@ -15,9 +15,9 @@ class NavBar extends Component {
   logout = (param) => {
     let url = "http://localhost:8080/logout"
     axios.get(url).then(res => {
-      withRouter(param);
+      this.props.history.push('/');
     }).catch(e => {
-      // this.props.history.push('/');
+      this.props.history.push('/');
     })
   }
 
@@ -42,7 +42,7 @@ class NavBar extends Component {
             <button onClick={() => this.props.change(0)} className="t">Home</button>
             <button onClick={() => this.props.change(1)} className="t">Pesquisar</button>
             <button onClick={() => this.props.change(2)} className="t">Perfil</button>
-            <button onClick={() => this.props.change(2)} className="t">Sair</button>
+            <button onClick={() => this.logout()} className="t">Sair</button>
           </nav>
         </div>
       </aside>

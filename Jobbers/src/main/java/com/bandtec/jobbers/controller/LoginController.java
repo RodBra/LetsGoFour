@@ -33,13 +33,15 @@ public class LoginController {
 	private UsuarioContratante contrantante;
 	private UsuarioPrestador prestador;
 
-	public LoginController(){}
+	public LoginController() {
+	}
 
-	public LoginController(Credenciais credenciais, PrestadorRepository prestadorRepository, ContratanteRepository contratanteRepository){
-	    this.credenciais = credenciais;
-	    this.contratanteRepository = contratanteRepository;
-	    this.prestadorRepository = prestadorRepository;
-    }
+	public LoginController(Credenciais credenciais, PrestadorRepository prestadorRepository,
+			ContratanteRepository contratanteRepository) {
+		this.credenciais = credenciais;
+		this.contratanteRepository = contratanteRepository;
+		this.prestadorRepository = prestadorRepository;
+	}
 
 	@PostMapping("/login")
 	public ResponseEntity<Usuario> login(HttpSession session, @RequestBody Credenciais credenciais) {
@@ -50,17 +52,17 @@ public class LoginController {
 			role = Role.CONTRATANTE;
 		}
 
-		if (role.equals(Role.PRESTADOR)){
+		if (role.equals(Role.PRESTADOR)) {
 			prestador = prestadorRepository.findByCredenciais(credenciais);
-			if(prestador != null){
+			if (prestador != null) {
 				// prestador = prestadorRepository.findByLogin(credenciais.getLogin());
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.ok(prestador);
 			}
-		} else if (role.equals(Role.CONTRATANTE)){
-			contrantante = contratanteRepository.findByCredenciais(credenciais); 
-			if(contrantante != null){
+		} else if (role.equals(Role.CONTRATANTE)) {
+			contrantante = contratanteRepository.findByCredenciais(credenciais);
+			if (contrantante != null) {
 				session.setAttribute("Usuario", credenciais.getLogin());
 				logger.info("usuario logado : " + credenciais.getLogin());
 				return ResponseEntity.ok(contrantante);
@@ -71,9 +73,10 @@ public class LoginController {
 	}
 
 	@PostMapping("/cadastrar/contratante")
-	public ResponseEntity<String> cadastrarContratante(HttpSession session, @RequestBody UsuarioContratante usuarioContratante) {
+	public ResponseEntity<String> cadastrarContratante(HttpSession session,
+			@RequestBody UsuarioContratante usuarioContratante) {
 
-		if(contratanteRepository.findByLogin(usuarioContratante.getLogin()) == null) {
+		if (contratanteRepository.findByLogin(usuarioContratante.getLogin()) == null) {
 			contratanteRepository.save(usuarioContratante);
 			return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
 		} else {
@@ -82,37 +85,50 @@ public class LoginController {
 	}
 
 	@PostMapping("/cadastrar/prestador")
-	public ResponseEntity<String> cadastrarPrestador(HttpSession session, @RequestBody UsuarioPrestador usuarioPrestador) {
-		UsuarioPrestador cdUsuarioPrestador = prestadorRepository.findByLogin(usuarioPrestador.getLogin());	
-		if(cdUsuarioPrestador == null) {
+	public ResponseEntity<String> cadastrarPrestador(HttpSession session,
+			@RequestBody UsuarioPrestador usuarioPrestador) {
+		UsuarioPrestador cdUsuarioPrestador = prestadorRepository.findByLogin(usuarioPrestador.getLogin());
+		if (cdUsuarioPrestador == null) {
 			prestadorRepository.save(usuarioPrestador);
 			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
 		} else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
 	}
-	
+
 	@PutMapping("/update")
-	public ResponseEntity<String> update(HttpSession session, @RequestBody UsuarioContratante uc) {
-		contratanteRepository.save(uc);
-		return ResponseEntity.ok("Usuario atualizado");
+	public ResponseEntity<String> update(HttpSession session, @RequestBody UsuarioContratante usuarioContratante) {
+		if(usuarioContratante.getId() != null) {
+			contratanteRepository.save(usuarioContratante);
+			return ResponseEntity.ok("Usuario atualizado");
+		}
+		return ResponseEntity.status(HttpStatus.CONFLICT).build();
 	}
-	
-	
+
+	@PutMapping("/updatePrestador")
+	public ResponseEntity<String> updatePrestador(HttpSession session, @RequestBody UsuarioPrestador usuarioPrestador) {
+		if (usuarioPrestador.getId() != null) {
+			prestadorRepository.save(usuarioPrestador);
+				return ResponseEntity.ok("Usuario atualizado");
+		}
+		String result = "Não foi possivel atualizar o usuário ";
+		return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+	}
+
 	@GetMapping("/userPrestador/{id}")
 	public ResponseEntity<UsuarioPrestador> searchByIdPrestador(@PathVariable("id") String id) {
 		Optional<UsuarioPrestador> usuarioPrestador = prestadorRepository.findById(id);
-		if(usuarioPrestador.get() == null) {
+		if (usuarioPrestador.get() == null) {
 			return ResponseEntity.notFound().build();
 		}
 		UsuarioPrestador result = usuarioPrestador.get();
 		return ResponseEntity.status(HttpStatus.OK).body(result);
 	}
-	
+
 	@GetMapping("/user/{id}")
 	public ResponseEntity<UsuarioContratante> searchByIdCotratante(@PathVariable("id") String id) {
 		Optional<UsuarioContratante> usuarioContratante = contratanteRepository.findById(id);
-		if(usuarioContratante.get() == null) {
+		if (usuarioContratante.get() == null) {
 			return ResponseEntity.notFound().build();
 		}
 		UsuarioContratante result = usuarioContratante.get();
@@ -120,7 +136,7 @@ public class LoginController {
 	}
 
 	@GetMapping("/logout")
-	public ResponseEntity<String> logout(HttpSession session ) {
+	public ResponseEntity<String> logout(HttpSession session) {
 		session.invalidate();
 		return ResponseEntity.status(HttpStatus.OK).body("Deslogado");
 	}

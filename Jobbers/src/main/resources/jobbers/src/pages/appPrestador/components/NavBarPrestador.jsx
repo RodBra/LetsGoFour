@@ -30,7 +30,7 @@ class NavBarPrestador extends Component {
             </i> */}
             <button onClick={() => this.props.change(0)} className="t">Home</button>
             <button onClick={() => this.props.change(1)} className="t">Perfil</button>
-            <button onClick={() => this.props.change(1)} className="t">Sair</button>
+            <button onClick={() => this.logout()} className="t">Sair</button>
           </nav>
         </div>
       </aside>

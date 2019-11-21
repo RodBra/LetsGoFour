@@ -38,3 +38,18 @@
 2019-11-19 18:59:38 [main] INFO  usuario logado : Joao1234
 2019-11-19 18:59:55 [main] INFO  usuario logado : Joao1234
 >>>>>>> 7fdb02c3b68cd8bb2ec99ddf73899d9aedb873ea
+2019-11-21 02:05:27 [http-nio-8080-exec-4] INFO  usuario logado : matheus123
+2019-11-21 04:25:17 [http-nio-8080-exec-2] INFO  usuario logado : matheus123
+2019-11-21 04:29:58 [http-nio-8080-exec-2] INFO  usuario logado : teste
+2019-11-21 04:31:06 [http-nio-8080-exec-9] INFO  usuario logado : admin
+2019-11-21 04:31:19 [http-nio-8080-exec-10] INFO  usuario logado : admin
+2019-11-21 04:31:20 [http-nio-8080-exec-2] INFO  usuario logado : admin
+2019-11-21 04:31:21 [http-nio-8080-exec-1] INFO  usuario logado : admin
+2019-11-21 04:31:39 [http-nio-8080-exec-3] INFO  usuario logado : admin
+2019-11-21 04:43:01 [http-nio-8080-exec-1] INFO  usuario logado : teste
+2019-11-21 04:49:24 [http-nio-8080-exec-9] INFO  usuario logado : teste
+2019-11-21 04:51:04 [http-nio-8080-exec-2] INFO  usuario logado : teste
+2019-11-21 05:15:25 [http-nio-8080-exec-1] INFO  usuario logado : teste
+2019-11-21 05:22:35 [http-nio-8080-exec-8] INFO  usuario logado : admin
+2019-11-21 05:23:00 [http-nio-8080-exec-2] INFO  usuario logado : teste
+2019-11-21 05:28:02 [http-nio-8080-exec-7] INFO  usuario logado : admin

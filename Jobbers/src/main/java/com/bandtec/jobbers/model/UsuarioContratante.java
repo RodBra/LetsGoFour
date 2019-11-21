@@ -32,4 +32,8 @@ public class UsuarioContratante extends Usuario {
 	public Credenciais getCredenciais() {
 		return this.credenciais;
 	}
+	
+	public String getId() {
+		return id;
+	}
 }

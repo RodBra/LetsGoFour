@@ -41,4 +41,8 @@ public class UsuarioPrestador extends Usuario {
 	public String getLogin(){
 		return credenciais.getLogin();
 	}
+	
+	public String getId() {
+		return id;
+	}
 }

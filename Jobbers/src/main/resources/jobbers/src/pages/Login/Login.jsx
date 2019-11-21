@@ -36,6 +36,19 @@ class Login extends Component {
       .post(url + "/login", dados)
       .then(res => {
         localStorage.setItem('id', res.data.id)
+        localStorage.setItem('nome', res.data.nome)
+        localStorage.setItem('cidade', res.data.cidade);
+        localStorage.setItem('estado', res.data.estado);
+        localStorage.setItem('rua', res.data.rua);
+        localStorage.setItem('numero', res.data.numero);
+        localStorage.setItem('celular', res.data.celular);
+        localStorage.setItem('telefone', res.data.telefone);
+        localStorage.setItem('email', res.data.email);
+        localStorage.setItem('tipo_servico', res.data.tipo_servico);
+        localStorage.setItem('descricao', res.data.descricao);
+        localStorage.setItem('valor', res.data.valor);
+        localStorage.setItem('login', res.data.credenciais.login);
+        localStorage.setItem('senha', res.data.credenciais.senha);
         console.log(res.data)
         if (res.data.prestador === true) {
           this.props.history.push("/homePrestador");
