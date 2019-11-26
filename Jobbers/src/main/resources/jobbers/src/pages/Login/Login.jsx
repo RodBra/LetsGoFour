@@ -32,29 +32,42 @@ class Login extends Component {
       senha: senha
     };
 
-    localStorage.setItem('login', dados.login)
-    localStorage.setItem('senha', dados.senha)
-    
-        console.log("localStorage: "+ localStorage.getItem('login'))
-
     axios
       .post(url + "/login", dados)
       .then(res => {
         localStorage.setItem('id', res.data.id)
-        // if (res.data.prestador === true) {
+        localStorage.setItem('nome', res.data.nome)
+        localStorage.setItem('cidade', res.data.cidade);
+        localStorage.setItem('estado', res.data.estado);
+        localStorage.setItem('rua', res.data.rua);
+        localStorage.setItem('numero', res.data.numero);
+        localStorage.setItem('celular', res.data.celular);
+        localStorage.setItem('telefone', res.data.telefone);
+        localStorage.setItem('email', res.data.email);
+        localStorage.setItem('tipo_servico', res.data.tipo_servico);
+        localStorage.setItem('descricao', res.data.descricao);
+        localStorage.setItem('valor', res.data.valor);
+        localStorage.setItem('login', res.data.credenciais.login);
+        localStorage.setItem('senha', res.data.credenciais.senha);
+        console.log(res.data)
+        if (res.data.prestador === true) {
           this.props.history.push("/homePrestador");
-        // } else if (res.data.prestador === false) {
-        //   this.props.history.push("/home");
-        //   console.log(res)
-        // }
+          console.log("foi")
+        } else if (res.data.prestador === false) {
+          this.props.history.push("/home");
+          console.log(res)
+        }
       })
       .catch(e => {
         this.props.history.push("/");
-        console.log("deu ruim " + e);
         state.Erro = "Usuário ou senha inválido"
         this.setState(state);
       });
   };
+
+
+
+
 
   render() {
     return (
@@ -90,7 +103,7 @@ class Login extends Component {
               <button
                 className="fadeIn fourth"
                 id="botao-login"
-                // onClick={this.login1}
+                onClick={this.login1}
               >
                 Entrar
               </button>

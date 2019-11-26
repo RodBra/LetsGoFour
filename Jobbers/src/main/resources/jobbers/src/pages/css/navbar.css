@@ -73,3 +73,21 @@ aside.menu-area {
 #nomePrestador {
   height: 20px;
 }
+
+.t {
+  display: block;
+  text-decoration: none;
+  background-color: var(--bg-dark);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 300;
+  width: 100%;
+  padding: 10px;
+  padding-left: 50px;
+}
+
+.t:hover {
+  color: #3e0179;
+}

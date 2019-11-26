@@ -1,6 +1,23 @@
+<<<<<<< HEAD
 2019-11-21 09:28:35 INFO  usuario logado : null
 2019-11-25 10:00:09 INFO  usuario logado : joao1234
 2019-11-25 11:12:42 INFO  usuario logado : joao1234
 2019-11-25 17:42:25 INFO  usuario logado : joao1234
 2019-11-26 17:40:23 INFO  usuario logado : joao1234
 2019-11-26 17:42:42 INFO  usuario logado : joao1234
+=======
+2019-11-21 04:25:17 INFO  usuario logado : matheus123
+2019-11-21 04:29:58 INFO  usuario logado : teste
+2019-11-21 04:31:06 INFO  usuario logado : admin
+2019-11-21 04:31:19 INFO  usuario logado : admin
+2019-11-21 04:31:20 INFO  usuario logado : admin
+2019-11-21 04:31:21 INFO  usuario logado : admin
+2019-11-21 04:31:39 INFO  usuario logado : admin
+2019-11-21 04:43:01 INFO  usuario logado : teste
+2019-11-21 04:49:24 INFO  usuario logado : teste
+2019-11-21 04:51:04 INFO  usuario logado : teste
+2019-11-21 05:15:25 INFO  usuario logado : teste
+2019-11-21 05:22:35 INFO  usuario logado : admin
+2019-11-21 05:23:00 INFO  usuario logado : teste
+2019-11-21 05:28:02 INFO  usuario logado : admin
+>>>>>>> ca5b2700a2fb1abbf0053484550d34fb304c503f

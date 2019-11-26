@@ -16,14 +16,12 @@ public class UsuarioContratante extends Usuario {
 	@JsonProperty
 	private Credenciais credenciais;
 
-	private boolean prestador = true;
-
 	public UsuarioContratante(){
 	}
 
 	public UsuarioContratante(String nome, String telefone, String email,
-			String cidade, String estado, String rua, int numero, Credenciais credenciais) {
-		super(nome, email, cidade, estado, rua, numero, telefone, false);
+			String cidade, String estado, String rua, int numero, Credenciais credenciais, Boolean prestador) {
+		super(nome, email, cidade, estado, rua, numero, telefone, prestador);
 		this.credenciais = credenciais;
 	}
 
@@ -33,5 +31,9 @@ public class UsuarioContratante extends Usuario {
 	
 	public Credenciais getCredenciais() {
 		return this.credenciais;
+	}
+	
+	public String getId() {
+		return id;
 	}
 }

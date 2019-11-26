@@ -20,14 +20,17 @@ class NavBarPrestador extends Component {
         <div className="posi">
           <div className="lg">Logo</div>
           <nav className="menu">
-            <a href="/homePrestador">
+            {/* <a href="/homePrestador">
               <i className="fa fa-home"></i> Inicio
             </a>
             <a href="/homePrestador/perfilPrestador">
               <i className="fa fa-user"></i> Perfil
             </a>
             <i className="fa fa-sign-out" id="logout" onClick={() => this.logout()}>Sair
-            </i>
+            </i> */}
+            <button onClick={() => this.props.change(0)} className="t">Home</button>
+            <button onClick={() => this.props.change(1)} className="t">Perfil</button>
+            <button onClick={() => this.logout()} className="t">Sair</button>
           </nav>
         </div>
       </aside>

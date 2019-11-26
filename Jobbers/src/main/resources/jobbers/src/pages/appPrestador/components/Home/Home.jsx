@@ -1,10 +1,9 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import MainPrestador from '../../MainPrestador/MainPrestador'
 import '../../css/home.css'
 
 export default props =>
-    <MainPrestador icon="home" title="Início">
+    <React.Fragment>
         <div className="p-3 mt-3">
             <div className="display-4">
                 <span>Bem Vindo!</span>
@@ -27,4 +26,4 @@ export default props =>
                 e atualize algumas das informações que estam em branco
             </p>
         </div>
-    </MainPrestador>
+    </React.Fragment>

@@ -29,8 +29,8 @@ public class UsuarioPrestador extends Usuario {
 
 	public UsuarioPrestador(String nome, String telefone, String email,
 							String cidade, String estado, String rua, int numero, double valor, String tipo_servico,
-							String descricao, String celular, Credenciais credenciais) {
-		super(nome, email, cidade, estado, rua, numero, telefone, true);
+							String descricao, String celular, Credenciais credenciais, Boolean prestador) {
+		super(nome, email, cidade, estado, rua, numero, telefone, prestador);
 		this.valor = valor;
 		this.tipo_servico = tipo_servico;
 		this.descricao = descricao;
@@ -40,5 +40,9 @@ public class UsuarioPrestador extends Usuario {
 
 	public String getLogin(){
 		return credenciais.getLogin();
+	}
+	
+	public String getId() {
+		return id;
 	}
 }

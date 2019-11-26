@@ -48,12 +48,7 @@
 
 }
 
-#descricapoServico {
-    font-size: 20px;
-    font-family: 'Roboto';
-    margin-top: 1%;
-    width: 100%;
-}
+
 
 #idDescrip {
     margin-top: 2%;
@@ -83,27 +78,27 @@
 }
 
 
-#inputNomePrestador {
+.inputNomePrestador {
     width: 89.5%;   
 }
 
-#inputIdadePrestador {
+.inputIdadePrestador {
     width: 89.9%;
 }
 
-#inputEstadoPrestador {
+.inputEstadoPrestador {
     width: 88.9%;
 }
 
-#inputCidadePrestador {
+.inputCidadePrestador {
     width: 88.8%;
 }
 
-#inputTelefonePrestador {
+.inputTelefonePrestador {
     width: 79.8%;
 }
 
-#inputEmailPrestador {
+.inputEmailPrestador {
     width: 89.4%;
 }
 
@@ -117,16 +112,16 @@
 }
 
 
-#inputFormacao {
+.inputFormacao {
     width: 85.5%;    
     font-size: 190%;
 }
 
-#inputProfissaoPrestador {
+.inputProfissaoPrestador {
     width: 86.9%;
 }
 
-#inputValorServicoPrestador {
+.inputValorServicoPrestador {
     width: 78.6%;
 }
 
@@ -151,4 +146,11 @@
 #contratar {
     width: 12%;
     margin-left: 1%;
+}
+
+.descricapoServico {
+    font-size: 20px;
+    font-family: 'Roboto';
+    margin-top: 1%;
+    width: 100%;
 }
