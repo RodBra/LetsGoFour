@@ -33,8 +33,7 @@ public class LoginController {
 
 	public LoginController(){}
 
-	public LoginController(Credenciais credenciais, PrestadorRepository prestadorRepository, ContratanteRepository contratanteRepository){
-	    this.credenciais = credenciais;
+	public LoginController(PrestadorRepository prestadorRepository, ContratanteRepository contratanteRepository){
 	    this.contratanteRepository = contratanteRepository;
 	    this.prestadorRepository = prestadorRepository;
     }
@@ -42,29 +41,30 @@ public class LoginController {
 	@PostMapping("/login")
 	public ResponseEntity<Usuario> login(HttpSession session, @RequestBody Credenciais credenciais) {
 
-		if (prestadorRepository.findByCredenciais(credenciais) != null) {
-			role = Role.PRESTADOR;
-		} else if (contratanteRepository.findByCredenciais(credenciais) != null) {
-			role = Role.CONTRATANTE;
-		}
-
-		if (role.equals(Role.PRESTADOR)){
-			prestador = prestadorRepository.findByCredenciais(credenciais);
-			if(prestador != null){
-				// prestador = prestadorRepository.findByLogin(credenciais.getLogin());
-				session.setAttribute("Usuario", credenciais.getLogin());
-				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.ok(prestador);
+		if (credenciais.getLogin() != null && credenciais.getSenha() != null) {
+			if (prestadorRepository.findByCredenciais(credenciais) != null) {
+				role = Role.PRESTADOR;
+			} else if (contratanteRepository.findByCredenciais(credenciais) != null) {
+				role = Role.CONTRATANTE;
 			}
-		} else if (role.equals(Role.CONTRATANTE)){
-			contrantante = contratanteRepository.findByCredenciais(credenciais); 
-			if(contrantante != null){
-				session.setAttribute("Usuario", credenciais.getLogin());
-				logger.info("usuario logado : " + credenciais.getLogin());
-				return ResponseEntity.ok(contrantante);
+
+			if (role.equals(Role.PRESTADOR)) {
+				prestador = prestadorRepository.findByCredenciais(credenciais);
+				if (prestador != null) {
+					session.setAttribute("Usuario", credenciais.getLogin());
+					logger.info("usuario logado : " + credenciais.getLogin());
+					return ResponseEntity.ok(prestador);
+				}
+			} else if (role.equals(Role.CONTRATANTE)) {
+				contrantante = contratanteRepository.findByCredenciais(credenciais);
+				if (contrantante != null) {
+					session.setAttribute("Usuario", credenciais.getLogin());
+					logger.info("usuario logado : " + credenciais.getLogin());
+					return ResponseEntity.ok(contrantante);
+				}
 			}
 		}
-
+		logger.info(HttpStatus.NOT_FOUND);
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 
@@ -75,6 +75,7 @@ public class LoginController {
 			contratanteRepository.save(usuarioContratante);
 			return ResponseEntity.status(HttpStatus.OK).body(" Usuario contratante Cadastrado com sucesso");
 		} else {
+			logger.info(HttpStatus.CONFLICT);
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
 
@@ -87,6 +88,7 @@ public class LoginController {
 			prestadorRepository.save(usuarioPrestador);
 			return ResponseEntity.status(HttpStatus.OK).body("Usuario prestador Cadastrado com sucesso");
 		} else {
+			logger.info(HttpStatus.CONFLICT);
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário ja existe");
 		}
 	}
