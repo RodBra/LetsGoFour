@@ -21,3 +21,8 @@
 2019-11-21 05:23:00 INFO  usuario logado : teste
 2019-11-21 05:28:02 INFO  usuario logado : admin
 >>>>>>> ca5b2700a2fb1abbf0053484550d34fb304c503f
+2019-11-26 18:26:03 INFO  usuario logado : joao1234
+2019-11-26 18:26:03 INFO  404 NOT_FOUND
+2019-11-26 18:26:58 INFO  usuario logado : joao1234
+2019-11-26 18:26:58 INFO  404 NOT_FOUND
+2019-11-26 18:26:58 INFO  409 CONFLICT

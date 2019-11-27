@@ -1,7 +1,6 @@
 package com.bandtec.LetsGoFourService;
 
 import com.bandtec.LetsGoFourService.model.Agendamento;
-import com.bandtec.LetsGoFourService.repository.AgendamentoRepository;
 import com.bandtec.LetsGoFourService.service.AgendamentosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

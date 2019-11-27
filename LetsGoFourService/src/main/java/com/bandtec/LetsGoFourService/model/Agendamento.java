@@ -22,6 +22,11 @@ public class Agendamento {
     public Agendamento() {
     }
 
+    public Agendamento(String idPrestador, Date data){
+        this.idPrestador = idPrestador;
+        this.data = data;
+    }
+
     public String getIdPrestador() {
         return idPrestador;
     }

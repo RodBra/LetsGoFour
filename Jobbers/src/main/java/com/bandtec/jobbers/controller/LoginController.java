@@ -49,7 +49,7 @@ public class LoginController {
 
 	@PostMapping("/login")
 	public ResponseEntity<Usuario> login(HttpSession session, @RequestBody Credenciais credenciais) {
-		
+
 		if (credenciais.getLogin() != null && credenciais.getSenha() != null) {
 			if (prestadorRepository.findByCredenciais(credenciais) != null) {
 				role = Role.PRESTADOR;

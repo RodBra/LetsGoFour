@@ -13,6 +13,10 @@ public class AgendamentosService {
 
     private Agendamento agendamento;
 
+    public AgendamentosService(AgendamentoRepository agendamentoRepository){
+        this.agendamentoRepository = agendamentoRepository;
+    }
+
     public boolean agendarData(Agendamento agendamento){
         agendamentoRepository.save(agendamento);
         return true;

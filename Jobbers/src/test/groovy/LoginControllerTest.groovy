@@ -58,7 +58,7 @@ class LoginControllerTest extends Specification {
     def "Cadastro com falha"(){
         given:
         Credenciais credenciais = new Credenciais("joao1234", "joao1234")
-        UsuarioContratante contratante = new UsuarioContratante("teste", "teste", "teste", "teste","teste","teste",1, credenciais)
+        UsuarioContratante contratante = new UsuarioContratante("teste", "teste", "teste", "teste","teste","teste",1, credenciais, false)
 
         and:
         HttpSession session = new MockHttpSession()
