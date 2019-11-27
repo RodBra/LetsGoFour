@@ -9,7 +9,5 @@ public class JobbersApplication {
 	
     public static void main(String[] args) throws ClassNotFoundException {
         SpringApplication.run(JobbersApplication.class, args);
-    }
-    
-    
+    }    
 }

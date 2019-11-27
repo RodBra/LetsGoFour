@@ -41,18 +41,12 @@ export default class PrincipalAppPrestador extends Component {
         let field = event.target.id;
         state.userPrestReq[field] = event.target.value;
         this.setState(state);
-        // console.log(state.user.nome)
     };
 
 
     handleActualPage = () => {
         switch (this.state.actualPage) {
             case 1:
-                // this.usuario()
-                // return <PerfilPrestador nome={this.state.user.nome} estado={this.state.user.estado} cidade={this.state.user.cidade}
-                // celular={this.state.user.celular} profissao={this.state.user.tipo_servico} descricao={this.state.user.descricao}
-                // valor={this.state.user.valor} email={this.state.user.email} rua={this.state.user.rua} numero={this.state.user.numero}
-                // change={this.handleChange}/>
                 return <PerfilPrestador usuario={this.usuario}/>
             default:
                 return <Home />

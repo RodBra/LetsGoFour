@@ -21,3 +21,16 @@
 2019-11-21 05:23:00 INFO  usuario logado : teste
 2019-11-21 05:28:02 INFO  usuario logado : admin
 >>>>>>> ca5b2700a2fb1abbf0053484550d34fb304c503f
+2019-11-27 12:24:01 INFO  usuario logado : teste
+2019-11-27 12:24:24 INFO  usuario logado : admin
+2019-11-27 12:33:15 INFO  usuario logado : admin
+2019-11-27 14:18:20 INFO  usuario logado : admin
+2019-11-27 14:39:52 INFO  404 NOT_FOUND
+2019-11-27 14:39:57 INFO  usuario logado : admin
+2019-11-27 14:45:19 INFO  usuario logado : admin
+2019-11-27 14:45:55 INFO  usuario logado : admin
+2019-11-27 14:46:28 INFO  usuario logado : teste
+2019-11-27 14:46:36 INFO  usuario logado : teste
+2019-11-27 14:52:46 INFO  usuario logado : admin
+2019-11-27 14:57:25 INFO  usuario logado : admin
+2019-11-27 15:22:58 INFO  usuario logado : admin

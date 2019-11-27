@@ -31,7 +31,7 @@ public class ServicosController {
 
     @GetMapping("/prestador/servico/{servico}")
     public List<UsuarioPrestador> retornaServicos(HttpSession session, @PathVariable("servico") String servico){
-        List<UsuarioPrestador> prestadors = prestadorRepository.findByServico(servico.toUpperCase());
+        List<UsuarioPrestador> prestadors = prestadorRepository.findByServico(servico);
         session.setAttribute("servicos", prestadors);
         return prestadors;
     }

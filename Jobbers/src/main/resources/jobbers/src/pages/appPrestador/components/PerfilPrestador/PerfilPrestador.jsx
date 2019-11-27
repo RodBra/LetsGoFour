@@ -65,7 +65,7 @@ export default class PerfilPrestador extends React.Component{
 
     escritaBotao() {
         const state = Object.assign({}, this.state);
-        if(state.botao === true) {
+        if(state.botao) {
             state.botaoEscrita = "Editar"
         } else {
             state.botaoEscrita = "Salvar"
@@ -77,7 +77,7 @@ export default class PerfilPrestador extends React.Component{
         const state = Object.assign({}, this.state);
         state.botao = !state.botao;
         this.setState(state)
-        if(e.target.id == "salvar") {
+        if(e.target.id === "salvar") {
             let user = this.state.user
             axios.put(url+"/updatePrestador", user).
             then(res => {

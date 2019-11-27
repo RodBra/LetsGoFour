@@ -15,9 +15,9 @@ class NavBar extends Component {
   logout = (param) => {
     let url = "http://localhost:8080/logout"
     axios.get(url).then(res => {
-      this.props.history.push('/');
+      window.location.href = "/"
     }).catch(e => {
-      this.props.history.push('/');
+      console.log(e)
     })
   }
 
@@ -27,22 +27,10 @@ class NavBar extends Component {
         <div className="posi">
           <div className="lg">Logo</div>
           <nav className="menu">
-            {/* <a href="/home" onClick={this.perfil}>
-              <i className="fa fa-home"></i> Inicio
-            </a>
-            <a href="/home/pesquisa">
-              <i className="fa fa-search"></i> Pesquisar
-            </a>
-            
-            <a href="/home/perfil">
-              <i className="fa fa-user"></i> Perfil
-            </a>
-            <i className="fa fa-sign-out" id="logout" onClick={() => this.logout(Login)}> Sair
-            </i> */}
-            <button onClick={() => this.props.change(0)} className="t">Home</button>
-            <button onClick={() => this.props.change(1)} className="t">Pesquisar</button>
-            <button onClick={() => this.props.change(2)} className="t">Perfil</button>
-            <button onClick={() => this.logout()} className="t">Sair</button>
+            <button onClick={() => this.props.change(0)} className="t"><i className="fa fa-home"></i> Home</button>
+            <button onClick={() => this.props.change(1)} className="t"><i className="fa fa-search"></i> Pesquisar</button>
+            <button onClick={() => this.props.change(2)} className="t"><i className="fa fa-user"></i> Perfil</button>
+            <button onClick={() => this.logout()} className="t"><i className="fa fa-sign-out"></i> Sair</button>
           </nav>
         </div>
       </aside>
