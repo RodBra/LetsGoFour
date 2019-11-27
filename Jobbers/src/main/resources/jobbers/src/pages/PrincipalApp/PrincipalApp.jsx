@@ -49,9 +49,7 @@ export default class PrincipalApp extends Component {
                 return <Pesquisa/>
             case 2:
                 this.usuario()
-                return <Perfil nome={this.state.user.nome} cidade={this.state.user.cidade}
-                estado={this.state.user.estado} rua={this.state.user.rua} numero={this.state.user.numero}
-                telefone={this.state.user.telefone} email={this.state.user.email}/>
+                return <Perfil usuario={this.usuario}/>
             default:
                 return <Home />
         }
@@ -61,15 +59,16 @@ export default class PrincipalApp extends Component {
         let id = localStorage.getItem('id')
         let urlUsuario = url+"/user/"+id
         axios.get(urlUsuario).then(res => {
-            const state = Object.assign({}, this.state);
-            state.user.nome = res.data.nome;
-            state.user.cidade = res.data.cidade;
-            state.user.estado = res.data.estado;
-            state.user.rua = res.data.rua;
-            state.user.numero = res.data.numero;
-            state.user.telefone = res.data.telefone;
-            state.user.email = res.data.email;
-            this.setState(state);
+            localStorage.setItem('id', res.data.id)
+            localStorage.setItem('nome', res.data.nome)
+            localStorage.setItem('cidade', res.data.cidade);
+            localStorage.setItem('estado', res.data.estado);
+            localStorage.setItem('rua', res.data.rua);
+            localStorage.setItem('numero', res.data.numero);
+            localStorage.setItem('telefone', res.data.telefone);
+            localStorage.setItem('email', res.data.email);
+            localStorage.setItem('login', res.data.credenciais.login);
+            localStorage.setItem('senha', res.data.credenciais.senha);
         }).catch(e => {
             console.log(e)
         })

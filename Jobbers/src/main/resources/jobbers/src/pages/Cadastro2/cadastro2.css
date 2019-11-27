@@ -123,14 +123,32 @@ body {
     background: #BD79FF;
     border-radius: 30px;
     border: none;
-    margin-left: 42%;
+    margin-left: 35%;
+    color: #ffff;
+    font-family: 'Roboto';
+    font-size: 250%;
+    /* margin-top: 2%; */
+}
+
+.botaoCadastra:hover {
+    background-color: #3E0179;
+}
+
+.botaoVoltar {
+    width: 14%;
+    height: 47px;
+    margin-bottom: 3%;
+    background: #BD79FF;
+    border-radius: 30px;
+    border: none;
+    margin-left: 2%;
     color: #ffff;
     font-family: 'Roboto';
     font-size: 250%;
     margin-top: 2%;
 }
 
-.botaoCadastra:hover {
+.botaoVoltar:hover {
     background-color: #3E0179;
 }
 

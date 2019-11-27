@@ -64,11 +64,7 @@ class Login extends Component {
         this.setState(state);
       });
   };
-
-
-
-
-
+  
   render() {
     return (
       <Fragment>

@@ -74,6 +74,10 @@ class Cadastro2 extends Component {
         })
     }
 
+    voltar = () => {
+        this.props.history.push("/");
+    }
+
 
     render() {
         return (
@@ -111,6 +115,7 @@ class Cadastro2 extends Component {
                         <input onChange={(e) => this.isChecked(e)} type="checkbox" id="check"/> <label htmlFor="check">Concordo com os termos de uso</label><br/>
                     </div>  
                     <button type="button" className="botaoCadastra" onClick={this.cadastro}>Cadastrar</button>
+                    <button type="button" className="botaoVoltar" onClick={this.voltar}>Voltar</button>
                 </form>
             </div>
         )
