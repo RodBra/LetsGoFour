@@ -1,8 +1,10 @@
 package com.bandtec.LetsGoFourService.model;
 
+import com.bandtec.LetsGoFourService.repository.AgendamentoEmEsperaRepository;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,6 +22,9 @@ public class AgendamentoEmEspera {
     private Date data;
 
     private String idContratante;
+
+    @Autowired
+    public AgendamentoEmEsperaRepository esperaRepository;
 
     public AgendamentoEmEspera() {
     }
@@ -45,5 +50,6 @@ public class AgendamentoEmEspera {
     public void setIdContratante(String idContratante) {
         this.idContratante = idContratante;
     }
+
 }
 

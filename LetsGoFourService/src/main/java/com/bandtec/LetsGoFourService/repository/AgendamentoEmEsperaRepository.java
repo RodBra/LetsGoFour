@@ -1,7 +1,12 @@
 package com.bandtec.LetsGoFourService.repository;
 
+import com.bandtec.LetsGoFourService.model.Agendamento;
+import com.bandtec.LetsGoFourService.model.AgendamentoEmEspera;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface AgendamentoEmEsperaRepository extends MongoRepository<AgendamentoEmEsperaRepository, String> {
+@Repository
+public interface AgendamentoEmEsperaRepository extends MongoRepository<Agendamento, Object> {
+
 
 }

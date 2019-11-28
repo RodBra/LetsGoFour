@@ -30,12 +30,12 @@ public class AgendamentoController {
         agendamento.setIdContratante(idContratante);
 
         if (service.vefiricaAgendamento(agendamento) != null) {
-            status = fila.insereAgendamento(agendamento);
-            if (status) {
-                System.out.println("Inserido na fila de espera");
-            }
+            fila.isFull();
+            System.out.println("Inserido na fila de espera");
+            fila.insereAgendamento(agendamento);
 
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Data não disponível, em fila de espera");
+
 
         } else {
             status = service.agendarData(agendamento);

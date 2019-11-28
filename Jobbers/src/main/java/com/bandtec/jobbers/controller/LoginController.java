@@ -142,15 +142,6 @@ public class LoginController {
 		return ResponseEntity.status(HttpStatus.OK).body(result);
 	}
 
-	//TODO O RESTO DO METODO
-	@GetMapping("/userPrestador/servicos/{servico}")
-	public ResponseEntity<UsuarioPrestador> buscaTodos(@PathVariable("servico") String servico){
-		if (servico != null){
-			prestadorRepository.findByServico(servico);
-		}
-		return null;
-	}
-
 	@GetMapping("/logout")
 	public ResponseEntity<String> logout(HttpSession session) {
 		session.invalidate();
