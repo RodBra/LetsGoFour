@@ -9,8 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Data
-@Document(value = "agendamentos")
-public class Agendamento {
+@Document(value = "agendamentos_em_espera")
+public class AgendamentoEmEspera {
 
     @Id
     private String id;
@@ -21,10 +21,10 @@ public class Agendamento {
 
     private String idContratante;
 
-    public Agendamento() {
+    public AgendamentoEmEspera() {
     }
 
-    public Agendamento(String idPrestador, Date data){
+    public AgendamentoEmEspera(String idPrestador, Date data){
         this.idPrestador = idPrestador;
         this.data = data;
     }
@@ -46,3 +46,4 @@ public class Agendamento {
         this.idContratante = idContratante;
     }
 }
+

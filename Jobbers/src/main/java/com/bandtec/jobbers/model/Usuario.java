@@ -1,7 +1,5 @@
 package com.bandtec.jobbers.model;
 
-import org.springframework.data.annotation.Transient;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class Usuario {

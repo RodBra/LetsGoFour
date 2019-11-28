@@ -12,4 +12,5 @@ public interface AgendamentoRepository extends MongoRepository<Agendamento, Stri
 
     @Query("{'idPrestador' : ?0, 'data' : ?1}")
     Agendamento findByData(String idPrestador, Date data);
+
 }
