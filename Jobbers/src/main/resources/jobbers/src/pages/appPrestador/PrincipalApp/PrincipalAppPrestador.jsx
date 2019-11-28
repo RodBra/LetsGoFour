@@ -71,6 +71,7 @@ export default class PrincipalAppPrestador extends Component {
             localStorage.setItem('valor', res.data.valor);
             localStorage.setItem('login', res.data.credenciais.login);
             localStorage.setItem('senha', res.data.credenciais.senha);
+            console.log(localStorage.getItem('login'))
         }).catch(e => {
             console.log(e)
         })

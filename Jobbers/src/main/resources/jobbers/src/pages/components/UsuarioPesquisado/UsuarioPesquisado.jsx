@@ -1,8 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-// import '../../css/pesquisa.css'
 import './pesquisado.css'
-
 export default class UsuarioPesquisado extends React.Component {
     render() {
         return (
