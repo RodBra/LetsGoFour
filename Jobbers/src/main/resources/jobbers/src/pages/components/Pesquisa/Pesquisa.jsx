@@ -23,7 +23,7 @@ export default class Pesquisa extends React.Component {
     }
 
     pesquisar = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         let url = "http://localhost:8080/prestador/servico/" + this.state.servico
         axios.get(url).then(res => {    
             let state = Object.assign({}, this.state)
@@ -50,7 +50,7 @@ export default class Pesquisa extends React.Component {
                     </div>
                 </div>
                 {this.state.prestadores}
-                <UsuarioPesquisado />
+                {/* <UsuarioPesquisado /> */}
             </React.Fragment>
         )
     }

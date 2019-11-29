@@ -58,7 +58,7 @@ export default class Contratacao extends React.Component{
         state.user.credenciais.login = localStorage.getItem('loginPrestador')
         state.user.credenciais.senha = localStorage.getItem('senhaPrestador')
         this.setState(state);
-
+        console.log(this.state)
     }
 
     render() {

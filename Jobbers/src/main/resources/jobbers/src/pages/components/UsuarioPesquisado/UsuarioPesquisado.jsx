@@ -21,7 +21,7 @@ export default class UsuarioPesquisado extends React.Component {
                     {/* <label className="labels">Cidade</label>
                     <input className="inputVi" type="texto" name="" id="" /> */}
 
-                    {/* <button id="botaoVi" onClick={() => { this.props.change(3, this.props.id) }}>Visualizar</button> */}
+                    <button id="botaoVi" onClick={() => { this.props.change(3, this.props.id) }}>Visualizar</button>
                 </div>
             </div>
         )

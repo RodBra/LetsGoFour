@@ -2,3 +2,6 @@
 2019-11-28 20:03:30 [http-nio-8080-exec-8] INFO  usuario logado : teste
 2019-11-28 20:04:18 [http-nio-8080-exec-9] INFO  usuario logado : admin
 2019-11-28 20:21:30 [http-nio-8080-exec-4] INFO  usuario logado : admin
+2019-11-29 18:05:53 [http-nio-8080-exec-2] INFO  usuario logado : admin
+2019-11-29 18:10:21 [http-nio-8080-exec-7] INFO  404 NOT_FOUND
+2019-11-29 18:27:29 [http-nio-8080-exec-1] INFO  usuario logado : admin

@@ -22,27 +22,27 @@ export default class CadastroPrestador extends Component {
             numero: '',
             celular: '',
             telefone: '',
-            check: false
+            check: false,
+            result: ''
          }
     }
 
     cadastrar(e) {
         e.preventDefault()
         const url = 'http://localhost:8080/cadastrar/prestador'
-
+        const state = Object.assign({}, this.state);
         let nome = this.state.nomeUsuario
-        let email = this.state.email
-        let telefone = this.state.telefone
-        let cidade = this.state.cidade
-        let estado = this.state.estado
-        let rua = this.state.rua
-        let numero = this.state.numero
-        let celular = this.state.celular
-        let login = this.state.apelido
-        let senha = this.state.senha
-        let profissao = this.state.profissao
+        let email = state.email
+        let telefone = state.telefone
+        let cidade = state.cidade
+        let estado = state.estado
+        let rua = state.rua
+        let numero = state.numero
+        let celular = state.celular
+        let login = state.apelido
+        let senha = state.senha
+        let profissao = state.profissao
         let credenciais = { login, senha }
-
         const user = {
             nome: nome,
             email: email,
@@ -58,7 +58,9 @@ export default class CadastroPrestador extends Component {
         }
 
         axios.post(url, user).then(res => {
-            console.log(res.data + " deu bom")
+            const state = Object.assign({}, this.state);
+            state.result = res.data;
+            this.setState(state);
         }).catch(e => {
             console.log("deu ruim " + e)
         })
@@ -136,8 +138,9 @@ export default class CadastroPrestador extends Component {
                     <div className="termo">
                         <input onChange={(e) => this.isChecked(e)} type="checkbox" id="check" /> <label htmlFor="check">Concordo com os termos de uso</label><br />
                     </div>
-                    <button type="button" className="botaoCadastra" onClick={this.cadastro}>Cadastrar</button>
+                    <button type="button" className="botaoCadastra" onClick={this.cadastrar}>Cadastrar</button>
                     <button type="button" className="botaoVoltar" onClick={this.voltar}>Voltar</button>
+                    <p>{this.state.result}</p>
                 </form>
             </div>
         )
