@@ -82,8 +82,8 @@ export default class Contratacao extends React.Component{
                 <span className="descricao" id="valorServicoPrestador">Valor de serviço (diaria):</span>
                 <span className=" inputSemBorda" type="texto" name="inputValorServicoPrestador"  id="inputValorServicoPrestador">{this.state.user.valor}</span><br/>
                 <textarea name="inputSemBorda" id="descricapoServico" cols="82" rows="10" disabled="true">{this.state.user.descricao}</textarea>
-                <button className="buttonPrestador" id="denunciar">Denunciar</button>
-                <button className="buttonPrestador" id="contratar">Contratar</button>
+                <button className="buttonPrestador" id="denunciarButton">Denunciar</button>
+                <button className="buttonPrestador" id="contratarButton">Contratar</button>
             </React.Fragment>
         )
     }

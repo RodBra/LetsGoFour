@@ -1,7 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../../css/pesquisa.css'
-// import UsuarioPesquisado from '../UsuarioPesquisado/UsuarioPesquisado'
 import axios from 'axios'
 import UsuarioPesquisado from '../UsuarioPesquisado/UsuarioPesquisado';
 export default class Pesquisa extends React.Component {
@@ -51,6 +50,7 @@ export default class Pesquisa extends React.Component {
                     </div>
                 </div>
                 {this.state.prestadores}
+                <UsuarioPesquisado />
             </React.Fragment>
         )
     }

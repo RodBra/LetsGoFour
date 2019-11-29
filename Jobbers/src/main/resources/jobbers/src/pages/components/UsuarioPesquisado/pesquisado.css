@@ -24,7 +24,7 @@ td {
 
 #foto {
     background-color: #ececec;
-    height: 90px;
+    height: 100%;
 }
 
 .inputVi {
@@ -36,10 +36,23 @@ td {
 }
 
 #nomePesquisado {
-    width: 80%;
+    width: 10%;
 }
 
 
 #botaoVi {
     font-size: 15px;
+}
+
+#botaoViTd {
+    width: 25%;
+}
+
+.userImage {
+    margin-left: 2%;
+    font-size: 180%;
+}
+
+#informacao {
+    width: 50%;
 }

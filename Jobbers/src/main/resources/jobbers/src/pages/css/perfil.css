@@ -131,10 +131,10 @@
     border: none;
 }
 
-#denunciar {
+#denunciarButton {
     width: 12%;
     background-color: red;
-    margin-left: 59%;
+    margin-left: 74.5%;
 }
 
 #contato {
@@ -142,7 +142,7 @@
     margin-left: 1%;
 }
 
-#contratar {
+#contratarButton {
     width: 12%;
     margin-left: 1%;
 }
