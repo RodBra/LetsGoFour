@@ -15,8 +15,8 @@ export default class Routes extends React.Component{
                     <Route exact path="/home" render={Home}/>
                     <Route from='/home/pesquisa' render={Pesquisa}/>
                     <Route from='/home/perfil' render={Perfil}/>
+                    <Route from='/home/contratacao' render={Contratacao}/>
                     <Route from='/home/perfilPrestador' render={(props) => <PerfilPrestador/>}/>
-                    <Route from='/home/contratacao' render={(props) => <Contratacao/>}/>
                 </Switch>
             </BrowserRouter>
         )

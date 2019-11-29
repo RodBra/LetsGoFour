@@ -79,8 +79,7 @@ export default class PerfilPrestador extends React.Component{
         this.setState(state)
         if(e.target.id === "salvar") {
             let user = this.state.user
-            axios.put(url+"/updatePrestador", user).
-            then(res => {
+            axios.put(url+"/updatePrestador", user).then(res => {
                 console.log(res.data)
                 this.props.usuario()
             }).catch(e => {

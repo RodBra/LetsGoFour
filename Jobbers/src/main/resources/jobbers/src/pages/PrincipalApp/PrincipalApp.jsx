@@ -15,6 +15,7 @@ import Home from '../components/Home/Home';
 import Perfil from '../components/Perfil/Perfil';
 import Pesquisa from '../components/Pesquisa/Pesquisa';
 import axios from 'axios';
+import Contratacao from '../components/Contratacao/Contratacao';
 
 let url = "http://localhost:8080"
 // let dados;
@@ -43,13 +44,23 @@ export default class PrincipalApp extends Component {
             this.setState(state);
     }
 
+    handleChangePageContratacao = (page, id) => {
+        const state = Object.assign({}, this.state);
+        state.actualPage = page;
+        this.setState(state);
+        this.usuarioPrestador();
+}
+
+
     handleActualPage = () => {
         switch (this.state.actualPage) {
             case 1:
-                return <Pesquisa/>
+                return <Pesquisa change={this.handleChangePageContratacao}/>
             case 2:
                 this.usuario()
                 return <Perfil usuario={this.usuario}/>
+            case 3:
+                return <Contratacao/>
             default:
                 return <Home />
         }
@@ -74,12 +85,33 @@ export default class PrincipalApp extends Component {
         })
     }
 
+    usuarioPrestador = (id) => {
+        let urlUsuario = url+"/userPrestador/"+id
+        axios.get(urlUsuario).then(res => {
+            localStorage.setItem('idPrestador', res.data.id)
+            localStorage.setItem('nomePrestador', res.data.nome)
+            localStorage.setItem('cidadePrestador', res.data.cidade);
+            localStorage.setItem('estadoPrestador', res.data.estado);
+            localStorage.setItem('ruaPrestador', res.data.rua);
+            localStorage.setItem('numeroPrestador', res.data.numero);
+            localStorage.setItem('telefonePrestador', res.data.celular);
+            localStorage.setItem('emailPrestador', res.data.email);
+            localStorage.setItem('tipo_servico', res.data.tipo_servico);
+            localStorage.setItem('descricaoPrestador', res.data.descricao);
+            localStorage.setItem('valorPrestador', res.data.valor);
+            localStorage.setItem('loginPrestador', res.data.credenciais.login);
+            localStorage.setItem('senhaPrestador', res.data.credenciais.senha);
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
     render() {
         return (
             <HashRouter>
                 <div className="app">
                     <NavBar change={this.handleChangePage} />
-                    {/* icon="home" title="Início" */}
+
                     <Main >
                         {this.handleActualPage()}
                     </Main>

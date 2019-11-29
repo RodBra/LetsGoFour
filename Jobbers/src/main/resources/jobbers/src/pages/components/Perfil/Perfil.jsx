@@ -57,8 +57,7 @@ export default class Perfil extends React.Component {
         this.setState(state)
         if(e.target.id === "salvar") {
             let user = this.state.user
-            axios.put(url+"/update", user).
-            then(res => {
+            axios.put(url+"/update", user).then(res => {
                 const state = Object.assign({}, this.state);
                 state.atualizado = res.data;
                 this.setState(state);
