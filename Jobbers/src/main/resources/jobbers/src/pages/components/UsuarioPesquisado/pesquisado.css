@@ -1,7 +1,8 @@
 .quadro {
     box-shadow: 0px 0px 15px #0004;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #ececec;
+    /* background-color: #ffffff; */
 }
 
 .label-pesquisado {
@@ -28,24 +29,49 @@ td {
 }
 
 .inputVi {
-    border: 1px solid black;
-    box-sizing: border-box;
     width: 2px;
     height: 20px;
     font-size: 18px;
+    border-radius: 0px;
 }
 
 #nomePesquisado {
-    width: 10%;
+    width: 74%;
+    height: 35%;
+    margin-left: 2%;
 }
 
+#profissaoPesquisado {
+    width: 65%;
+    height: 35%;
+    margin-left: 2%;
+    margin-bottom: 5%;
+}
+
+#estadoPesquisado {
+    width: 67%;
+    height: 35%;
+    margin-left: 2%;
+}
+
+#cidadePesquisado {
+    width: 65%;
+    height: 35%;
+    margin-left: 2%;
+}
 
 #botaoVi {
-    font-size: 15px;
+    font-size: 50%;
+    border-radius: 30px;
+    border: none;
+    background-color: #870CFF;
+    height: 28.5%;
+    color: #ffffff;
+    width: 90%;
 }
 
-#botaoViTd {
-    width: 25%;
+#botaoVi:hover {
+    background-color: #3E0179;
 }
 
 .userImage {

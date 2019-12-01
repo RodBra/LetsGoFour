@@ -27,7 +27,8 @@ export default class Contratacao extends React.Component {
           login: "",
           senha: ""
         },
-        prestador: true
+        prestador: true,
+        inp: ''
       }
     };
   }
@@ -42,23 +43,10 @@ export default class Contratacao extends React.Component {
     this.setState(state);
   }
 
-  componentDidMount() {
+  agendar = () => {
     const state = Object.assign({}, this.state);
-    state.user.id = localStorage.getItem("idPrestador");
-    state.user.nome = localStorage.getItem("nomePrestador");
-    state.user.cidade = localStorage.getItem("cidadePrestador");
-    state.user.estado = localStorage.getItem("estadoPrestador");
-    state.user.rua = localStorage.getItem("ruaPrestador");
-    state.user.numero = localStorage.getItem("numeroPrestador");
-    state.user.celular = localStorage.getItem("celularPrestador");
-    state.user.email = localStorage.getItem("emailPrestador");
-    state.user.tipo_servico = localStorage.getItem("tipo_servicoPrestador");
-    state.user.descricao = localStorage.getItem("descricaoPrestador");
-    state.user.valor = localStorage.getItem("valorPrestador");
-    state.user.credenciais.login = localStorage.getItem("loginPrestador");
-    state.user.credenciais.senha = localStorage.getItem("senhaPrestador");
+    state.inp = <input type="datetime-local" />
     this.setState(state);
-    console.log(this.state);
   }
 
   render() {
@@ -76,7 +64,7 @@ export default class Contratacao extends React.Component {
           name="inputNomePrestador"
           id="inputNomePrestador"
         >
-          {localStorage.getItem("nomePrestador")}
+          {this.props.usuarioContratacao.nome}
         </span>
         <br />
         <span className="descricao" id="estadoPrestador">
@@ -88,7 +76,7 @@ export default class Contratacao extends React.Component {
           name="inputEstadoPrestador"
           id="inputEstadoPrestador"
         >
-          {this.state.user.estado}
+          {this.props.usuarioContratacao.estado}
         </span>
         <br />
         <span className="descricao" id="cidadePrestador">
@@ -100,7 +88,7 @@ export default class Contratacao extends React.Component {
           name="inputCidadePrestador"
           id="inputCidadePrestador"
         >
-          {this.state.user.cidade}
+          {this.props.usuarioContratacao.cidade}
         </span>
         <br />
         <span className="descricao" id="telefonePrestador">
@@ -112,7 +100,7 @@ export default class Contratacao extends React.Component {
           name="inputTelefonePrestador"
           id="inputTelefonePrestador"
         >
-          {this.state.user.celular}
+          {this.props.usuarioContratacao.celular}
         </span>
         <br />
         <span className="descricao" id="emailPrestador">
@@ -124,7 +112,7 @@ export default class Contratacao extends React.Component {
           name="inputEmailPrestador"
           id="inputEmailPrestador"
         >
-          {this.state.user.email}
+          {this.props.usuarioContratacao.email}
         </span>
         <br />
         <span className="descricao" id="profissaoPrestador">
@@ -136,7 +124,7 @@ export default class Contratacao extends React.Component {
           name="inputProfissaoPrestador"
           id="inputProfissaoPrestador"
         >
-          {this.state.user.tipo_servico}
+          {this.props.usuarioContratacao.tipo_servico}
         </span>
         <br />
         <span className="descricao" id="valorServicoPrestador">
@@ -148,24 +136,25 @@ export default class Contratacao extends React.Component {
           name="inputValorServicoPrestador"
           id="inputValorServicoPrestador"
         >
-          {this.state.user.valor}
+          {this.props.usuarioContratacao.valor}
         </span>
         <br />
         <textarea
           name="inputSemBorda"
           id="descricapoServico"
-          cols="82"
           rows="10"
           disabled="true"
+          value={this.props.usuarioContratacao.descricao}
         >
-          {this.state.user.descricao}
         </textarea>
         <button className="buttonPrestador" id="denunciarButton">
           Denunciar
         </button>
-        <button className="buttonPrestador" id="contratarButton">
-          Contratar
+        <button className="buttonPrestador" id="contratarButton" onClick={() => this.agendar()}>
+          Agendar
         </button>
+        {this.state.inp}
+
       </React.Fragment>
     );
   }

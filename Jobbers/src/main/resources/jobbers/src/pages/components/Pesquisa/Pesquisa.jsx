@@ -10,7 +10,8 @@ export default class Pesquisa extends React.Component {
       num: 0,
       servico: "",
       prestadores: [],
-      data: []
+      data: [],
+      teste: ''
     };
   }
 
@@ -21,9 +22,17 @@ export default class Pesquisa extends React.Component {
     this.setState(state);
   };
 
+  apagarPrestadores = () => {
+    let state = Object.assign({}, this.state);
+    state.prestadores = [];
+    this.setState(state);
+  }
+
   pesquisar = async e => {
-    // e.preventDefault();
+    e.preventDefault()
+    this.apagarPrestadores()
     let url = "http://localhost:8080/prestador/servico/" + this.state.servico;
+
     axios
       .get(url)
       .then(res => {
@@ -35,10 +44,14 @@ export default class Pesquisa extends React.Component {
               id={res.data[i].id}
               nome={res.data[i].nome}
               servico={res.data[i].tipo_servico}
+              cidade={res.data[i].cidade}
+              estado={res.data[i].estado}
             />
           );
         }
         this.setState(state);
+        console.log(this.state.prestadores)
+        e.preventDefault();
       })
       .catch(e => {
         console.log(e);
@@ -67,8 +80,9 @@ export default class Pesquisa extends React.Component {
             </form>
           </div>
         </div>
-        {this.state.prestadores}
-        {/* <UsuarioPesquisado /> */}
+        <div className="mt-10 mb-4">
+          {this.state.prestadores}
+        </div>
       </React.Fragment>
     );
   }

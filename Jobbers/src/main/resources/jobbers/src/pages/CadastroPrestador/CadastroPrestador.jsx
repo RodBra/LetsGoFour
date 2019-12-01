@@ -300,7 +300,7 @@ export default class CadastroPrestador extends Component {
           <button
             type="button"
             className="botaoCadastra"
-            onClick={this.cadastrar}
+            onClick={(e) => this.cadastrar(e)}
           >
             Cadastrar
           </button>

@@ -8,7 +8,6 @@ import '../css/app.css'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
-// import Routes from './Routes'
 import Main from '../Main/Main'
 import HashRouter from 'react-router-dom/HashRouter';
 import Home from '../components/Home/Home';
@@ -18,7 +17,6 @@ import axios from 'axios';
 import Contratacao from '../components/Contratacao/Contratacao';
 
 let url = "http://localhost:8080"
-// let dados;
 export default class PrincipalApp extends Component {
 
     constructor(props) {
@@ -34,6 +32,26 @@ export default class PrincipalApp extends Component {
                 telefone: "",
                 email: ""
             },
+            usuarioContratacao: {
+                id: "",
+                nome: "",
+                cidade: "",
+                estado: "",
+                rua: "",
+                numero: "",
+                celular: "",
+                telefone: "",
+                email: "",
+                tipo_servico: "",
+                descricao: "",
+                valor: "",
+                profissao: "",
+                credenciais: {
+                  login: "",
+                  senha: ""
+                },
+                prestador: true
+            },
             servico: ""
         }
     }
@@ -47,9 +65,8 @@ export default class PrincipalApp extends Component {
     handleChangePageContratacao = (page, id) => {
         const state = Object.assign({}, this.state);
         state.actualPage = page;
-        this.setState(state);
-        this.usuarioPrestador();
-}
+        this.usuarioPrestador(id, state);
+    }
 
 
     handleActualPage = () => {
@@ -60,7 +77,7 @@ export default class PrincipalApp extends Component {
                 this.usuario()
                 return <Perfil usuario={this.usuario}/>
             case 3:
-                return <Contratacao/>
+                return <Contratacao usuarioContratacao={this.state.usuarioContratacao}/>
             default:
                 return <Home />
         }
@@ -85,22 +102,24 @@ export default class PrincipalApp extends Component {
         })
     }
 
-    usuarioPrestador = (id) => {
+    usuarioPrestador = (id, state2) => {
         let urlUsuario = url+"/userPrestador/"+id
         axios.get(urlUsuario).then(res => {
-            localStorage.setItem('idPrestador', res.data.id)
-            localStorage.setItem('nomePrestador', res.data.nome)
-            localStorage.setItem('cidadePrestador', res.data.cidade);
-            localStorage.setItem('estadoPrestador', res.data.estado);
-            localStorage.setItem('ruaPrestador', res.data.rua);
-            localStorage.setItem('numeroPrestador', res.data.numero);
-            localStorage.setItem('telefonePrestador', res.data.celular);
-            localStorage.setItem('emailPrestador', res.data.email);
-            localStorage.setItem('tipo_servico', res.data.tipo_servico);
-            localStorage.setItem('descricaoPrestador', res.data.descricao);
-            localStorage.setItem('valorPrestador', res.data.valor);
-            localStorage.setItem('loginPrestador', res.data.credenciais.login);
-            localStorage.setItem('senhaPrestador', res.data.credenciais.senha);
+            const state = Object.assign({}, this.state);
+            state.usuarioContratacao.id = res.data.id
+            state.usuarioContratacao.nome = res.data.nome
+            state.usuarioContratacao.cidade = res.data.cidade
+            state.usuarioContratacao.estado = res.data.estado
+            state.usuarioContratacao.rua = res.data.rua
+            state.usuarioContratacao.numero = res.data.numero
+            state.usuarioContratacao.celular = res.data.celular
+            state.usuarioContratacao.email = res.data.email
+            state.usuarioContratacao.tipo_servico = res.data.tipo_servico
+            state.usuarioContratacao.descricao = res.data.descricao
+            state.usuarioContratacao.valor = res.data.valor
+            console.log(state.usuarioContratacao.nome + " nome")
+            this.setState(state);
+            this.setState(state2);
         }).catch(e => {
             console.log(e)
         })
