@@ -3,7 +3,9 @@ package com.bandtec.LetsGoFourService.gerenciadorDeFilas;
 import com.bandtec.LetsGoFourService.model.Agendamento;
 import com.bandtec.LetsGoFourService.repository.AgendamentoEmEsperaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FilaDeAgendamentos {
 
     private int tamanho;
