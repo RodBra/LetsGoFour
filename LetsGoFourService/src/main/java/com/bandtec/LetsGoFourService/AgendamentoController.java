@@ -18,8 +18,9 @@ public class AgendamentoController {
     private FilaDeAgendamentos fila;
 
     @Autowired
-    public AgendamentoController(AgendamentosService service) {
+    public AgendamentoController(AgendamentosService service, FilaDeAgendamentos fila) {
         this.service = service;
+        this.fila = fila;
     }
 
     @PostMapping("/agendamento/agendar/{idContratante}")

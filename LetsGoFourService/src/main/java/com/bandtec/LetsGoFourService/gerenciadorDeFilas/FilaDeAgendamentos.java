@@ -17,6 +17,12 @@ public class FilaDeAgendamentos {
         agendamentosNaFila = new Object[5];
     }
 
+    public FilaDeAgendamentos(Agendamento agendamento){
+        tamanho = 0;
+        agendamentosNaFila = new Object[5];
+        insereAgendamento(agendamento);
+    }
+
     public boolean isFull() {
         if(tamanho == agendamentosNaFila.length){
             limpaFila();

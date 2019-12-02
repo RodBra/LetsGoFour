@@ -29,6 +29,12 @@ public class Agendamento {
         this.data = data;
     }
 
+    public Agendamento(String idPrestador,String idContratante, Date data){
+        this.idPrestador = idPrestador;
+        this.idContratante = idContratante;
+        this.data = data;
+    }
+
     public String getIdPrestador() {
         return idPrestador;
     }
