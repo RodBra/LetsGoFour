@@ -6,10 +6,9 @@ import com.bandtec.LetsGoFourService.service.AgendamentosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class AgendamentoController {
@@ -45,6 +44,28 @@ public class AgendamentoController {
             } else {
                 return ResponseEntity.ok("Falha ao agendar");
             }
+        }
+    }
+
+    @GetMapping("/agendamentos/prestador/{idPrestador}")
+    public List<Agendamento> retornaTodosPrestador(@PathVariable("idPrestador") String idPrestador){
+        List<Agendamento> agendamentos = service.retornaAgendamentosPrestador(idPrestador);
+        if (!agendamentos.isEmpty()){
+            return agendamentos;
+        } else {
+            System.out.println("Nenhum Agendamento encontrado");
+            return null;
+        }
+    }
+
+    @GetMapping("/agendamentos/prestador/{idContratante}")
+    public List<Agendamento> retornaTodosContratante(@PathVariable("idContratante") String idContratante){
+        List<Agendamento> agendamentos = service.retornaAgendamentosContratante(idContratante);
+        if (!agendamentos.isEmpty()){
+            return agendamentos;
+        } else {
+            System.out.println("Nenhum Agendamento encontrado");
+            return null;
         }
     }
 }

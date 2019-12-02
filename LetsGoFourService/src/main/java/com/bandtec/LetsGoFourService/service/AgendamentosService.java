@@ -6,6 +6,8 @@ import com.bandtec.LetsGoFourService.repository.AgendamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AgendamentosService {
 
@@ -32,4 +34,13 @@ public class AgendamentosService {
         return agendamento;
     }
 
+    public List<Agendamento> retornaAgendamentosPrestador(String idPrestador){
+        List<Agendamento> agendamentos = agendamentoRepository.findByIdPrestador(idPrestador);
+        return agendamentos;
+    }
+
+    public List<Agendamento> retornaAgendamentosContratante(String idContratante){
+        List<Agendamento> agendamentos = agendamentoRepository.findByIdContratante(idContratante);
+        return agendamentos;
+    }
 }
