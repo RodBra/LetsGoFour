@@ -151,3 +151,101 @@
 #atualizado {
     color: green;
 }
+
+
+.bg-modal {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed ;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 500px;
+    height: 300px;
+    background-color: #870CFF;
+    opacity: 1;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.form-control {
+    width: 103%;
+    font-size: 180%;
+    margin-top: 3%;
+    border: none;
+}
+
+.dn {
+    display: none;
+}
+
+.label-data {
+    color: #ffffff;
+    font-size: 180%;
+    margin-top: 8%;
+}
+
+.title-info {
+    color: #ffffff;
+    font-size: 240%;
+}
+
+
+.button-agendamento {
+    border-radius: 20px;
+    border: none;
+    margin-top: 15%;
+    width: 49.5%;
+    height: 20%;
+    font-size: 190%;
+}
+
+#cancel {
+    background-color: red;
+    color: white;
+}
+#agend {
+    margin-left: 1%;
+    background-color: #3E0179;
+    color: white;
+}
+
+#nome {
+    width: 90%;
+}
+
+#estado {
+    width: 89.3%;
+}
+
+#cidade {
+    width: 89.3%;
+}
+
+#email {
+    width: 90.4%;
+}
+
+#telefone {
+    width: 88%;
+}
+
+#numero {
+    width: 88.5%;
+}
+
+#rua {
+    width: 91.7%;
+}
+
+.inputPerfilContratante {
+    border-radius: 0px;
+    margin-top: 1.5%;
+}

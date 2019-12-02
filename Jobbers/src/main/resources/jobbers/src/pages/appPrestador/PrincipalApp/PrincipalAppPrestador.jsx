@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import Home from '../components/Home/Home'
 import PerfilPrestador from '../components/PerfilPrestador/PerfilPrestador';
 import MainPrestador from '../MainPrestador/MainPrestador';
+import AgendadosPrestador from '../components/AgendadosPrestador/AgendadosPrestador'
 import axios from 'axios'
 
 let url = "http://localhost:8080"
@@ -32,7 +33,9 @@ export default class PrincipalAppPrestador extends Component {
                 tipo_servico: "",
                 valor: 0
             },
-            servico: ""
+            servico: "",
+            icon: '',
+            title: ''
         }
     }
 
@@ -44,10 +47,14 @@ export default class PrincipalAppPrestador extends Component {
     };
 
 
+
     handleActualPage = () => {
         switch (this.state.actualPage) {
             case 1:
+                this.usuario()
                 return <PerfilPrestador usuario={this.usuario}/>
+            case 2:
+                return <AgendadosPrestador />
             default:
                 return <Home />
         }
@@ -71,7 +78,7 @@ export default class PrincipalAppPrestador extends Component {
             localStorage.setItem('valor', res.data.valor);
             localStorage.setItem('login', res.data.credenciais.login);
             localStorage.setItem('senha', res.data.credenciais.senha);
-            console.log(localStorage.getItem('login'))
+            console.log(localStorage.getItem('valor'))
         }).catch(e => {
             console.log(e)
         })

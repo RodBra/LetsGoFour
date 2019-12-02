@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../css/perfil.css";
+import axios from 'axios'
 
 export default class Contratacao extends React.Component {
   constructor(props) {
@@ -27,11 +28,23 @@ export default class Contratacao extends React.Component {
           login: "",
           senha: ""
         },
-        prestador: true,
-        inp: ''
-      }
+      },
+      prestador: true,
+      show: false,
+      dataAgendamento: '',
+      agendamentoConcluido: ''
     };
   }
+
+  handleChange = event => {
+    console.log(event)
+    const state = Object.assign({}, this.state);
+    let field = event.target.id;
+    state.user[field] = event.target.value;
+    this.setState(state);
+    console.log(this.state.dataAgendamento)
+  };
+
 
   escritaBotao() {
     const state = Object.assign({}, this.state);
@@ -45,8 +58,33 @@ export default class Contratacao extends React.Component {
 
   agendar = () => {
     const state = Object.assign({}, this.state);
-    state.inp = <input type="datetime-local" />
+    state.show = true
     this.setState(state);
+  }
+
+  cancelar = (e) => {
+    e.preventDefault()
+    const state = Object.assign({}, this.state);
+    state.show = false
+    this.setState(state);
+  }
+
+  agendado = (e) => {
+    e.preventDefault();
+    const state = Object.assign({}, this.state);
+    state.dataAgendamento = document.getElementById('dataAgendamento').value
+    let dados = {
+      idPrestador: this.props.usuarioContratacao.id,
+      idContratante: localStorage.getItem('id'),
+      data: state.dataAgendamento
+    }
+    let url = "http://localhost:8080/agendamento/agendar"
+    axios.post(url, dados).then(res => {
+      state.agendamentoConcluido = 'Agendamento concluido com sucesso'
+      this.setState(state)
+    }).catch(e => {
+      console.log(e)
+    })
   }
 
   render() {
@@ -147,14 +185,24 @@ export default class Contratacao extends React.Component {
           value={this.props.usuarioContratacao.descricao}
         >
         </textarea>
+        {this.state.inp}
         <button className="buttonPrestador" id="denunciarButton">
           Denunciar
         </button>
-        <button className="buttonPrestador" id="contratarButton" onClick={() => this.agendar()}>
-          Agendar
+        <button className="buttonPrestador" id="contratarButton" onClick={(e) => this.agendar(e)}>
+          Contratar
         </button>
-        {this.state.inp}
-
+        <div className={this.state.show ? "bg-modal" : "dn"}>
+          <div className="modal-content">
+            <h2 className="title-info">Agendar serviço</h2><br />
+            <form action="">
+              <label className="label-data">Data e hora do serviço</label>
+              <input className="form-control" type="datetime-local" id="dataAgendamento"/>
+              <button className="button-agendamento" id="cancel" onClick={(e) => this.cancelar(e)}>Cancelar</button>
+              <button className="button-agendamento" id="agend" onClick={(e) => this.agendado(e)}>Agendar</button>
+            </form>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

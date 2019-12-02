@@ -76,19 +76,19 @@ export default class Perfil extends React.Component {
                     <span className="fa fa-user"></span>
                 </div>
                 <span className="descricao" id="nomeUserUser">Nome:</span>
-                <input type="texto" name="nome" id="nome" value={this.state.user.nome} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="nome" id="nome" value={this.state.user.nome} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <span className="descricao" id="estadoUser">Estado:</span>
-                <input type="texto" name="estado" id="estado" value={this.state.user.estado} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="estado" id="estado" value={this.state.user.estado} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <span className="descricao" id="cidadeUser">Cidade:</span>
-                <input type="texto" name="cidade" id="cidade" value={this.state.user.cidade} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="cidade" id="cidade" value={this.state.user.cidade} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <span className="descricao" id="ruaUser">Rua:</span>
-                <input type="texto" name="rua" id="rua" value={this.state.user.rua} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="rua" id="rua" value={this.state.user.rua} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <span className="descricao" id="numeroUser">Numero:</span>
-                <input type="texto" name="numero" id="numero" value={this.state.user.numero} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="numero" id="numero" value={this.state.user.numero} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <span className="descricao" id="telefoneUser">Telefone:</span>
-                <input type="texto" name="telefone" id="telefone" value={this.state.user.telefone} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="telefone" id="telefone" value={this.state.user.telefone} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <span className="descricao" id="emailUser">Email:</span>
-                <input type="texto" name="email" id="email" value={this.state.user.email} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
+                <input className="inputPerfilContratante" type="texto" name="email" id="email" value={this.state.user.email} disabled={this.state.botao} onChange={e => this.handleChange(e)}></input><br />
                 <p id="atualizado">{this.state.atualizado}</p>
                 <button className="buttonPrestador" id="editar" disabled={!this.state.botao} onClick={e => this.habilitaDesabilita(e)}>Editar</button>
                 <button className="buttonPrestador" id="salvar" disabled={this.state.botao} onClick={e => this.habilitaDesabilita(e)}>Salvar</button>

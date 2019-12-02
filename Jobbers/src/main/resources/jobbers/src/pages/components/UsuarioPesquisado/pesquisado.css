@@ -9,12 +9,6 @@
     font-size: 40%;
 }
 
-td {
-    border: 1px solid black;
-    box-sizing: border-box;
-    height: 90px;
-}
-
 #fotoLocal {
     width: 22%;
 }

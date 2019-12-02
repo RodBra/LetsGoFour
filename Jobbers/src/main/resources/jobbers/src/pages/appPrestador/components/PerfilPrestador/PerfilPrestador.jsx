@@ -109,11 +109,11 @@ export default class PerfilPrestador extends React.Component{
                 <span className="descricao" id="cidadePrestador">Cidade:</span>
                 <input className="inputPestador inputCidadePrestador" type="texto" name="inputCidadePrestador" disabled={this.state.botao} id="cidade" value={this.state.user.cidade} onChange={e => this.handleChange(e)}/><br/>
                 <span className="descricao" id="telefonePrestador">Telefone para Contato:</span>
-                <input className="inputPestador inputTelefonePrestador" type="texto" name="inputTelefonePrestador" disabled={this.state.botao} id="telefone" value={this.state.user.celular} onChange={e => this.handleChange(e)}/><br/>
+                <input className="inputPestador" type="texto" name="inputTelefonePrestador" disabled={this.state.botao} id="telefone" value={this.state.user.celular} onChange={e => this.handleChange(e)}/><br/>
                 <span className="descricao" id="emailPrestador">Email:</span>
                 <input className="inputPestador inputEmailPrestador" type="texto" name="inputEmailPrestador" disabled={this.state.botao} id="email" value={this.state.user.email} onChange={e => this.handleChange(e)}/><br/>
                 <span className="descricao" id="profissaoPrestador">Profissão:</span>
-                <input className="inputPestador inputProfissaoPrestador" type="texto" name="inputProfissaoPrestador" disabled={this.state.botao} id="tipo_servico" value={this.state.user.tipo_servico} onChange={e => this.handleChange(e)}/><br/>
+                <input className="inputPestador " type="texto" name="inputProfissaoPrestador" disabled={this.state.botao} id="tipo_servico" value={this.state.user.tipo_servico} onChange={e => this.handleChange(e)}/><br/>
                 <span className="descricao" id="valorServicoPrestador">Valor de serviço (diaria):</span>
                 <input className="inputPestador inputValorServicoPrestador" type="texto" name="inputValorServicoPrestador" disabled={this.state.botao} id="valor" value={this.state.user.valor} onChange={e => this.handleChange(e)}/><br/>
                 <span className="descricao" id="idDescrip">Descrição:  </span>

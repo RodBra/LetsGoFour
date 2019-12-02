@@ -91,11 +91,19 @@
 }
 
 .inputCidadePrestador {
-    width: 88.8%;
+    width: 81.8%;
 }
 
-.inputTelefonePrestador {
-    width: 79.8%;
+#inputTelefonePrestador {
+    width: 9.8%;
+}
+
+#telefone {
+    width: 71%;
+}
+
+#tipo_servico {
+    width: 80.5%;
 }
 
 .inputEmailPrestador {
@@ -107,8 +115,10 @@
     height: 26px;
     font-size: 20px;
     margin-left: 1%;
-    border: 1px solid black;
-    box-sizing: border-box;
+    border-radius: 0;
+    /* border: 1px solid black;
+    box-sizing: border-box; */
+    border: none;
 }
 
 
@@ -130,8 +140,8 @@
     font-size: 20px;
     margin-left: 1%;
     border: none;
-}
 
+}
 #denunciar {
     width: 12%;
     background-color: red;
@@ -153,4 +163,24 @@
     font-family: 'Roboto';
     margin-top: 1%;
     width: 100%;
+}
+
+#valor {
+    width: 69.6%;
+}
+
+#email {
+    width: 83.6%;
+}
+
+#cidade {
+    width: 82.7%;
+}
+
+#estado {
+    width: 82.8%;
+}
+
+#nome {
+    width: 83.5%;   
 }

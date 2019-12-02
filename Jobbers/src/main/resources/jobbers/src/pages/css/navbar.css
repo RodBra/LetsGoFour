@@ -44,26 +44,28 @@ aside.menu-area {
 }
 
 
-.menu a {
+.menu  {
   display: block;
   text-decoration: none;
   color: #fff;
   font-size: 20px;
   text-align: left;
   font-weight: 300;
-  padding: 10px;
-  padding-left: 50px;
+  position: fixed;
+  /* padding: 10px;
+  padding-left: 50px; */
 }
 
-.menu a:hover {
-  color: #3e0179;
-}
+/* .menu:hover {
+  background-color: #3e0179;
+} */
 
 .lg {
   height: 8.8%;
   text-align: center;
   align-items: center;
   font-size: 30px;
+  /* position: fix; */
 }
 
 .posi {
@@ -86,6 +88,11 @@ aside.menu-area {
   width: 100%;
   padding: 10px;
   padding-left: 50px;
+  margin-top: 1%;
+}
+
+#navHome {
+  margin-top: 6%;
 }
 
 .t:hover {

@@ -15,6 +15,7 @@ import Perfil from '../components/Perfil/Perfil';
 import Pesquisa from '../components/Pesquisa/Pesquisa';
 import axios from 'axios';
 import Contratacao from '../components/Contratacao/Contratacao';
+import Agendados from '../components/Agendados/Agendados';
 
 let url = "http://localhost:8080"
 export default class PrincipalApp extends Component {
@@ -78,6 +79,8 @@ export default class PrincipalApp extends Component {
                 return <Perfil usuario={this.usuario}/>
             case 3:
                 return <Contratacao usuarioContratacao={this.state.usuarioContratacao}/>
+            case 4:
+                return <Agendados />
             default:
                 return <Home />
         }
