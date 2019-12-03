@@ -6,9 +6,11 @@ import java.util.Date;
 
 public class Agendamento {
 
-    @JsonProperty
-    private String nome;
+	@JsonProperty
+    private String idPrestador;
     @JsonProperty
     private Date data;
+    @JsonProperty
+    private String idContratante;
 
 }

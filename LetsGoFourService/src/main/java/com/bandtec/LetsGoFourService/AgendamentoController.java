@@ -23,11 +23,9 @@ public class AgendamentoController {
         this.fila = fila;
     }
 
-    @PostMapping("/agendamento/agendar/{idContratante}")
-    public ResponseEntity<String> agendar(@RequestBody Agendamento agendamento, @PathVariable("idContratante") String idContratante) {
+    @PostMapping("/agendamento/agendar")
+    public ResponseEntity<String> agendar(@RequestBody Agendamento agendamento) {
         boolean status;
-
-        agendamento.setIdContratante(idContratante);
 
         if (service.vefiricaAgendamento(agendamento) != null) {
             fila.isFull();

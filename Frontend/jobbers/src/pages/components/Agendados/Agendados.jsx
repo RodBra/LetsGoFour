@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import './agendados.css'
 
 
 export default class Agendados extends Component {
+
+    componentDidMount() {
+        this.carregarAgendados()
+    }
+
+    carregarAgendados = () => {
+        let idContratante = localStorage.getItem('id')
+        let url = "http://localhost:8080/prestador/" + idContratante
+        axios.get(url).then(res => {
+            console.log(res.data);
+        }).catch(e => {
+            console.log(e)
+        })
+    }
     render() {
         return (
             <table class="table table-hover table-fixed">

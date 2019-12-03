@@ -18,7 +18,7 @@ public class Agendamento {
     private String idPrestador;
     @JsonProperty
     private Date data;
-
+    @JsonProperty
     private String idContratante;
 
     public Agendamento() {
