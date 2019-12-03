@@ -81,9 +81,11 @@ export default class Contratacao extends React.Component {
     let url = "http://localhost:8080/agendamento/agendar"
     axios.post(url, dados).then(res => {
       state.agendamentoConcluido = 'Agendamento concluido com sucesso'
+      state.show = false;
       this.setState(state)
+      console.log(res.data)
     }).catch(e => {
-      console.log(e)
+      console.log(e + " deu ruim")
     })
   }
 
@@ -197,7 +199,7 @@ export default class Contratacao extends React.Component {
             <h2 className="title-info">Agendar serviço</h2><br />
             <form action="">
               <label className="label-data">Data e hora do serviço</label>
-              <input className="form-control" type="datetime-local" id="dataAgendamento"/>
+              <input className="form-control" type="datetime-local" id="dataAgendamento" />
               <button className="button-agendamento" id="cancel" onClick={(e) => this.cancelar(e)}>Cancelar</button>
               <button className="button-agendamento" id="agend" onClick={(e) => this.agendado(e)}>Agendar</button>
             </form>
