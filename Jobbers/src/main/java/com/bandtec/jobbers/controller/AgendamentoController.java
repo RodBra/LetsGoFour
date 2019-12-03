@@ -39,7 +39,7 @@ public class AgendamentoController {
     	return ResponseEntity.ok(result);
     }
     
-    @GetMapping("/agendamentos/prestador/{idContratante}")
+    @GetMapping("/agendamentos/contratante/{idContratante}")
     public ResponseEntity<List<Agendamento>> retornaTodosContratante(@PathVariable("idContratante") String idContratante){
     	List<Agendamento> result = service.retornaTodosContratante(idContratante);
     	return ResponseEntity.ok(result);

@@ -31,13 +31,13 @@ public class AgendamentoService {
     }
 
 	public List<Agendamento> retornaTodosPrestadores(String idPrestador) {
-		String urlRetornaPrestador = url+idPrestador;
+		String urlRetornaPrestador = "http://localhost:8081/agendamentos/prestador/"+idPrestador;
 		ResponseEntity<Agendamento[]> list = restTemplate.getForEntity(urlRetornaPrestador, Agendamento[].class);
 		return Arrays.asList(list.getBody());
 	}
 
 	public List<Agendamento> retornaTodosContratante(String idContratante) {
-		String urlRetornaContratante = url+idContratante;
+		String urlRetornaContratante = "http://localhost:8081/agendamentos/contratante/"+idContratante;
 		ResponseEntity<Agendamento[]> list = restTemplate.getForEntity(urlRetornaContratante, Agendamento[].class);
 		return Arrays.asList(list.getBody());
 	}

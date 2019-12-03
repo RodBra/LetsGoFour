@@ -5,3 +5,63 @@ td {
 th {
     font-size: 160%;
 }
+
+.bg-modal-comentario {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed ;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-comentario {
+    width: 700px;
+    height: 400px;
+    background-color: #870CFF;
+    opacity: 1;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+}
+
+.title-coment {
+    color:white;
+    font-size: 230%;
+}
+
+.label-coment {
+    color: white;
+    font-size: 180%;
+    margin-top: 4%;
+}
+
+.comentario {
+    width: 90%;
+    height: 160px;
+    margin-top: 2%;
+    font-size: 160%;
+}
+
+.button-comment {
+    margin-top: 3%;
+    height: 32px;
+    width: 22%;
+    border: none;
+    background-color: #BD79FF;
+    color: white;
+    font-size: 190%;
+    border-radius: 30px;
+}
+
+.button-comment:hover {
+    background-color: #3E0179;
+}
+
+.dn {
+    display: none;
+}

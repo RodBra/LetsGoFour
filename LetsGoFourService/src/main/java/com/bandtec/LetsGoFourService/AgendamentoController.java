@@ -57,7 +57,7 @@ public class AgendamentoController {
         }
     }
 
-    @GetMapping("/agendamentos/prestador/{idContratante}")
+    @GetMapping("/agendamentos/contratante/{idContratante}")
     public List<Agendamento> retornaTodosContratante(@PathVariable("idContratante") String idContratante){
         List<Agendamento> agendamentos = service.retornaAgendamentosContratante(idContratante);
         if (!agendamentos.isEmpty()){
