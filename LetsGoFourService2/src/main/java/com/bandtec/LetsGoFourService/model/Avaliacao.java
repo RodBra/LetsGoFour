@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Data
-@Document(value = "agendamentos")
+@Document(value = "avaliacao")
 public class Avaliacao {
 
     @Id
@@ -20,6 +20,8 @@ public class Avaliacao {
     private String idContratante;
     @JsonProperty
     private String comentario;
+    @JsonProperty
+    private String login;
 
     public Avaliacao() {
     }

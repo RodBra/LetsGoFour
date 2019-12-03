@@ -1,6 +1,7 @@
 package com.bandtec.jobbers.controller;
 
 import com.bandtec.jobbers.model.Avaliacao;
+import com.bandtec.jobbers.model.Credenciais;
 import com.bandtec.jobbers.service.AvaliacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,8 @@ public class AvaliacaoController {
         this.service = service;
     }
 
-    @PostMapping("avaliacao/avaliar/{login}")
-    public String avaliar(@RequestBody Avaliacao avaliacao, @PathVariable("login") String login){
+    @PostMapping("avaliacao/avaliar")
+    public String avaliar(@RequestBody Avaliacao avaliacao, String login){
 
         boolean result = service.fazerAvaliacao(avaliacao, login);
         if(result){

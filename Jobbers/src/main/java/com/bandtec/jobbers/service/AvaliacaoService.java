@@ -22,7 +22,7 @@ public class AvaliacaoService {
     }
 
     public boolean fazerAvaliacao(Avaliacao avaliacao, String login){
-        String urlAvaliacao = url + "avaliar/" + login ;
+        String urlAvaliacao = url + "avaliar";
         ResponseEntity<String> result = restTemplate.postForEntity(urlAvaliacao, avaliacao, String.class);
         if (result.getBody().equals("Avaliação feita com sucesso")){
             return true;
