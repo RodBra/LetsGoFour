@@ -23,11 +23,9 @@ public class AgendamentoController {
         this.fila = fila;
     }
 
-    @PostMapping("/agendamento/agendar/{idContratante}")
-    public ResponseEntity<String> agendar(@RequestBody Agendamento agendamento, @PathVariable("idContratante") String idContratante) {
+    @PostMapping("/agendamento/agendar")
+    public ResponseEntity<String> agendar(@RequestBody Agendamento agendamento) {
         boolean status;
-
-        agendamento.setIdContratante(idContratante);
 
         if (service.vefiricaAgendamento(agendamento) != null) {
             fila.isFull();
@@ -59,7 +57,7 @@ public class AgendamentoController {
         }
     }
 
-    @GetMapping("/agendamentos/prestador/{idContratante}")
+    @GetMapping("/agendamentos/contratante/{idContratante}")
     public List<Agendamento> retornaTodosContratante(@PathVariable("idContratante") String idContratante){
         List<Agendamento> agendamentos = service.retornaAgendamentosContratante(idContratante);
         if (!agendamentos.isEmpty()){

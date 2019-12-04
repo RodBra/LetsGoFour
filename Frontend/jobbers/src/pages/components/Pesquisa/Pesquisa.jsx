@@ -37,7 +37,7 @@ export default class Pesquisa extends React.Component {
       .get(url)
       .then(res => {
         let state = Object.assign({}, this.state);
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < res.data.length; i++) {
           state.prestadores.push(
             <UsuarioPesquisado
               change={this.props.change}

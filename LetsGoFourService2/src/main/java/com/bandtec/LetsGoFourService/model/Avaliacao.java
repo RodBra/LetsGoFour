@@ -6,44 +6,34 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Data
-@Document(value = "agendamentos")
-public class Agendamento {
+@Document(value = "avaliacao")
+public class Avaliacao {
 
     @Id
     private String id;
     @JsonProperty
     private String idPrestador;
     @JsonProperty
-<<<<<<< HEAD
-    private String data;
-
-=======
-    private Date data;
-    @JsonProperty
->>>>>>> 2b50fcb44151dff679ff69c6de83b13e33bceef1
     private String idContratante;
+    @JsonProperty
+    private String comentario;
+    @JsonProperty
+    private String login;
 
-    public Agendamento() {
+    public Avaliacao() {
     }
 
-    public Agendamento(String idPrestador, String data){
+    public Avaliacao(String idPrestador, String comentario){
         this.idPrestador = idPrestador;
-        this.data = data;
+        this.comentario = comentario;
     }
 
-    public Agendamento(String idPrestador,String idContratante, String data){
-        this.idPrestador = idPrestador;
-        this.idContratante = idContratante;
-        this.data = data;
-    }
 
     public String getIdPrestador() {
         return idPrestador;
-    }
-
-    public String getData() {
-        return data;
     }
 
     public String getIdContratante() {

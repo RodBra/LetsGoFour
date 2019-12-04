@@ -1,66 +1,108 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import axios from 'axios'
 import './agendados.css'
+import Agendamento from './Agendamento';
 
 
 export default class Agendados extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            agendados: [],
+            userPrestador: {},
+            agendamentos: [],
+            show: false
+        }
+    }
+
+    componentDidMount() {
+        this.carregarAgendados();
+    }
+
+    carregarAgendados = () => {
+        let idContratante = localStorage.getItem('id')
+        let url = "http://localhost:8080/agendamentos/contratante/" + idContratante
+        axios.get(url).then(res => {
+            const state = Object.assign({}, this.state);
+            console.log(res.data)
+            state.agendados = res.data
+            this.setState(state)
+            this.renderAgendamentos(state.agendados)             
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
+    renderAgendamentos = () => {
+        const state = Object.assign({}, this.state);
+
+        for (let i = 0; i < state.agendados.length; i++) {
+            state.agendamentos.push(
+              <Agendamento 
+              data={state.agendados[i].data}
+              idPrestador={state.agendados[i].idPrestador}
+              comentar={this.comentar}
+              />
+            );
+        }
+        this.setState(state)
+    }
+
+    comentado = (e) => {
+        e.preventDefault();
+        const state = Object.assign({}, this.state);
+        let dados = {
+            comentario: document.getElementById('comentario').value,
+            idPrestador: state.userPrestador.id,
+            login: localStorage.getItem('login')
+        }
+        let url = "http://localhost:8080/agendamento/agendar"
+        axios.post(url, dados).then(res => {
+          console.log(res.data)
+          state.show = false;
+          this.setState(state)
+        }).catch(e => {
+          console.log(e + " deu ruim")
+          state.show = false;
+          this.setState(state)
+        })
+      }
+
+    comentar = () => {
+        const state = Object.assign({}, this.state);
+        state.show = true
+        this.setState(state);
+    }
+
     render() {
         return (
-            <table class="table table-hover table-fixed">
-                <thead>
-                    <tr>
-                        <th>Data/hora</th>
-                        <th>Prestador</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                        <th>Concluido</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Jerry</td>
-                        <td>Horwitz</td>
-                        <td>Italy</td>
-                        <td>Bari</td>
-                        <td>Editor-in-chief</td>
-                    </tr>
-                    <tr>
-                        <td>Janis</td>
-                        <td>Joplin</td>
-                        <td>Poland</td>
-                        <td>Warsaw</td>
-                        <td>Video Maker</td>
-                    </tr>
-                    <tr>
-                        <td>Gary</td>
-                        <td>Winogrand</td>
-                        <td>Germany</td>
-                        <td>Berlin</td>
-                        <td>Photographer</td>
-                    </tr>
-                    <tr>
-                        <td>Angie</td>
-                        <td>Smith</td>
-                        <td>USA</td>
-                        <td>San Francisco</td>
-                        <td>Teacher</td>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>Mattis</td>
-                        <td>France</td>
-                        <td>Paris</td>
-                        <td>Actor</td>
-                    </tr>
-                    <tr>
-                        <td>Otto</td>
-                        <td>Morris</td>
-                        <td>Germany</td>
-                        <td>Munich</td>
-                        <td>Singer</td>
-                    </tr>
-                </tbody>
-
-            </table>
+            <Fragment>
+                <table class="table table-hover table-fixed">
+                    <thead>
+                        <tr className="trhead">
+                            <th>Data/hora</th>
+                            <th>Prestador</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Concluido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.agendamentos}
+                    </tbody>
+                </table>
+                <div className={this.state.show ? "bg-modal-comentario" : "dn"}>
+                  <div className="modal-content-comentario">
+                    <h2 className="title-coment">Comentar serviço</h2><br />
+                    <form action="">
+                      <label className="label-coment">Comente sobre o serviço para outros usuários:</label><br/>
+                      <textarea className="comentario" id="comentario"></textarea><br/>
+                      <button className="button-comment" id="coment" onClick={(e) => this.comentado(e)}>Salvar</button>
+                    </form>
+                  </div>
+                </div>
+            </Fragment>
         )
     }
 }
