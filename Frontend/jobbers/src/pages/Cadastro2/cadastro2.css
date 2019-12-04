@@ -7,6 +7,13 @@ body {
     background-color: #870CFF;
 }
 
+.msgCadastro {
+    color: white;
+    margin-left: 37%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
 
 .div-titulo {
     width: 100%;    

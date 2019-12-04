@@ -11,19 +11,20 @@ export default class CadastroPrestador extends Component {
       rg: "",
       cpf: "",
       profissao: "",
-      email: "",
+      emailInput: "",
       confEmail: "",
       apelido: "",
       senha: "",
       confSenha: "",
-      estado: "",
-      cidade: "",
-      rua: "",
-      numero: "",
-      celular: "",
-      telefone: "",
+      estadoInput: "",
+      cidadeInput: "",
+      ruaInput: "",
+      numeroInput: "",
+      celularInput: "",
+      telefoneInput: "",
       check: false,
-      result: ""
+      result: "",
+      msg: ''
     };
   }
 
@@ -32,13 +33,13 @@ export default class CadastroPrestador extends Component {
     const url = "http://localhost:8080/cadastrar/prestador";
     const state = Object.assign({}, this.state);
     let nome = this.state.nomeUsuario;
-    let email = state.email;
-    let telefone = state.telefone;
-    let cidade = state.cidade;
-    let estado = state.estado;
-    let rua = state.rua;
-    let numero = state.numero;
-    let celular = state.celular;
+    let email = state.emailInput;
+    let telefone = state.telefoneInput;
+    let cidade = state.cidadeInput;
+    let estado = state.estadoInput;
+    let rua = state.ruaInput;
+    let celular = state.celularInput;
+    let numero = state.numeroInput;
     let login = state.apelido;
     let senha = state.senha;
     let profissao = state.profissao;
@@ -61,7 +62,7 @@ export default class CadastroPrestador extends Component {
       .post(url, user)
       .then(res => {
         const state = Object.assign({}, this.state);
-        state.result = res.data;
+        state.msg = "Cadastro realizado com sucesso!";
         this.setState(state);
       })
       .catch(e => {
@@ -164,7 +165,7 @@ export default class CadastroPrestador extends Component {
             onChange={e => this.handleChange(e)}
             type="email"
             name="email"
-            id="email"
+            id="emailInput"
             className="inputgran"
           />
           <br />
@@ -229,14 +230,14 @@ export default class CadastroPrestador extends Component {
             onChange={e => this.handleChange(e)}
             type="texto"
             name="estado"
-            id="estado"
+            id="estadoInput"
             className="inputpeqpri inputpeq"
           />
           <input
             onChange={e => this.handleChange(e)}
             type="texto"
             name="cidade"
-            id="cidade"
+            id="cidadeInput"
             className="inputpeqseg inputpeq"
           />
           <br />
@@ -251,14 +252,14 @@ export default class CadastroPrestador extends Component {
             onChange={e => this.handleChange(e)}
             type="texto"
             name="rua"
-            id="rua"
+            id="ruaInput"
             className="inputpeqpri inputpeq"
           />
           <input
             onChange={e => this.handleChange(e)}
             type="texto"
             name="numero"
-            id="numero"
+            id="numeroInput"
             className="inputpeqseg inputpeq"
           />
           <br />
@@ -277,14 +278,14 @@ export default class CadastroPrestador extends Component {
             onChange={e => this.handleChange(e)}
             type="texto"
             name="celular"
-            id="celular"
+            id="celularInput"
             className="inputpeqpri inputpeq"
           />
           <input
             onChange={e => this.handleChange(e)}
             type="texto"
             name="telefone"
-            id="telefone"
+            id="telefoneInput"
             className="inputpeqseg inputpeq"
           />
           <br />
@@ -297,6 +298,7 @@ export default class CadastroPrestador extends Component {
             <label htmlFor="check">Concordo com os termos de uso</label>
             <br />
           </div>
+          <p className="msgCadastro">{this.state.msg}</p>
           <button
             type="button"
             className="botaoCadastra"
@@ -307,7 +309,6 @@ export default class CadastroPrestador extends Component {
           <button type="button" className="botaoVoltar" onClick={this.voltar}>
             Voltar
           </button>
-          <p>{this.state.result}</p>
         </form>
       </div>
     );

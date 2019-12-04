@@ -1,8 +1,51 @@
 import React, { Component } from 'react'
 import './agendadosPrestador.css'
+import axios from 'axios'
+import AgendamentoPrestador from './AgendamentoPrestador'
+export default class agendadosPrestador extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            agendados: [],
+            userContratante: {},
+            agendamentos: [],
+        }
+    }
 
-export default class Agendados extends Component {
+    componentDidMount() {
+        this.carregarAgendados()
+    }
+
+    carregarAgendados = () => {
+        let idPrestador = localStorage.getItem('id')
+        let url = "http://localhost:8080/agendamentos/prestador/" + idPrestador
+        axios.get(url).then(res => {
+            const state = Object.assign({}, this.state);
+            console.log(res.data)
+            state.agendados = res.data
+            this.setState(state)
+            this.renderAgendamentos(state.agendados)             
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
+    renderAgendamentos = () => {
+        const state = Object.assign({}, this.state);
+
+        for (let i = 0; i < state.agendados.length; i++) {
+            state.agendamentos.push(
+              <AgendamentoPrestador 
+              data={state.agendados[i].data}
+              idContratante={state.agendados[i].idContratante}
+              comentar={this.comentar}
+              />
+            );
+        }
+        this.setState(state)
+    }
+
     render() {
         return (
             <table class="table table-hover table-fixed">
@@ -12,83 +55,10 @@ export default class Agendados extends Component {
                         <th>Prestador</th>
                         <th>Telefone</th>
                         <th>E-mail</th>
-                        <th>Concluido</th>
-                        <th>Concluir</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Jerry</td>
-                        <td>Horwitz</td>
-                        <td>Italy</td>
-                        <td>Bari</td>
-                        <td>Editor-in-chief</td>
-                        <td>
-                            <button>
-                                Cocluir
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Janis</td>
-                        <td>Joplin</td>
-                        <td>Poland</td>
-                        <td>Warsaw</td>
-                        <td>Video Maker</td>
-                        <td>
-                            <button>
-                                Cocluir
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Gary</td>
-                        <td>Winogrand</td>
-                        <td>Germany</td>
-                        <td>Berlin</td>
-                        <td>Photographer</td>
-                        <td>
-                            <button>
-                                Cocluir
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Angie</td>
-                        <td>Smith</td>
-                        <td>USA</td>
-                        <td>San Francisco</td>
-                        <td>Teacher</td>
-                        <td>
-                            <button>
-                                Cocluir
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>Mattis</td>
-                        <td>France</td>
-                        <td>Paris</td>
-                        <td>Actor</td>
-                        <td>
-                            <button>
-                                Cocluir
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Otto</td>
-                        <td>Morris</td>
-                        <td>Germany</td>
-                        <td>Munich</td>
-                        <td>Singer</td>
-                        <td>
-                            <button>
-                                Cocluir
-                            </button>
-                        </td>
-                    </tr>
+                    {this.state.agendamentos}
                 </tbody>
 
             </table>

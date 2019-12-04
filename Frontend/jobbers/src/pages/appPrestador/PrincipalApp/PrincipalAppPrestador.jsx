@@ -39,6 +39,11 @@ export default class PrincipalAppPrestador extends Component {
         }
     }
 
+    componentDidMount() {
+        this.usuario()
+        console.log(localStorage.getItem('id'))
+    }
+
     handleChange = event => {
         const state = Object.assign({}, this.state);
         let field = event.target.id;
@@ -88,6 +93,29 @@ export default class PrincipalAppPrestador extends Component {
         const state = Object.assign({}, this.state);
         state.actualPage = page;
         this.setState(state);
+    }
+
+    usuarioPrestador = (id, state2) => {
+        let urlUsuario = url+"/userPrestador/"+id
+        axios.get(urlUsuario).then(res => {
+            const state = Object.assign({}, this.state);
+            state.usuarioContratacao.id = res.data.id
+            state.usuarioContratacao.nome = res.data.nome
+            state.usuarioContratacao.cidade = res.data.cidade
+            state.usuarioContratacao.estado = res.data.estado
+            state.usuarioContratacao.rua = res.data.rua
+            state.usuarioContratacao.numero = res.data.numero
+            state.usuarioContratacao.celular = res.data.celular
+            state.usuarioContratacao.email = res.data.email
+            state.usuarioContratacao.tipo_servico = res.data.tipo_servico
+            state.usuarioContratacao.descricao = res.data.descricao
+            state.usuarioContratacao.valor = res.data.valor
+            console.log(state.usuarioContratacao.nome + " nome")
+            this.setState(state);
+            this.setState(state2);
+        }).catch(e => {
+            console.log(e)
+        })
     }
 
     render() {

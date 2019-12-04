@@ -48,24 +48,23 @@ export default class Agendados extends Component {
         }
         this.setState(state)
     }
-
+    
     comentado = (e) => {
         e.preventDefault();
         const state = Object.assign({}, this.state);
         let dados = {
             comentario: document.getElementById('comentario').value,
             idPrestador: state.userPrestador.id,
+            idContratante: localStorage.getItem('id'),
             login: localStorage.getItem('login')
         }
-        let url = "http://localhost:8080/agendamento/agendar"
+        let url = "http://localhost:8080/avaliacao/avaliar"
         axios.post(url, dados).then(res => {
           console.log(res.data)
           state.show = false;
           this.setState(state)
         }).catch(e => {
           console.log(e + " deu ruim")
-          state.show = false;
-          this.setState(state)
         })
       }
 

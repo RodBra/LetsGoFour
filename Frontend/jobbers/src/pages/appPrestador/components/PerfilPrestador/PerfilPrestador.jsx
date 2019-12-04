@@ -30,7 +30,8 @@ export default class PerfilPrestador extends React.Component{
                     senha: ""
                 },
                 prestador: true
-            }
+            },
+            msg: ''
         }
     }
 
@@ -80,7 +81,9 @@ export default class PerfilPrestador extends React.Component{
         if(e.target.id === "salvar") {
             let user = this.state.user
             axios.put(url+"/updatePrestador", user).then(res => {
-                console.log(res.data)
+                const state = Object.assign({}, this.state);
+                state.msg="Atualizado com sucesso!"
+                this.setState(state)
                 this.props.usuario()
             }).catch(e => {
                 console.log("deu ruim")
@@ -118,6 +121,7 @@ export default class PerfilPrestador extends React.Component{
                 <input className="inputPestador inputValorServicoPrestador" type="texto" name="inputValorServicoPrestador" disabled={this.state.botao} id="valor" value={this.state.user.valor} onChange={e => this.handleChange(e)}/><br/>
                 <span className="descricao" id="idDescrip">Descrição:  </span>
                 <textarea className="descricapoServico" rows="10" id="descricao" disabled={this.state.botao} onChange={e => this.handleChange(e)} value={this.state.user.descricao}></textarea>
+                <p className="msgPerfilPrestador">{this.state.msg}</p>
                 <button className="buttonPrestador" id="editar" disabled={!this.state.botao} onClick={e => this.habilitaDesabilita(e)}>Editar</button>
                 <button className="buttonPrestador" id="salvar" disabled={this.state.botao} onClick={e => this.habilitaDesabilita(e)}>Salvar</button>
             </React.Fragment>
