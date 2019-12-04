@@ -14,16 +14,18 @@ class AgendamentoTest extends Specification{
     private FilaDeAgendamentos fila
     private Date date = new Date()
     private Agendamento agendamento2 = new Agendamento("5d9fa9efd3169c199094eec5", "5d9fa9efd3169c199094eec5", date)
+    private String data2
+
 
     void "config"(){
-
+        data2 = date.getDate();
         repository = Stub(AgendamentoRepository.class)
         esperaRepository = Stub(AgendamentoEmEsperaRepository.class)
     }
 
     def "Agendamento indiponivel, reservando"(){
         given:
-        Agendamento agendamento = new Agendamento("AKJDidiwoniocdn", date)
+        Agendamento agendamento = new Agendamento("AKJDidiwoniocdn", data2)
 
         and:
         fila = new FilaDeAgendamentos(agendamento2)
@@ -42,7 +44,7 @@ class AgendamentoTest extends Specification{
 
     def "Faha ao agendar"(){
         given:
-        Agendamento agendamento = new Agendamento("AKJDidiwoniocdn", date)
+        Agendamento agendamento = new Agendamento("AKJDidiwoniocdn", data2)
 
         and:
         fila = new FilaDeAgendamentos(agendamento2)

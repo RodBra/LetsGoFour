@@ -6,8 +6,6 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
-
 @Data
 @Document(value = "agendamentos")
 public class Agendamento {
@@ -17,19 +15,19 @@ public class Agendamento {
     @JsonProperty
     private String idPrestador;
     @JsonProperty
-    private Date data;
+    private String data;
 
     private String idContratante;
 
     public Agendamento() {
     }
 
-    public Agendamento(String idPrestador, Date data){
+    public Agendamento(String idPrestador, String data){
         this.idPrestador = idPrestador;
         this.data = data;
     }
 
-    public Agendamento(String idPrestador,String idContratante, Date data){
+    public Agendamento(String idPrestador,String idContratante, String data){
         this.idPrestador = idPrestador;
         this.idContratante = idContratante;
         this.data = data;
@@ -39,8 +37,7 @@ public class Agendamento {
         return idPrestador;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    public Date getData() {
+    public String getData() {
         return data;
     }
 

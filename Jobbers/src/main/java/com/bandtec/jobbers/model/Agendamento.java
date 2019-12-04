@@ -9,6 +9,6 @@ public class Agendamento {
     @JsonProperty
     private String nome;
     @JsonProperty
-    private Date data;
+    private String data;
 
 }
