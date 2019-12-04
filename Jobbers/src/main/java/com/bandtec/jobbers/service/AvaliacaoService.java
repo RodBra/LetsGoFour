@@ -18,7 +18,7 @@ public class AvaliacaoService {
 
     public AvaliacaoService(){
         this.restTemplate = new RestTemplate();
-        this.url = "http://localhost:8081/avaliacao/";
+        this.url = "http://localhost:8082/avaliacao/";
     }
 
     public boolean fazerAvaliacao(Avaliacao avaliacao, String login){
@@ -32,7 +32,7 @@ public class AvaliacaoService {
     }
 
     public List<Avaliacao> retornaAvaliacoesPrestador(String idPrestador){
-        String urlAvaliacao = url + "prestador/" + idPrestador;
+        String urlAvaliacao = "http://localhost:8082/avaliacoes/prestador/" + idPrestador;
         ResponseEntity<Avaliacao[]> avaliacaos = restTemplate.getForEntity(urlAvaliacao, Avaliacao[].class);
         return Arrays.asList(avaliacaos.getBody());
     }

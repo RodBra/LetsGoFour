@@ -59,9 +59,8 @@ export default class Perfil extends React.Component {
             let user = this.state.user
             axios.put(url+"/update", user).then(res => {
                 const state = Object.assign({}, this.state);
-                state.atualizado = res.data;
+                state.atualizado = "Atualizado com sucesso";
                 this.setState(state);
-                console.log(res.data)
                 this.props.usuario()
             }).catch(e => {
                 console.log("deu ruim")

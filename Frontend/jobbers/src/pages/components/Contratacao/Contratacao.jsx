@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../css/perfil.css";
 import axios from 'axios'
+import Comentario from "./comentario/Comentario";
 
 export default class Contratacao extends React.Component {
   constructor(props) {
@@ -32,8 +33,14 @@ export default class Contratacao extends React.Component {
       prestador: true,
       show: false,
       dataAgendamento: '',
-      agendamentoConcluido: ''
+      agendamentoConcluido: '',
+      comentarios: [],
+      comentarioAvaliativo: ''
     };
+  }
+
+  componentDidMount() {
+    this.comentario()
   }
 
   handleChange = event => {
@@ -69,19 +76,33 @@ export default class Contratacao extends React.Component {
     this.setState(state);
   }
 
+  comentario() {
+    let url = "http://localhost:8080/avaliacao/prestador/"+ this.props.usuarioContratacao.idPrestador
+    axios.get(url).then(res => {
+      const state = Object.assign({}, this.state)
+      console.log(res.data)
+      for(let i = 0; i < res.data.length; i++) {
+        state.comentarios.push(<Comentario comentario={res.data[i].comentario}
+        login={res.data[i].login}/>)
+      }
+      if(res.data.length > 0) {
+        state.comentarioAvaliativo = "Comentarios Avaliativo"
+      }
+      this.setState(state)
+    }).catch(e => {
+      console.log(e)
+    })
+  }
+
   agendado = (e) => {
     e.preventDefault();
     const state = Object.assign({}, this.state);
     let data = new Date(document.getElementById('dataAgendamento').value)
-    data = "" +data.getFullYear() + '-' + data.getMonth() + '-' + data.getDay() + ""
-    // data = state.dataAgendamento = document.getElementById('dataAgendamento').value
-    // data = data.get
-    console.log(data)
-    
+    let dataFormatada = ""+(data.getDate()+1)+"/"+(data.getMonth()+1)+"/"+data.getFullYear()+" "+ data.getHours() +":"+data.getUTCMinutes() +""
     let dados = {
       idPrestador: this.props.usuarioContratacao.id,
       idContratante: localStorage.getItem('id'),
-      data: data
+      data: dataFormatada
     }
     let url = "http://localhost:8080/agendamento/agendar"
     axios.post(url, dados).then(res => {
@@ -199,12 +220,16 @@ export default class Contratacao extends React.Component {
         <button className="buttonPrestador" id="contratarButton" onClick={(e) => this.agendar(e)}>
           Contratar
         </button>
+        <h2 className="comentarioAvaliativo">{this.state.comentarioAvaliativo}</h2>
+        <div className="div-comentarios">
+          {this.state.comentarios}
+        </div>
         <div className={this.state.show ? "bg-modal" : "dn"}>
           <div className="modal-content">
             <h2 className="title-info">Agendar serviço</h2><br />
             <form action="">
               <label className="label-data">Data e hora do serviço</label>
-              <input className="form-control" type="date" id="dataAgendamento" />
+              <input className="form-control" type="datetime-local" id="dataAgendamento" />
               <button className="button-agendamento" id="cancel" onClick={(e) => this.cancelar(e)}>Cancelar</button>
               <button className="button-agendamento" id="agend" onClick={(e) => this.agendado(e)}>Agendar</button>
             </form>

@@ -11,17 +11,18 @@ class Cadastro2 extends Component {
 
         this.state ={
             nomeUsuario:'',
-            telefone:'',
-            email:'',
+            telefoneInput:'',
+            emailInput:'',
             confEmail:'',
             apelido:'',
             senha:'',
             confSenha:'',
-            estado:'',
-            cidade:'',
-            rua:'',
-            numero:'',
-            check:false
+            estadoInput:'',
+            cidadeInput:'',
+            ruaInput:'',
+            numeroInput:'',
+            check:false,
+            msg: ''
         }
     }
 
@@ -43,13 +44,14 @@ class Cadastro2 extends Component {
 
     cadastro = () => {
         let nome = this.state.nomeUsuario
-        let email = this.state.email
+        let email = this.state.emailInput
         let login = this.state.apelido
         let senha = this.state.senha
-        let estado = this.state.estado
-        let cidade = this.state.cidade
-        let rua = this.state.rua
-        let numero = this.state.numero
+        let estado = this.state.estadoInput
+        let cidade = this.state.cidadeInput
+        let rua = this.state.ruaInput
+        let numero = this.state.numeroInput
+        let telefone = this.state.telefoneInput
         
         let dados = {
             nome: nome,
@@ -62,13 +64,15 @@ class Cadastro2 extends Component {
             cidade: cidade,
             rua: rua,
             numero: numero,
+            telefone: telefone,
             prestador: false
         }
 
 
         axios.post(url+"/cadastrar/contratante", dados).then(res => {
-            console.log(res);
-            this.props.history.push('/');
+            const state = Object.assign({}, this.state)
+            state.msg = "Cadastro Realizado com sucesso!"
+            this.setState(state)
         }).catch(e => {
             console.log("deu ruim " + e)
         })
@@ -90,10 +94,10 @@ class Cadastro2 extends Component {
                     <label className="labelgran" id="label-nome">Nome Completo</label><br/>
                     <input onChange={(e) => this.handleChange(e)} type="texto" name="nomeUsuario" id="nomeUsuario" className="inputgran"/><br/>
                     <label className="labelgran" id="label-telefone1">Telefone/Celular</label><br/>
-                    <input onChange={(e) => this.handleChange(e)} type="texto" name="telefone" id="telefone" className="inputgran"/><br/>
+                    <input onChange={(e) => this.handleChange(e)} type="texto" name="telefone" id="telefoneInput" className="inputgran"/><br/>
                     <h2 className="h2" id="h2-login">Dados de Login</h2><br/>
                     <label className="labelgran" id="label-email">Email</label><br/>
-                    <input onChange={(e) => this.handleChange(e)} type="email" name="email" id="email" className="inputgran"/><br/>
+                    <input onChange={(e) => this.handleChange(e)} type="email" name="email" id="emailInput" className="inputgran"/><br/>
                     <label className="labelgran" id="label-confEmail">Confirmar Email</label><br/>
                     <input onChange={(e) => this.handleChange(e)} type="email" name="confEmail" id="confEmail" className="inputgran"/><br/>
                     <label className="labelgran" id="label-apelido">Apelido</label><br/>
@@ -105,15 +109,16 @@ class Cadastro2 extends Component {
                     <h2 className="h2" id="h2-endereco">Endereco</h2><br/>
                     <label className="labelpeq labelpri" id="label-estado">Estado</label>
                     <label className="labelpeq labelseg" id="label-cidade">Cidade</label><br/>
-                    <input onChange={(e) => this.handleChange(e)} type="texto" name="estado" id="estado" className="inputpeqpri inputpeq"/>
-                    <input onChange={(e) => this.handleChange(e)} type="texto" name="cidade" id="cidade" className="inputpeqseg inputpeq"/><br/>
+                    <input onChange={(e) => this.handleChange(e)} type="texto" name="estado" id="estadoInput" className="inputpeqpri inputpeq"/>
+                    <input onChange={(e) => this.handleChange(e)} type="texto" name="cidade" id="cidadeInput" className="inputpeqseg inputpeq"/><br/>
                     <label className="labelpeq labelpri" id="label-rua">Rua</label>
                     <label className="labelpeq labelseg" id="label-numero">Numero</label><br/>
-                    <input onChange={(e) => this.handleChange(e)} type="texto" name="rua" id="rua" className="inputpeqpri inputpeq"/>
-                    <input onChange={(e) => this.handleChange(e)} type="texto" name="numero" id="numero" className="inputpeqseg inputpeq"/><br/>
+                    <input onChange={(e) => this.handleChange(e)} type="texto" name="rua" id="ruaInput" className="inputpeqpri inputpeq"/>
+                    <input onChange={(e) => this.handleChange(e)} type="texto" name="numero" id="numeroInput" className="inputpeqseg inputpeq"/><br/>
                     <div className="termo">
                         <input onChange={(e) => this.isChecked(e)} type="checkbox" id="check"/> <label htmlFor="check">Concordo com os termos de uso</label><br/>
                     </div>  
+                    <p className="msgCadastro">{this.state.msg}</p>
                     <button type="button" className="botaoCadastra" onClick={this.cadastro}>Cadastrar</button>
                     <button type="button" className="botaoVoltar" onClick={this.voltar}>Voltar</button>
                 </form>

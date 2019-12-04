@@ -19,7 +19,7 @@ public class AvaliacaoController {
         this.service = service;
     }
 
-    @PostMapping("avaliacao/avaliar")
+    @PostMapping("/avaliacao/avaliar")
     public String avaliar(@RequestBody Avaliacao avaliacao, String login){
 
         boolean result = service.fazerAvaliacao(avaliacao, login);

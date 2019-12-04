@@ -239,13 +239,16 @@
 
 #numero {
     width: 88.5%;
+    
 }
 
 #rua {
     width: 91.7%;
+    background-color: #ececec;
 }
 
 .inputPerfilContratante {
     border-radius: 0px;
     margin-top: 1.5%;
 }
+

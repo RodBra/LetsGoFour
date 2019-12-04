@@ -8,5 +8,9 @@ public class Avaliacao {
     private String comentario;
     @JsonProperty
     private String idPrestador;
+    @JsonProperty
+    private String idContratante;
+    @JsonProperty
+    private String login;
 
 }

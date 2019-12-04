@@ -18,12 +18,18 @@ export default props =>
 
         <div className="p-3 mt-3">
             <div className="display-4">
-                <span>Configurações Iniciais!</span>
+                <span>Proximos Passos</span>
             </div>
             <hr/>
             <p>
                 Se está acessando pela primeira vez entre em seu <strong>Perfil </strong>
-                e atualize algumas das informações que estam em branco
+                e atualize algumas das informações que estam em branco, para que os contratantes
+                tenham mais informações sobre você, e pronto agora é só esperar que agendem uma 
+                data e hora e entrem em contato com você para explicar sobre o serviço.
+            </p>
+            <p>
+                Para que voce veja os dados do seu agendamento é só clicar no menu em 
+                <strong>Agendados</strong> e conferir os dados
             </p>
         </div>
     </React.Fragment>
