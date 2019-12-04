@@ -72,11 +72,16 @@ export default class Contratacao extends React.Component {
   agendado = (e) => {
     e.preventDefault();
     const state = Object.assign({}, this.state);
-    state.dataAgendamento = document.getElementById('dataAgendamento').value
+    let data = new Date(document.getElementById('dataAgendamento').value)
+    data = "" +data.getFullYear() + '-' + data.getMonth() + '-' + data.getDay() + ""
+    // data = state.dataAgendamento = document.getElementById('dataAgendamento').value
+    // data = data.get
+    console.log(data)
+    
     let dados = {
       idPrestador: this.props.usuarioContratacao.id,
       idContratante: localStorage.getItem('id'),
-      data: state.dataAgendamento
+      data: data
     }
     let url = "http://localhost:8080/agendamento/agendar"
     axios.post(url, dados).then(res => {
@@ -199,7 +204,7 @@ export default class Contratacao extends React.Component {
             <h2 className="title-info">Agendar serviço</h2><br />
             <form action="">
               <label className="label-data">Data e hora do serviço</label>
-              <input className="form-control" type="datetime-local" id="dataAgendamento" />
+              <input className="form-control" type="date" id="dataAgendamento" />
               <button className="button-agendamento" id="cancel" onClick={(e) => this.cancelar(e)}>Cancelar</button>
               <button className="button-agendamento" id="agend" onClick={(e) => this.agendado(e)}>Agendar</button>
             </form>

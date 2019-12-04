@@ -18,7 +18,6 @@ export default class Agendados extends Component {
 
     componentDidMount() {
         this.carregarAgendados();
-        this.renderAgendamentos()
     }
 
     carregarAgendados = () => {
@@ -26,20 +25,19 @@ export default class Agendados extends Component {
         let url = "http://localhost:8080/agendamentos/contratante/" + idContratante
         axios.get(url).then(res => {
             const state = Object.assign({}, this.state);
+            console.log(res.data)
             state.agendados = res.data
             this.setState(state)
-            this.renderAgendamentos(state.agendados)
-            console.log(this.state.agendados)
-             
+            this.renderAgendamentos(state.agendados)             
         }).catch(e => {
             console.log(e)
         })
     }
 
-    renderAgendamentos = (agendados) => {
+    renderAgendamentos = () => {
         const state = Object.assign({}, this.state);
-        console.log(agendados.length)
-        for (let i = 0; i < agendados.length; i++) {
+
+        for (let i = 0; i < state.agendados.length; i++) {
             state.agendamentos.push(
               <Agendamento 
               data={state.agendados[i].data}
@@ -48,6 +46,7 @@ export default class Agendados extends Component {
               />
             );
         }
+        this.setState(state)
     }
 
     comentado = (e) => {
@@ -81,7 +80,7 @@ export default class Agendados extends Component {
             <Fragment>
                 <table class="table table-hover table-fixed">
                     <thead>
-                        <tr>
+                        <tr className="trhead">
                             <th>Data/hora</th>
                             <th>Prestador</th>
                             <th>Telefone</th>

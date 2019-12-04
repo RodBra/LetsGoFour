@@ -65,3 +65,7 @@ th {
 .dn {
     display: none;
 }
+
+.trhead {
+    margin-bottom: 999%;
+}
