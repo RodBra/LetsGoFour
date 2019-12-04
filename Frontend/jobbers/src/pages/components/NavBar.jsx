@@ -27,7 +27,7 @@ class NavBar extends Component {
         {/* <div className="posi"> */}
           
           <nav className="menu">
-            <div className="lg mt-3">Logo</div>
+            <div className="lg mt-3 ml-4">Jobbers</div>
             <button onClick={() => this.props.change(0)} className="t" id="navHome"><i className="fa fa-home"></i> Home</button>
             <button onClick={() => this.props.change(1)} className="t"><i className="fa fa-search"></i> Pesquisar</button>
             <button onClick={() => this.props.change(4)} className="t"><i className="fa fa-history"></i> Agendados</button>

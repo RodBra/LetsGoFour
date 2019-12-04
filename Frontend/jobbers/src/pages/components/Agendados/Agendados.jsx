@@ -84,7 +84,7 @@ export default class Agendados extends Component {
                             <th>Prestador</th>
                             <th>Telefone</th>
                             <th>E-mail</th>
-                            <th>Concluido</th>
+                            <th>Avaliar</th>
                         </tr>
                     </thead>
                     <tbody>

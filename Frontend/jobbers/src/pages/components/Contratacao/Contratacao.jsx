@@ -77,7 +77,7 @@ export default class Contratacao extends React.Component {
   }
 
   comentario() {
-    let url = "http://localhost:8080/avaliacao/prestador/5dd5d5899fecad52af64118f"
+    let url = "http://localhost:8080/avaliacao/prestador/"+ this.props.usuarioContratacao.idPrestador
     axios.get(url).then(res => {
       const state = Object.assign({}, this.state)
       console.log(res.data)
