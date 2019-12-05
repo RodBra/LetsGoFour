@@ -35,3 +35,10 @@
 2019-12-04 04:08:17 [http-nio-8080-exec-5] INFO  usuario logado : teste
 2019-12-04 04:09:07 [http-nio-8080-exec-2] INFO  usuario logado : teste
 2019-12-04 04:09:39 [http-nio-8080-exec-6] INFO  usuario logado : admin
+2019-12-04 17:50:20 [http-nio-8080-exec-2] INFO  usuario logado : teste
+2019-12-04 17:50:33 [http-nio-8080-exec-5] INFO  404 NOT_FOUND
+2019-12-04 17:50:39 [http-nio-8080-exec-6] INFO  usuario logado : admin
+2019-12-04 18:24:12 [http-nio-8080-exec-2] INFO  usuario logado : teste
+2019-12-04 18:34:21 [http-nio-8080-exec-1] INFO  usuario logado : teste
+2019-12-04 18:49:42 [http-nio-8080-exec-6] INFO  usuario logado : admin
+2019-12-04 18:53:12 [http-nio-8080-exec-1] INFO  usuario logado : teste

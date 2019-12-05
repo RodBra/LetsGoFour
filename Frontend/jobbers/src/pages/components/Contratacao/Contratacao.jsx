@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../css/perfil.css";
-import axios from 'axios'
-import Comentario from "./comentario/Comentario";
+import axios from "axios";
+// import Comentario from "./comentario/Comentario";
 
 export default class Contratacao extends React.Component {
   constructor(props) {
@@ -28,30 +28,34 @@ export default class Contratacao extends React.Component {
         credenciais: {
           login: "",
           senha: ""
-        },
+        }
       },
       prestador: true,
       show: false,
-      dataAgendamento: '',
-      agendamentoConcluido: '',
-      comentarios: [],
-      comentarioAvaliativo: ''
+      dataAgendamento: "",
+      agendamentoConcluido: "",
+      comentarios: [
+        "Muito bom, recomendo!",
+        "Regular, poderia melhorar!",
+        "Contrataria novamente!"
+      ],
+      comentarioAparece: "",
+      comentarioAvaliativo: ""
     };
   }
 
   componentDidMount() {
-    this.comentario()
+    this.comentario();
   }
 
   handleChange = event => {
-    console.log(event)
+    console.log(event);
     const state = Object.assign({}, this.state);
     let field = event.target.id;
     state.user[field] = event.target.value;
     this.setState(state);
-    console.log(this.state.dataAgendamento)
+    console.log(this.state.dataAgendamento);
   };
-
 
   escritaBotao() {
     const state = Object.assign({}, this.state);
@@ -65,55 +69,88 @@ export default class Contratacao extends React.Component {
 
   agendar = () => {
     const state = Object.assign({}, this.state);
-    state.show = true
+    state.show = true;
     this.setState(state);
-  }
+  };
 
-  cancelar = (e) => {
-    e.preventDefault()
-    const state = Object.assign({}, this.state);
-    state.show = false
-    this.setState(state);
-  }
-
-  comentario() {
-    let url = "http://localhost:8080/avaliacao/prestador/"+ this.props.usuarioContratacao.idPrestador
-    axios.get(url).then(res => {
-      const state = Object.assign({}, this.state)
-      console.log(res.data)
-      for(let i = 0; i < res.data.length; i++) {
-        state.comentarios.push(<Comentario comentario={res.data[i].comentario}
-        login={res.data[i].login}/>)
-      }
-      if(res.data.length > 0) {
-        state.comentarioAvaliativo = "Comentarios Avaliativo"
-      }
-      this.setState(state)
-    }).catch(e => {
-      console.log(e)
-    })
-  }
-
-  agendado = (e) => {
+  cancelar = e => {
     e.preventDefault();
     const state = Object.assign({}, this.state);
-    let data = new Date(document.getElementById('dataAgendamento').value)
-    let dataFormatada = ""+(data.getDate()+1)+"/"+(data.getMonth()+1)+"/"+data.getFullYear()+" "+ data.getHours() +":"+data.getUTCMinutes() +""
+    state.show = false;
+    this.setState(state);
+  };
+
+  comentario() {
+    // let url =
+    //   "http://localhost:8080/avaliacao/prestador/" +
+    //   this.props.usuarioContratacao.idPrestador;
+    // axios
+    //   .get(url)
+    //   .then(res => {
+    const state = Object.assign({}, this.state);
+    //     console.log(res.data);
+    //     for (let i = 0; i < res.data.length; i++) {
+    //       state.comentarios.push(
+    //         <Comentario
+    //           comentario={res.data[i].comentario}
+    //           login={res.data[i].login}
+    //         />
+    //       );
+    //     }
+    //     if (res.data.length > 0) {
+    //       state.comentarioAvaliativo = "Comentarios Avaliativo";
+    //     }
+    //     this.setState(state);
+    //   })
+    //   .catch(e => {
+    //     console.log(e);
+    //   });
+
+    let valor = Math.random() * 2;
+    if (valor == 3) {
+      valor = 2;
+    }
+    valor = parseInt(valor);
+    console.log(valor);
+    state.comentarioAparece = state.comentarios[valor];
+    console.log(state.comentarioAparece);
+    this.setState(state);
+  }
+
+  agendado = e => {
+    e.preventDefault();
+    const state = Object.assign({}, this.state);
+    let data = new Date(document.getElementById("dataAgendamento").value);
+    let dataFormatada =
+      "" +
+      (data.getDate() + 1) +
+      "/" +
+      (data.getMonth() + 1) +
+      "/" +
+      data.getFullYear() +
+      " " +
+      data.getHours() +
+      ":" +
+      data.getUTCMinutes() +
+      "";
     let dados = {
       idPrestador: this.props.usuarioContratacao.id,
-      idContratante: localStorage.getItem('id'),
+      idContratante: localStorage.getItem("id"),
       data: dataFormatada
-    }
-    let url = "http://localhost:8080/agendamento/agendar"
-    axios.post(url, dados).then(res => {
-      state.agendamentoConcluido = 'Agendamento concluido com sucesso'
-      state.show = false;
-      this.setState(state)
-      console.log(res.data)
-    }).catch(e => {
-      console.log(e + " deu ruim")
-    })
-  }
+    };
+    let url = "http://localhost:8080/agendamento/agendar";
+    axios
+      .post(url, dados)
+      .then(res => {
+        state.agendamentoConcluido = "Agendamento concluido com sucesso";
+        state.show = false;
+        this.setState(state);
+        console.log(res.data);
+      })
+      .catch(e => {
+        console.log(e + " deu ruim");
+      });
+  };
 
   render() {
     return (
@@ -211,27 +248,45 @@ export default class Contratacao extends React.Component {
           rows="10"
           disabled="true"
           value={this.props.usuarioContratacao.descricao}
-        >
-        </textarea>
+        ></textarea>
         {this.state.inp}
         <button className="buttonPrestador" id="denunciarButton">
           Denunciar
         </button>
-        <button className="buttonPrestador" id="contratarButton" onClick={(e) => this.agendar(e)}>
+        <button
+          className="buttonPrestador"
+          id="contratarButton"
+          onClick={e => this.agendar(e)}
+        >
           Contratar
         </button>
-        <h2 className="comentarioAvaliativo">{this.state.comentarioAvaliativo}</h2>
-        <div className="div-comentarios">
-          {this.state.comentarios}
-        </div>
+        <h2 className="comentarioAvaliativo">Comentarios Avaliativos</h2>
+        <div className="div-comentarios">{this.state.comentarioAparece}</div>
         <div className={this.state.show ? "bg-modal" : "dn"}>
           <div className="modal-content">
-            <h2 className="title-info">Agendar serviço</h2><br />
+            <h2 className="title-info">Agendar serviço</h2>
+            <br />
             <form action="">
               <label className="label-data">Data e hora do serviço</label>
-              <input className="form-control" type="datetime-local" id="dataAgendamento" />
-              <button className="button-agendamento" id="cancel" onClick={(e) => this.cancelar(e)}>Cancelar</button>
-              <button className="button-agendamento" id="agend" onClick={(e) => this.agendado(e)}>Agendar</button>
+              <input
+                className="form-control"
+                type="datetime-local"
+                id="dataAgendamento"
+              />
+              <button
+                className="button-agendamento"
+                id="cancel"
+                onClick={e => this.cancelar(e)}
+              >
+                Cancelar
+              </button>
+              <button
+                className="button-agendamento"
+                id="agend"
+                onClick={e => this.agendado(e)}
+              >
+                Agendar
+              </button>
             </form>
           </div>
         </div>

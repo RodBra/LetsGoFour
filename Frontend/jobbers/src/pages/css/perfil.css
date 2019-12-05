@@ -1,254 +1,251 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url('../font/Roboto-Regular.ttf')
+  font-family: "Roboto";
+  src: url("../font/Roboto-Regular.ttf");
 }
 
 #botaoUsuario {
-    position: absolute;
-    width: 121px;
-    height: 34px;
-    left: 1144px;
-    top: 15px;
-    opacity: 100%;
-    background-color: #870CFF; 
+  position: absolute;
+  width: 121px;
+  height: 34px;
+  left: 1144px;
+  top: 15px;
+  opacity: 100%;
+  background-color: #870cff;
 
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 40px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 40px;
 }
 
 .imagen {
-    position: relative;
-    width: 213px;
-    height: 187px;
-    border: 1px solid black;
-    box-sizing: border-box;
-    background-color: #979797;
-    font-size: 1380%;
-    padding-left: 5%;
-    padding-right: 5.5%;
-    padding-top: 0.1%;
-    padding-bottom: 6%;
+  position: relative;
+  width: 213px;
+  height: 187px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color: #979797;
+  font-size: 1380%;
+  padding-left: 5%;
+  padding-right: 5.5%;
+  padding-top: 0.1%;
+  padding-bottom: 6%;
 }
 
 .descricao {
-    width: 30%;
+  width: 30%;
 
-    line-height: 33px;
-    align-items: center;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 180%; 
+  line-height: 33px;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 180%;
 
-    color: #000000;
+  color: #000000;
 
-    /* border: 1px solid black;
+  /* border: 1px solid black;
     box-sizing: border-box; */
-
 }
 
 #descricapoServico {
-    font-size: 20px;
-    font-family: 'Roboto';
-    margin-top: 2%;
-    width: 100%;
+  font-size: 20px;
+  font-family: "Roboto";
+  margin-top: 2%;
+  width: 100%;
 }
 
 .buttonPrestador {
-    border-radius: 30px;
-    border: none;
-    color: #FFFFFF;
-    background-color: #870CFF;
-    width: 10%;
-    height: 35px;
-    margin: 1% 0% 2% 0%;
-    font-size: 200%;
+  border-radius: 30px;
+  border: none;
+  color: #ffffff;
+  background-color: #870cff;
+  width: 10%;
+  height: 35px;
+  margin: 1% 0% 2% 0%;
+  font-size: 200%;
 }
 
 .buttonPrestador:hover {
-    background-color: #3E0179;
+  background-color: #3e0179;
 }
 
 #editar {
-    margin-left: 78.5%;
+  margin-left: 78.5%;
 }
 
 #salvar {
-    margin-left: 1%;
+  margin-left: 1%;
 }
 
-
 #inputNomePrestador {
-    width: 89.5%;
+  width: 89.5%;
 }
 
 #inputIdadePrestador {
-    width: 89.9%;
+  width: 89.9%;
 }
 
 #inputEstadoPrestador {
-    width: 88.9%;
+  width: 88.9%;
 }
 
 #inputCidadePrestador {
-    width: 88.8%;
+  width: 88.8%;
 }
 
 #inputTelefonePrestador {
-    width: 77%;
+  width: 77%;
 }
 
 #inputEmailPrestador {
-    width: 89.9%;
+  width: 89.9%;
 }
 
-
-.inputPestador{
-    height: 26px;
-    font-size: 20px;
-    margin-left: 1%;
-    border: 1px solid black;
-    box-sizing: border-box;
+.inputPestador {
+  height: 26px;
+  font-size: 20px;
+  margin-left: 1%;
+  border: 1px solid black;
+  box-sizing: border-box;
 }
-
 
 #inputFormacao {
-    width: 85.5%;    
+  width: 85.5%;
 }
 
 #inputProfissaoPrestador {
-    width: 86.9%;
+  width: 86.9%;
 }
 
 #inputValorServicoPrestador {
-    width: 76%;
+  width: 76%;
 }
 
 .inputSemBorda {
-    height: 26px;
-    font-size: 20px;
-    margin-left: 1%;
-    border: none;
+  height: 26px;
+  font-size: 20px;
+  margin-left: 1%;
+  border: none;
 }
 
 #denunciarButton {
-    width: 12%;
-    background-color: red;
-    margin-left: 74.5%;
+  width: 12%;
+  background-color: red;
+  margin-left: 74.5%;
 }
 
 #contato {
-    width: 18%;
-    margin-left: 1%;
+  width: 18%;
+  margin-left: 1%;
 }
 
 #contratarButton {
-    width: 12%;
-    margin-left: 1%;
+  width: 12%;
+  margin-left: 1%;
 }
 
 #atualizado {
-    color: green;
+  color: green;
 }
 
-
 .bg-modal {
-    width: 100%;
-    min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed ;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
-    width: 500px;
-    height: 300px;
-    background-color: #870CFF;
-    opacity: 1;
-    border-radius: 4px;
-    align-items: center;
+  width: 500px;
+  height: 300px;
+  background-color: #870cff;
+  opacity: 1;
+  border-radius: 4px;
+  align-items: center;
 }
 
 .form-control {
-    width: 103%;
-    font-size: 180%;
-    margin-top: 3%;
-    border: none;
+  width: 103%;
+  font-size: 180%;
+  margin-top: 3%;
+  border: none;
 }
 
 .dn {
-    display: none;
+  display: none;
 }
 
 .label-data {
-    color: #ffffff;
-    font-size: 180%;
-    margin-top: 8%;
+  color: #ffffff;
+  font-size: 180%;
+  margin-top: 8%;
 }
 
 .title-info {
-    color: #ffffff;
-    font-size: 240%;
+  color: #ffffff;
+  font-size: 240%;
 }
 
-
 .button-agendamento {
-    border-radius: 20px;
-    border: none;
-    margin-top: 15%;
-    width: 49.5%;
-    height: 20%;
-    font-size: 190%;
+  border-radius: 20px;
+  border: none;
+  margin-top: 15%;
+  width: 49.5%;
+  height: 20%;
+  font-size: 190%;
 }
 
 #cancel {
-    background-color: red;
-    color: white;
+  background-color: red;
+  color: white;
 }
 #agend {
-    margin-left: 1%;
-    background-color: #3E0179;
-    color: white;
+  margin-left: 1%;
+  background-color: #3e0179;
+  color: white;
 }
 
 #nome {
-    width: 90%;
+  width: 90%;
 }
 
 #estado {
-    width: 89.3%;
+  width: 89.3%;
 }
 
 #cidade {
-    width: 89.3%;
+  width: 89.3%;
 }
 
 #email {
-    width: 90.4%;
+  width: 90.4%;
 }
 
 #telefone {
-    width: 88%;
+  width: 88%;
 }
 
 #numero {
-    width: 88.5%;
-    
+  width: 88.5%;
 }
 
 #rua {
-    width: 91.7%;
-    background-color: #ececec;
+  width: 91.7%;
+  background-color: #ececec;
 }
 
 .inputPerfilContratante {
-    border-radius: 0px;
-    margin-top: 1.5%;
+  border-radius: 0px;
+  margin-top: 1.5%;
 }
 
+.div-comentarios {
+  font-size: 230%;
+  padding: 4%;
+}
