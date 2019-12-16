@@ -34,12 +34,17 @@ export default class Contratacao extends React.Component {
       show: false,
       dataAgendamento: "",
       agendamentoConcluido: "",
-      comentarios: [
-        "Muito bom, recomendo!",
-        "Regular, poderia melhorar!",
-        "Contrataria novamente!"
+      comentarios1: [
+        "Muito bom, serviço de qualidade e rapido alem de tes sido muito bem atendido recomendo!",
+        "Um Exelente profisional, super recomendo",
+        "Muito bom adorei os serviços!"
       ],
-      comentarioAparece: "",
+      comentarios2: [
+        "experiencia não muito agradavel porem um serviço entregue",
+        "não gostei muito porem soube entrgar o que prometeu no prazo",
+        "bom o atendimento porem poderia melhorar a qualidade do serviço"
+      ],
+      comentarioAparece: [],
       comentarioAvaliativo: ""
     };
   }
@@ -105,15 +110,14 @@ export default class Contratacao extends React.Component {
     //   .catch(e => {
     //     console.log(e);
     //   });
+      let valor = Math.random() * 2;
+      if (valor === 3) {
+        valor = 2;
+      }
+      valor = parseInt(valor);
+      state.comentarioAparece.push(<div className="div-comentarios">{state.comentarios1[valor]}</div>);
+      state.comentarioAparece.push(<div className="div-comentarios">{state.comentarios2[valor]}</div>);
 
-    let valor = Math.random() * 2;
-    if (valor == 3) {
-      valor = 2;
-    }
-    valor = parseInt(valor);
-    console.log(valor);
-    state.comentarioAparece = state.comentarios[valor];
-    console.log(state.comentarioAparece);
     this.setState(state);
   }
 
@@ -260,8 +264,10 @@ export default class Contratacao extends React.Component {
         >
           Contratar
         </button>
+        <div>
+          {this.state.comentarioAparece}
+        </div>
         <h2 className="comentarioAvaliativo">Comentarios Avaliativos</h2>
-        <div className="div-comentarios">{this.state.comentarioAparece}</div>
         <div className={this.state.show ? "bg-modal" : "dn"}>
           <div className="modal-content">
             <h2 className="title-info">Agendar serviço</h2>

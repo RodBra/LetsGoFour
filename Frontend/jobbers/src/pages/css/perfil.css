@@ -213,26 +213,32 @@
 
 #nome {
   width: 90%;
+  background-color: #ececec;
 }
 
 #estado {
   width: 89.3%;
+  background-color: #ececec;
 }
 
 #cidade {
   width: 89.3%;
+  background-color: #ececec;
 }
 
 #email {
   width: 90.4%;
+  background-color: #ececec;
 }
 
 #telefone {
   width: 88%;
+  background-color: #ececec;
 }
 
 #numero {
   width: 88.5%;
+  background-color: #ececec;
 }
 
 #rua {

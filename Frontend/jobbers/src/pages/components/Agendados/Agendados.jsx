@@ -121,7 +121,7 @@ export default class Agendados extends Component {
               </button>
               <button
                 className="button-comment"
-                id="coment"
+                id="comentVoltar"
                 onClick={e => this.fechar(e)}
               >
                 Voltar

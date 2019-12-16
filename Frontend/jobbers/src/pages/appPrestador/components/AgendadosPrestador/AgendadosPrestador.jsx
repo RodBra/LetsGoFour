@@ -52,9 +52,10 @@ export default class agendadosPrestador extends Component {
                 <thead>
                     <tr>
                         <th>Data/hora</th>
-                        <th>Prestador</th>
+                        <th>Contratante</th>
                         <th>Telefone</th>
                         <th>E-mail</th>
+                        <th>Concluir</th>
                     </tr>
                 </thead>
                 <tbody>

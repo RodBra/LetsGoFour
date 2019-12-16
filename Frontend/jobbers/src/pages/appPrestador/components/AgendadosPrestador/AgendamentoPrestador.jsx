@@ -15,10 +15,10 @@ export default class AgendamentoPrestador extends Component {
         this.userPrestador()
     }
 
-    userPrestador = () => {
+    userPrestador = async () => {
         const state = Object.assign({}, this.state);
         let url = "http://localhost:8080/user/"+this.props.idContratante
-        axios.get(url).then(res => {
+        await axios.get(url).then(res => {
             state.userContratante = res.data
             this.setState(state)
         }).catch(e => {
@@ -33,6 +33,7 @@ export default class AgendamentoPrestador extends Component {
                 <td>{this.state.userContratante.nome}</td>
                 <td>{this.state.userContratante.telefone}</td>
                 <td>{this.state.userContratante.email}</td>
+                <td><button>Finalizar</button></td>
             </tr>
         )
     }
